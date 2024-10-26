@@ -23,6 +23,14 @@
   font-weight: normal;
   font-style: normal;
 }
+/* comments */
+@font-face {
+  font-family: "Dancing";
+  src: url("/fonts/dancingscript-regular-webfont.woff2") format("woff2"),
+      url("/fonts/dancingscript-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* General */
 body {
@@ -56,3 +64,7 @@ p {
   @apply tracking-wider
 }
 
+.ejemplo {
+  font-family: 'Dancing', system-ui, sans-serif
+  /* @apply text-blue-500 */
+}
