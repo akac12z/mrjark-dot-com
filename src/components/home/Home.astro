@@ -5,7 +5,7 @@ const home = await Astro.glob('@home/markdown/home.md');
 <section class="max-h-screen prose prose-invert">
   <!-- <Photo/> -->
   {home.map((h) => 
-    <h2>{h.frontmatter.title}</h2>
+    <h2 class="text-xl">{h.frontmatter.title}</h2>
     <p set:html={h.compiledContent()} />
   )}
 

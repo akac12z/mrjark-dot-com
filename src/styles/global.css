@@ -54,7 +54,7 @@ a {
 
 p {
   font-family: 'Rubik-Light', system-ui, sans-serif;
-  @apply text-base text-gray-200
+  @apply text-sm text-gray-200
 }
 
 
