@@ -1,0 +1,58 @@
+/* FONT FACES*/
+
+/* headers */
+@font-face {
+  font-family: "MuseoModerno";
+  src: url("/fonts/MuseoModerno-Medium.woff2") format("woff2"),
+    url("/fonts/MuseoModerno-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* text */
+@font-face {
+  font-family: "Rubik-Light";
+  src: url("/fonts/rubik-light-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url("/fonts/rubik-medium-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General */
+body {
+  background-color: #0b0b0e;
+	color: rgb(245, 250, 255);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "MuseoModerno", system-ui, sans-serif;
+  @apply text-xl font-medium text-gray-100 tracking-wider
+}
+a {
+  font-family: 'MuseoModerno', sans-serif;
+  @apply tracking-wider
+}
+
+p {
+  font-family: 'Rubik-Light', system-ui, sans-serif;
+  @apply text-base text-gray-200
+}
+
+
+
+/* OWN CLASSES */
+.tags {
+  @apply tracking-wider
+}
+

@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+---
+
+<nav class="container text-[#fbbf24] my-2 w-full">
+  <section class="flex justify-between items-center mx-auto">
+    <a href="/">
+      <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
+    </a>
+    <ul class="flex gap-4 justify-center items-center text-sm">
+      <li>
+        <a
+          class="hover:border-b hover:border-[#72e4aa] hover:text-[#72e4aa]"
+          href="/blog">Blog</a
+        >
+      </li>
+      <!-- <li>
+        <a class="hover:border-b hover:border-[#fbbf24]" href="/why">Why</a>
+      </li> -->
+      <li>
+        <a
+          class="hover:border-b hover:border-[#c963e9] hover:text-[#c963e9]"
+          href="/book-notes">Book Notes</a
+        >
+      </li>
+      <li>
+        <a
+          class="hover:border-b hover:border-[#7f95ed] hover:text-[#7f95ed]"
+          href="/about">About</a
+        >
+      </li>
+    </ul>
+  </section>
+</nav>
