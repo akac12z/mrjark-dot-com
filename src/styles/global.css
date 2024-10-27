@@ -57,8 +57,6 @@ p {
   @apply text-sm text-gray-200
 }
 
-
-
 /* OWN CLASSES */
 .tags {
   @apply tracking-wider

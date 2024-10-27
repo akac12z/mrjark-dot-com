@@ -1,5 +1,5 @@
 ---
-const home = await Astro.glob('@home/markdown/home.md');
+const home = await Astro.glob("@home/markdown/home.md");
 ---
 
 <section class="prose prose-invert">
@@ -9,20 +9,19 @@ const home = await Astro.glob('@home/markdown/home.md');
     <p set:html={h.compiledContent()} />
   )}
 
-    <!-- 
-    Forma antigua de hacerlo
-    <article class="">
-      <h2>Aquí mrjark, aunque offline me dicen Chema ✌🏽</h2>
-      <p>
-        Me dedico al Growth en Startups, apasionado de la psicología del
-        comportamiento, obsesionado por el aprendizaje y un amante del arte del
-        tattoo.
-      </p>
-      <p>
-        Este es mi build(me) in public, aquí compartiré aquello que voy haciendo
-        y pensando, y que considero que es importante, en mi carrera en Growth
-        entre otras cosas que me parecen interesantes.
-      </p>
-      <p>Welcome to my creative sorted chaos hub 💭</p>
-    </article> -->
+  <!-- Forma antigua de hacerlo -->
+  <!-- <article class="">
+    <h2>Aquí mrjark, aunque offline me dicen Chema ✌🏽</h2>
+    <p>
+      Me dedico al Growth en Startups, apasionado de la psicología del
+      comportamiento, obsesionado por el aprendizaje y un amante del arte del
+      tattoo.
+    </p>
+    <p>
+      Este es mi build(me) in public, aquí compartiré aquello que voy haciendo y
+      pensando, y que considero que es importante, en mi carrera en Growth entre
+      otras cosas que me parecen interesantes.
+    </p>
+    <p>Welcome to my creative sorted chaos hub 💭</p>
+  </article> -->
 </section>
