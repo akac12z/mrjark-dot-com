@@ -65,6 +65,6 @@ p {
 }
 
 .ejemplo {
-  font-family: 'Caveat', system-ui, sans-serif
+  /* font-family: 'Caveat', system-ui, sans-serif */
   /* @apply text-blue-500 */
 }
