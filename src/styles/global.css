@@ -25,9 +25,9 @@
 }
 /* comments */
 @font-face {
-  font-family: "Dancing";
-  src: url("/fonts/dancingscript-regular-webfont.woff2") format("woff2"),
-      url("/fonts/dancingscript-regular-webfont.woff") format("woff");
+  font-family: "Caveat";
+  src: url("/fonts/caveat-regular-webfont.woff2") format("woff2"),
+      url("/fonts/caveat-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -65,6 +65,6 @@ p {
 }
 
 .ejemplo {
-  font-family: 'Dancing', system-ui, sans-serif
+  font-family: 'Caveat', system-ui, sans-serif
   /* @apply text-blue-500 */
 }
