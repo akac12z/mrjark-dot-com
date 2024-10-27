@@ -28,13 +28,13 @@ const { title, subTitle = "Blog de mrjark" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body
-		class="mx-auto px-2 pt-2 sm:pt-6 max-w-md sm:max-w-xl md:max-w-2xl max-h-full"
+		class="mx-auto px-2 py-2 sm:py-6 max-w-md sm:max-w-xl md:max-w-2xl max-h-full"
 	>
 		<Navbar />
-		<main class="mt-12">
+		<main class="my-12">
 			<slot />
 		</main>
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
 
