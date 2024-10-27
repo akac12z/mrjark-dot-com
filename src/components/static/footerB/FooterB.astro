@@ -1,0 +1,8 @@
+---
+const footerB = await Astro.glob("../footerB/markdown/footerB.md");
+---
+
+<section class="prose prose-invert">
+  <!-- <Photo/> -->
+  {footerB.map((h) => <p set:html={h.compiledContent()} />)}
+</section>
