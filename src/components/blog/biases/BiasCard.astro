@@ -1,0 +1,42 @@
+---
+/*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
+
+import { Image } from "astro:assets";
+
+interface Props {
+  //TODO: QUITAR LOS ?
+  biasName?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  biasName = "Título del sesgo aquí",
+  description = "Descripción del sesgo que tendrás en tu .md del sesgo en los contenidos",
+  image = "una url de imagen de portada",
+} = Astro.props;
+---
+
+<article class="w-60 h-auto flex flex-col items-center justify-center">
+  <Image
+    width={240}
+    height={160}
+    src="https://images.unsplash.com/photo-1712412998279-bb7528f0b72d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="unshplash image"
+    class="w-full rounded-t-lg overflow-hidden object-cover"
+  />
+  <article class="pt-2 rounded-b-lg mx-auto text-center bg-neutral-800">
+    <h3 class="text-lg mb-2">{biasName}</h3>
+    <div class="pb-2">
+      <p class="mb-4 px-1 text-sm line-clamp-4">
+        {description}
+      </p>
+      <a
+        href="#"
+        class="mt-4 underline decoration-[#4fe5b8]/50 underline-offset-4"
+      >
+        Saber más
+      </a>
+    </div>
+  </article>
+</article>

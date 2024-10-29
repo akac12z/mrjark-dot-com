@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities; */
 
---root {
-
-}
+/* --root {
+  --background-dark: #0b0b0e
+} */
 
 /* FONT FACES*/
 
