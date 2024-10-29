@@ -2,10 +2,10 @@
 const about = await Astro.glob('@about/markdown/about.md');
 ---
 
-<section class="max-h-screen prose prose-invert">
+<section class="prose prose-invert">
   <!-- <Photo/> -->
   {about.map((h) => 
     <h1 class="text-3xl">{h.frontmatter.title}</h1>
-    <p set:html={h.compiledContent()} />
+    <p class="" set:html={h.compiledContent()} />
   )}
 </section>
