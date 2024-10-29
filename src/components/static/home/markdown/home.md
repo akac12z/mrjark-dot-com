@@ -10,6 +10,6 @@ comportamiento, obsesionado por el aprendizaje y amante del arte del
 tattoo.
 
 Este es mi build(me) in public, donde compartiré aquello que voy haciendo, aprendiendo
-y pensando, y que considero que es importante, en mi carrera en Growth y que, quizá, también te pueda ayudar.
+y pensando, y que considero importante, en mi carrera en Growth.
 
 Welcome to my creative sorted chaos hub 💭
