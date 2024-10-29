@@ -1,3 +1,11 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+--root {
+
+}
+
 /* FONT FACES*/
 
 /* headers */
@@ -5,30 +13,71 @@
   font-family: "MuseoModerno";
   src: url("/fonts/MuseoModerno-Medium.woff2") format("woff2"),
     url("/fonts/MuseoModerno-Medium.woff") format("woff");
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
-/* text */
+
 @font-face {
-  font-family: "Rubik-Light";
+  font-family: "MuseoModerno";
+  src: url("/fonts/MuseoModerno-MediumItalic.woff2") format("woff2"),
+    url("/fonts/MuseoModerno-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* text */
+/* text: normal*/
+@font-face {
+  font-family: "Rubik";
   src: url("/fonts/rubik-light-webfont.woff2") format("woff2"),
       url("/fonts/rubik-light-webfont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Rubik-Medium";
+  font-family: "Rubik";
   src: url("/fonts/rubik-medium-webfont.woff2") format("woff2"),
       url("/fonts/rubik-medium-webfont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/rubik-bold-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* text: italic */
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/rubik-lightitalic-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-lightitalic-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/rubik-mediumitalic-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-mediumitalic-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/rubik-bolditalic-webfont.woff2") format("woff2"),
+      url("/fonts/rubik-bolditalic-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
 /* comments */
 @font-face {
   font-family: "Caveat";
   src: url("/fonts/caveat-regular-webfont.woff2") format("woff2"),
       url("/fonts/caveat-regular-webfont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -45,16 +94,16 @@ h4,
 h5,
 h6 {
   font-family: "MuseoModerno", system-ui, sans-serif;
-  @apply text-xl font-medium text-gray-100 tracking-wider
+  @apply font-medium text-gray-100 tracking-wider
 }
 a {
-  font-family: 'MuseoModerno', sans-serif;
+  font-family: 'MuseoModerno', system-ui, sans-serif;
   @apply tracking-wider
 }
 
 p {
-  font-family: 'Rubik-Light', system-ui, sans-serif;
-  @apply text-sm text-gray-200
+  font-family: 'Rubik', system-ui, sans-serif;
+  @apply text-sm text-gray-200 font-light
 }
 
 /* OWN CLASSES */
@@ -62,11 +111,7 @@ p {
   @apply tracking-wider
 }
 
-.custom-footer {
-  @apply tracking-widest text-[12px] text-gray-200
-}
-
-.ejemplo {
-  /* font-family: 'Caveat', system-ui, sans-serif */
-  /* @apply text-blue-500 */
+.comment {
+  font-family: 'Caveat', 'Rubik', system-ui, sans-serif;
+  @apply text-base
 }
