@@ -1,22 +1,24 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
+import Layout404 from "@layouts/Layout404.astro";
 ---
 
-<main
-  class="mx-auto pt-6 max-w-md sm:max-w-xl md:max-w-2xl max-h-full flex items-center justify-center"
+<Layout404
+  title="Hiuston, tenemos un problema 404 en mrjark"
+  subTitle="Ha habido un problema con la página que estabas buscando y bueno..."
 >
-  <section class="grid grid-cols-1 text-center place-content-center">
-    <h1 class="mb-12 text-3xl">Vaya... tengamos un 404 entre manos</h1>
+  <section class="flex text-center justify-center items-center flex-col">
+    <h1 class="mb-12 text-3xl">Ups... hay un 404 entre manos</h1>
     <Image
-      class="rounded-lg"
+      class="rounded-lg flex w-96 h-auto"
       src="/images/courage-404-error.gif"
       height={100}
-      width={600}
+      width={500}
       alt="courage dog terror gif to 404 page for mrjark"
     />
-    <a class="mt-5 underline text-red-200 hover:text-red-500" href="/"
+    <a class="mt-5 underline text-teal-200 hover:text-teal-500" href="/"
       >Go Home</a
     >
   </section>
-</main>
+</Layout404>
