@@ -1,5 +1,5 @@
 ---
-import BiasCard from "@blog/biases/BiasCard.astro";
+import BiasCard from "@blog/biases/BiasCardCopy.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -25,21 +25,16 @@ const biases = await getCollection("biases");
           language,
           tags,
         } = data;
-
-        // const actualDate = new Date();
-        // const esDate = actualDate.toLocaleDateString("es-ES");
-        // // console.log(esDate);
-
         return (
           <BiasCard
             language="es"
-            keywords={["sesgo", "bias"]}
-            tags={["sesgo", "bias"]}
+            keywords={keywords}
+            tags={tags}
             createdDate={createdDate}
             biasName={biasName}
             description={description}
             biasImage={biasImage.src}
-            slug={`${slug}`}
+            slug={slug}
           />
         );
       })

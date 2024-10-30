@@ -1,7 +1,48 @@
 ---
-import MainLayout from "@layouts/MainLayout.astro";
+import BiasCard from "@blog/biases/BiasCardCopy.astro";
+import BookNotesLayout from "@layouts/BookNotesLayout.astro";
+import { getCollection } from "astro:content";
+
+// const biases = await Astro.glob("../../../content/biases/*.md");
+const biases = await getCollection("biases");
 ---
 
-<MainLayout title="mrjark | book notes">
-  <h1>Work in progress</h1>
-</MainLayout>
+<BookNotesLayout
+  title="Lista de sesgos cognitivos"
+  subTitle="Una lista donde se muestras los distintos sesgos cognitivos que existen con sus explicaciones, algunos ejemplos y formas en las que los puedes aplicar"
+>
+  <h1 class="text-xl mb-6">Biases page in porgress</h1>
+  <section
+    class="grid grid-cols-1 gap-x-6 gap-y-10 place-content-evenly sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
+  >
+    {
+      biases.map((bias) => {
+        const { data, slug } = bias;
+        const {
+          biasImage,
+          description,
+          biasName,
+          createdDate,
+          keywords,
+          language,
+          tags,
+        } = data;
+        return (
+          <BiasCard
+            language="es"
+            keywords={keywords}
+            tags={tags}
+            createdDate={createdDate}
+            biasName={biasName}
+            description={description}
+            biasImage={biasImage.src}
+            slug={slug}
+          />
+        );
+      })
+    }
+    <!-- <BiasCard />
+    <BiasCard />
+    <BiasCard /> -->
+  </section>
+</BookNotesLayout>
