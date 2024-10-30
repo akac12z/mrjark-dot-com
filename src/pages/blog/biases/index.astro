@@ -1,16 +1,32 @@
 ---
 import BiasCard from "@blog/biases/BiasCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+
+const biases = await Astro.glob("/src/content/blog/biases/*.md");
 ---
 
 <MainLayout
   title="Lista de sesgos cognitivos"
   subTitle="Una lista donde se muestras los distintos sesgos cognitivos que existen con sus explicaciones, algunos ejemplos y formas en las que los puedes aplicar"
 >
-  <h1>Biases page in porgress</h1>
-  <section class="grid grid-cols-2 lg:grid-cols-2 place-content-between">
+  <h1 class="text-xl mb-12">Biases page in porgress</h1>
+  <section class="flex justify-center flex-wrap items-center gap-x-3 gap-y-4">
+    {
+      biases.map((bias) => {
+        const { frontmatter } = bias;
+        const { title, description, image, slug } = frontmatter;
+        return (
+          <BiasCard
+            biasName={title}
+            description={description}
+            image={image}
+            slug={slug}
+          />
+        );
+      })
+    }
+    <!-- <BiasCard />
     <BiasCard />
-    <BiasCard />
-    <BiasCard />
+    <BiasCard /> -->
   </section>
 </MainLayout>
