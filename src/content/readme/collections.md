@@ -37,34 +37,9 @@ twitterCard: "summary_large_image" # Configuración de la tarjeta de Twitter (pu
 keywords: ["growth", "psicología", "A/B testing"] # Palabras clave específicas para SEO<br>
 status: "published" # Estado del post ("draft" para borrador, "published" para publicado)<br>
 
-### Frontmatter de la _BookNotes Collection_
-
-title: "Título del libro o nota" # (Máx. 60 caracteres)<br>
-slug: "titulo-libro" # (URL amigable)<br>
-language: "Español - es" Idioma<br>
-date: "2024-09-24" # Fecha de creación o publicación<br>
-author: "Autor del libro" # Autor del libro reseñado<br>
-authorLink: "Sitio web del autor del libro"<br>
-bookCover: "/images/book-cover.jpg" # Imagen de portada del libro<br>
-bookCoverAlt: "Descripción accesible de la portada del libro" # Texto alternativo para la imagen del libro<br>
-summary: "Resumen del libro o principales ideas" # Resumen breve (máx. 160 caracteres)<br>
-tags: ["psicología", "hábitos"] # Lista de etiquetas relacionadas con el libro<br>
-keyTakeaways: ["Punto clave 1", "Punto clave 2"] # Principales conclusiones del libro<br>
-readingTime: "7 min read" # Estimación del tiempo de lectura de las notas<br>
-metaTitle: "Título optimizado para SEO" # (si es diferente del `title`)<br>
-metaDescription: "Descripción optimizada para SEO" # (Máx. 160 caracteres)<br>
-ogImage: "/images/og-image-book.jpg" # Imagen Open Graph para redes sociales<br>
-ogTitle: "Título para redes sociales" # (si es diferente del `title`)<br>
-ogDescription: "Descripción para redes sociales" # Descripción para Open Graph<br>
-twitterCard: "summary_large_image" # Tipo de tarjeta de Twitter<br>
-keywords: ["resumen libro", "psicología", "hábitos"] # Palabras clave específicas para SEO<br>
-status: "published" # Estado del post ("draft" para borrador, "published" para publicado)<br>
-
-## ZOD schema para SEO Friendly
+#### Schema ZOD para _Blog Collection_
 
 Cogiendo todo lo anterior, la configuración del esquema de colecciones tiene la siguiente forma:
-
-### Zod para _Blog Collection_
 
 ```typescript
 const blogCollections = defineCollection({
@@ -91,7 +66,30 @@ const blogCollections = defineCollection({
 });
 ```
 
-### Zod para _BookNotes Collection_
+### Frontmatter de la _BookNotes Collection_
+
+title: "Título del libro o nota" # (Máx. 60 caracteres)<br>
+slug: "titulo-libro" # (URL amigable)<br>
+language: "Español - es" Idioma<br>
+date: "2024-09-24" # Fecha de creación o publicación<br>
+author: "Autor del libro" # Autor del libro reseñado<br>
+authorLink: "Sitio web del autor del libro"<br>
+bookCover: "/images/book-cover.jpg" # Imagen de portada del libro<br>
+bookCoverAlt: "Descripción accesible de la portada del libro" # Texto alternativo para la imagen del libro<br>
+summary: "Resumen del libro o principales ideas" # Resumen breve (máx. 160 caracteres)<br>
+tags: ["psicología", "hábitos"] # Lista de etiquetas relacionadas con el libro<br>
+keyTakeaways: ["Punto clave 1", "Punto clave 2"] # Principales conclusiones del libro<br>
+readingTime: "7 min read" # Estimación del tiempo de lectura de las notas<br>
+metaTitle: "Título optimizado para SEO" # (si es diferente del `title`)<br>
+metaDescription: "Descripción optimizada para SEO" # (Máx. 160 caracteres)<br>
+ogImage: "/images/og-image-book.jpg" # Imagen Open Graph para redes sociales<br>
+ogTitle: "Título para redes sociales" # (si es diferente del `title`)<br>
+ogDescription: "Descripción para redes sociales" # Descripción para Open Graph<br>
+twitterCard: "summary_large_image" # Tipo de tarjeta de Twitter<br>
+keywords: ["resumen libro", "psicología", "hábitos"] # Palabras clave específicas para SEO<br>
+status: "published" # Estado del post ("draft" para borrador, "published" para publicado)<br>
+
+#### Zod para _BookNotes Collection_
 
 ```typescript
 const bookNoteCollections = defineCollection({
@@ -119,4 +117,41 @@ const bookNoteCollections = defineCollection({
 });
 ```
 
-_Last Updated: 25/09/2024_
+### Frontmatter de la _Bias Collection_
+
+title: "Una Reflexión Profunda sobre la Creatividad"<br>
+publishDate: 2024-10-30<br>
+description: "Una reflexión sobre cómo la creatividad influye en nuestra vida diaria."<br>
+tags: ["creatividad", "reflexión", "sesos"]<br>
+image: "src/assets/images/creatividad.png"<br>
+keywords: ["creatividad", "inspiración", "pensamientos profundos"]<br>
+slug: "reflexion-creatividad"<br>
+relatedLinks:
+  - label: "Artículo sobre creatividad"
+    url: "https://ejemplo.com/articulo-creatividad"
+  - label: "Libro recomendado"
+    url: "https://amazon.com/libro-creatividad"
+readingTime: "5 min"
+
+#### ZOD para _Bias Collections_
+
+```typescript
+const biasCollection = defineCollection({
+  schema: z.object({
+    title: z.string(), // Título de la reflexión o idea
+    publishDate: z.date(), // Fecha de publicación
+    description: z.string(), // Descripción breve o resumen
+    tags: z.array(z.string()), // Tags para clasificar el contenido
+    image: z.union([z.string().url(), z.string()]).optional(), // Imagen de portada (URL externa o local)
+    keywords: z.array(z.string()), // Palabras clave para SEO
+    slug: z.string(), // Slug para SEO
+    relatedLinks: z.array(z.object({
+      label: z.string(), // Título del enlace relacionado
+      url: z.string().url() // URL del enlace
+    })).optional(), // Enlaces relacionados opcionales
+    readingTime: z.string().optional(), // Tiempo estimado de lectura
+  }),
+  });
+```
+
+_Last Updated: 30/10/2024_

@@ -2,7 +2,7 @@
 import BiasCard from "@blog/biases/BiasCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
-const biases = await Astro.glob("/src/content/blog/biases/*.md");
+const biases = await Astro.glob("../../../content/biases/*.md");
 ---
 
 <MainLayout
