@@ -4,18 +4,25 @@
 import { Image } from "astro:assets";
 
 interface Props {
-  //TODO: QUITAR LOS ?
   biasName: string;
+  createdDate: string;
+  lastTimeEdited?: Date;
   description: string;
-  image: string;
+  tags: string[];
+  biasImage: string;
+  language: string | string[];
+  keywords: string[];
   slug: string;
+  relatedLinks?: string[];
+  readingTime?: number;
 }
 
 const {
-  biasName = "Nombre del sesgo",
-  description = "Descripción del sesgo que a a a tendrás en tu .md en los contenidos",
-  image = "/public/images/markus-spiske-IiEFmIXZWSw-unsplash.jpg",
+  biasName,
+  description,
+  biasImage = "/public/images/markus-spiske-IiEFmIXZWSw-unsplash.jpg",
   slug,
+  createdDate,
 } = Astro.props;
 
 const { url } = Astro.params;
@@ -25,7 +32,7 @@ const { url } = Astro.params;
   <Image
     width={240}
     height={160}
-    src={image}
+    src={biasImage}
     alt="unshplash image"
     class="w-full rounded-t-lg overflow-hidden object-cover"
   />

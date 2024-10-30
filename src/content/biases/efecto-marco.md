@@ -1,10 +1,16 @@
 ---
-title: 'Efecto Marco'
+biasName: 'Efecto Marco'
 description: 'Un ejemplo del primer bias con su descripción para ver cómo queda'
-image: '/images/andrew-robinson-xh3DYZLFfgA-unsplash.jpg'
+biasImage: {
+  src: '/images/andrew-robinson-xh3DYZLFfgA-unsplash.jpg',
+  alt: 'efecto marco iamgen'
+}
 slug: 'efecto-marco'
-createdTime: '30/10/2024'
+createdDate: '2024-10-30'
 tags: ['sesgo', 'bias', 'efecto marco', 'marco effect']
+keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
+readingTime: 5
+language: "es"
 ---
 
 Un ejemplo del primer bias

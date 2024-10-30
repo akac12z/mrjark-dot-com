@@ -1,8 +1,10 @@
 ---
 import BiasCard from "@blog/biases/BiasCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
-const biases = await Astro.glob("../../../content/biases/*.md");
+// const biases = await Astro.glob("../../../content/biases/*.md");
+const biases = await getCollection("biases");
 ---
 
 <MainLayout
@@ -13,14 +15,31 @@ const biases = await Astro.glob("../../../content/biases/*.md");
   <section class="flex justify-center flex-wrap items-center gap-x-3 gap-y-4">
     {
       biases.map((bias) => {
-        const { frontmatter } = bias;
-        const { title, description, image, slug } = frontmatter;
+        const { data, slug } = bias;
+        const {
+          biasImage,
+          description,
+          biasName,
+          createdDate,
+          keywords,
+          language,
+          tags,
+        } = data;
+
+        // const actualDate = new Date();
+        // const esDate = actualDate.toLocaleDateString("es-ES");
+        // // console.log(esDate);
+
         return (
           <BiasCard
-            biasName={title}
+            language="es"
+            keywords={["sesgo", "bias"]}
+            tags={["sesgo", "bias"]}
+            createdDate={createdDate}
+            biasName={biasName}
             description={description}
-            image={image}
-            slug={slug}
+            biasImage={biasImage.src}
+            slug={`${slug}`}
           />
         );
       })
