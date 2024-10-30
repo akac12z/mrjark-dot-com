@@ -26,9 +26,7 @@ const { title, subTitle = "Blog de mrjark" } = Astro.props;
 		<ViewTransitions />
 		<title>{title}</title>
 	</head>
-	<body
-		class="mx-auto px-2 py-2 sm:py-6 max-w-md sm:max-w-xl md:max-w-2xl max-h-full"
-	>
+	<body class="mx-auto p-5 max-w-3xl">
 		<Navbar />
 		<main class="my-12">
 			<slot />

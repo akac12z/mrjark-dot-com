@@ -11,8 +11,10 @@ const biases = await getCollection("biases");
   title="Lista de sesgos cognitivos"
   subTitle="Una lista donde se muestras los distintos sesgos cognitivos que existen con sus explicaciones, algunos ejemplos y formas en las que los puedes aplicar"
 >
-  <h1 class="text-xl mb-12">Biases page in porgress</h1>
-  <section class="flex justify-center flex-wrap items-center gap-x-3 gap-y-4">
+  <h1 class="text-xl mb-8">Biases page in porgress</h1>
+  <section
+    class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 place-content-around sm:grid-cols-3"
+  >
     {
       biases.map((bias) => {
         const { data, slug } = bias;

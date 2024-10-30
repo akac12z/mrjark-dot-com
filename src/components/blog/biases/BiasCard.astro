@@ -2,6 +2,7 @@
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 
 import { Image } from "astro:assets";
+import BiasImage from "./BiasImage.astro";
 
 interface Props {
   biasName: string;
@@ -23,16 +24,22 @@ const {
   biasImage = "/images/markus-spiske-IiEFmIXZWSw-unsplash.jpg",
   slug,
 } = Astro.props;
+
+// const { url } = Astro.params;
 ---
 
-<section class="w-52 h-auto flex flex-col items-center justify-center">
-  <Image
-    width={240}
-    height={160}
-    src={biasImage}
-    alt="unshplash image"
-    class="w-full rounded-t-lg overflow-hidden object-cover"
-  />
+<section
+  class="w-full sm:w-56 container h-auto flex flex-col items-center justify-center"
+>
+  <div class="w-full overflow-hidden">
+    <BiasImage
+      width={240}
+      height={160}
+      src={biasImage}
+      alt="image"
+      moreClass="h-full w-full object-cover object-center rounded-t-lg"
+    />
+  </div>
   <article class="py-2 rounded-b-lg mx-auto text-center bg-neutral-800">
     <h3 class="text-lg">{biasName}</h3>
     <div class="py-2">
