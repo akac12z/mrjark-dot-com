@@ -28,15 +28,17 @@ const {
 ---
 
 <section
-  class="w-full sm:w-52 container h-auto flex flex-col items-center justify-center"
+  class="group w-full sm:w-52 container h-auto flex flex-col items-center justify-center"
 >
-  <Image
-    width={240}
-    height={160}
-    src={biasImage}
-    alt="image"
-    class="w-full h-auto object-cover object-center rounded-t-lg"
-  />
+  <div class="w-full overflow-hidden">
+    <Image
+      width={240}
+      height={160}
+      src={biasImage}
+      alt="image"
+      class="h-full w-full object-cover object-center rounded-t-lg"
+    />
+  </div>
   <article class="py-2 rounded-b-lg mx-auto text-center bg-neutral-800">
     <h3 class="text-lg">{biasName}</h3>
     <div class="py-2">
