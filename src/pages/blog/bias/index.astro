@@ -1,23 +1,23 @@
 ---
-import BiasCardCopy from "@blog/biases/BiasCardCopy.astro";
+import BiasCard from "@blog/bias/BiasCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-// const biases = await Astro.glob("../../../content/biases/*.md");
-const biases = await getCollection("biases");
+// const bias = await Astro.glob("../../../content/bias/*.md");
+const bias = await getCollection("bias");
 ---
 
 <MainLayout
   title="Lista de sesgos cognitivos"
   subTitle="Una lista donde se muestras los distintos sesgos cognitivos que existen con sus explicaciones, algunos ejemplos y formas en las que los puedes aplicar"
 >
-  <h1 class="text-xl mb-8">Biases page in porgress</h1>
+  <h1 class="text-xl mb-8">Bias page in porgress</h1>
   <section
     class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3"
   >
     {
-      biases.map((bias) => {
-        const { data, slug } = bias;
+      bias.map((b) => {
+        const { data, slug } = b;
         const {
           biasImage,
           description,
@@ -27,7 +27,7 @@ const biases = await getCollection("biases");
           tags,
         } = data;
         return (
-          <BiasCardCopy
+          <BiasCard
             language="es"
             keywords={keywords}
             tags={tags}

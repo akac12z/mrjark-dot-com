@@ -56,7 +56,7 @@ const bookNotes = defineCollection({
   }),
 });
 
-const biases = defineCollection({
+const bias = defineCollection({
   schema: z.object({
     biasName: z.string(), 
     createdDate: z.string().date(), 
@@ -79,7 +79,7 @@ const biases = defineCollection({
 });
 
 export const collections = {
-  biases, 
+  bias, 
   blogs, 
   bookNotes
 }
