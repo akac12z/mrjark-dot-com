@@ -3,7 +3,7 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 import "../styles/global.css";
 
-import Navbar from "@shared/Navbar.astro";
+import Header from "@shared/Header.astro";
 import Footer from "@shared/Footer.astro";
 
 interface Props {
@@ -27,7 +27,7 @@ const { title, subTitle = "Blog de mrjark" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="mx-auto p-5 max-w-3xl">
-		<Navbar />
+		<Header />
 		<main class="my-12">
 			<slot />
 		</main>
