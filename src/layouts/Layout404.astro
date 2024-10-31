@@ -4,7 +4,7 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 // import "../styles/dots.css";
 import "../styles/global.css";
 
-import Navbar from "@shared/Navbar.astro";
+import Header from "@shared/Header.astro";
 import Footer from "@shared/Footer.astro";
 
 interface Props {
@@ -30,7 +30,7 @@ const { title, subTitle = "Blog de mrjark" } = Astro.props;
 	<body
 		class="mx-auto px-2 py-2 sm:py-6 max-w-md sm:max-w-xl md:max-w-2xl max-h-full"
 	>
-		<Navbar />
+		<Header />
 		<main class="my-12">
 			<slot />
 		</main>
