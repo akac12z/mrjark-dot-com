@@ -85,6 +85,7 @@
 body {
   background-color: #0b0b0e;
 	color: #e5e7eb;
+  @apply antialiased
 }
 
 h1,
@@ -94,11 +95,11 @@ h4,
 h5,
 h6 {
   font-family: "MuseoModerno", system-ui, sans-serif;
-  @apply font-medium text-gray-100 tracking-wider
+  @apply font-medium text-gray-100 tracking-wider 
 }
 a {
   font-family: "MuseoModerno", system-ui, sans-serif;
-  @apply tracking-wider
+  @apply tracking-wider 
 }
 
 p {
