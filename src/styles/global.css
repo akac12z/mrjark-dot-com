@@ -95,7 +95,7 @@ h4,
 h5,
 h6 {
   font-family: "MuseoModerno", system-ui, sans-serif;
-  @apply font-medium text-gray-100 tracking-wider 
+  @apply font-medium text-[#e5e7eb] tracking-wider 
 }
 a {
   font-family: "MuseoModerno", system-ui, sans-serif;
@@ -104,15 +104,10 @@ a {
 
 p {
   font-family: 'Rubik', system-ui, sans-serif;
-  @apply text-sm text-gray-200 font-light
+  @apply text-sm text-neutral-50 font-light tracking-wide
 }
 
 /* OWN CLASSES */
 .tags {
   @apply tracking-wider
-}
-
-.comment {
-  font-family: 'Caveat', 'Rubik', system-ui, sans-serif;
-  @apply text-base
 }
