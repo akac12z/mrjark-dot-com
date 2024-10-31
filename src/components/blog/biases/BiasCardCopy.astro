@@ -17,18 +17,13 @@ interface Props {
   readingTime?: number;
 }
 
-const {
-  biasName,
-  description,
-  biasImage = "/images/markus-spiske-IiEFmIXZWSw-unsplash.jpg",
-  slug,
-} = Astro.props;
+const { biasName, description, biasImage, slug } = Astro.props;
 
 // const { url } = Astro.params;
 ---
 
 <section
-  class="group w-full h-auto sm:w-52 container flex flex-col items-center justify-center"
+  class="w-full h-auto sm:w-52 container flex flex-col items-center justify-center"
 >
   <div class="w-full overflow-hidden">
     <Image
@@ -36,7 +31,7 @@ const {
       height={160}
       src={biasImage}
       alt="image"
-      class="h-[160px] w-full object-cover object-center rounded-t-lg"
+      class="h-40 w-full object-cover object-center rounded-t-lg"
     />
   </div>
   <article class="py-2 rounded-b-lg mx-auto text-center bg-neutral-800">

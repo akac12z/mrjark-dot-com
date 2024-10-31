@@ -6,16 +6,23 @@ interface Props {
   alt: string;
   width: number;
   height: number;
-  moreClass?: string;
+  moreClasses?: string;
 }
 
-const { alt, height, src, width, moreClass } = Astro.props;
+const { alt, height, src, width, moreClasses } = Astro.props;
 ---
 
-<Image
-  src={src}
-  height={height}
-  alt={alt}
-  width={width}
-  class:list={["h-[160px] w-full rounded-t-lg", { moreClass }]}
-/>
+<div
+  class="relative inline-block aspect-video w-full overflow-hidden rounded-t-lg"
+>
+  <Image
+    src={src}
+    height={height}
+    alt={alt}
+    width={width}
+    class:list={[
+      "absolute h-full w-full object-cover object-center transition-transform hover:scale-110",
+      { moreClasses },
+    ]}
+  />
+</div>
