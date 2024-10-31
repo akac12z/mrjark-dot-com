@@ -1,0 +1,28 @@
+---
+/**
+ * Neceito porner el prerender porque aun no ha salido ASTRO 5 por ende, en las páginas dinámicas necesitas esto
+ */
+export const prerender = true;
+
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const biases = await getCollection("bias");
+
+  return biases.map((bias) => ({
+    params: { id: bias.slug },
+    props: { bias },
+  }));
+}
+
+const { bias } = Astro.props;
+const { data, slug } = bias;
+const { biasName } = data;
+---
+
+<MainLayout title="Sesgos cognitivos">
+  <h2>
+    {biasName}
+  </h2>
+</MainLayout>

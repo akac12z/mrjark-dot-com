@@ -9,6 +9,9 @@
       "@home/*": [
         "./src/components/static/home/*"
       ],
+      "@data/*": [
+        "./src/data/*"
+      ],
       "@about/*": [
         "./src/components/static/about/*"
       ],

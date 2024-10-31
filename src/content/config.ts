@@ -4,7 +4,7 @@ import { defineCollection, z } from "astro:content";
  * Las comento para que no me den errores
  */
 
-const blogs = defineCollection({
+const blog = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
@@ -80,6 +80,6 @@ const bias = defineCollection({
 
 export const collections = {
   bias, 
-  blogs, 
+  blog, 
   bookNotes
 }
