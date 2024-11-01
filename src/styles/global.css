@@ -1,94 +1,135 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
-
-/* --root {
-  --background-dark: #0b0b0e
-} */
+@tailwind utilities;
 
 /* FONT FACES*/
+@layer base{
+  /* headers */
+  @font-face {
+    font-family: "MuseoModerno";
+    src: url("/fonts/MuseoModerno-Medium.woff2") format("woff2"),
+      url("/fonts/MuseoModerno-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "MuseoModerno";
+    src: url("/fonts/MuseoModerno-MediumItalic.woff2") format("woff2"),
+      url("/fonts/MuseoModerno-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  /* text */
+  /* text: normal*/
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-light-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-light-webfont.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-regular-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-regular-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-medium-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-medium-webfont.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-bold-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-bold-webfont.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* text: italic */
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-lightitalic-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-lightitalic-webfont.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-mediumitalic-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-mediumitalic-webfont.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik-bolditalic-webfont.woff2") format("woff2"),
+        url("/fonts/rubik-bolditalic-webfont.woff") format("woff");
+    font-weight: 700;
+    font-style: italic;
+  }
 
-/* headers */
-@font-face {
-  font-family: "MuseoModerno";
-  src: url("/fonts/MuseoModerno-Medium.woff2") format("woff2"),
-    url("/fonts/MuseoModerno-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
+  /* code */
+  @font-face {
+    font-family: "Cascadia";
+    src: url("/fonts/cascadia-webfont.woff2") format("woff2"),
+        url("/fonts/cascadia-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* my comments */
+  @font-face {
+    font-family: "Note_This";
+    src: url("/fonts/note_this-webfont.woff2") format("woff2"),
+        url("/fonts/note_this-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 }
 
-@font-face {
-  font-family: "MuseoModerno";
-  src: url("/fonts/MuseoModerno-MediumItalic.woff2") format("woff2"),
-    url("/fonts/MuseoModerno-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
+
+@layer base {
+  html {
+    @apply bg-mr-bg antialiased
+  }
+  body {
+    @apply bg-mr-bg antialiased
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-museo_moderno tracking-wider text-mr-text-headers
+  }
+  p {
+    @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide
+  }
+  a {
+    @apply font-museo_moderno tracking-wider
+  }
 }
 
-/* text */
-/* text: normal*/
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-light-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-light-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-medium-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-medium-webfont.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-bold-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-bold-webfont.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* text: italic */
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-lightitalic-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-lightitalic-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-mediumitalic-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-mediumitalic-webfont.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/rubik-bolditalic-webfont.woff2") format("woff2"),
-      url("/fonts/rubik-bolditalic-webfont.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* comments */
-@font-face {
-  font-family: "Caveat";
-  src: url("/fonts/caveat-regular-webfont.woff2") format("woff2"),
-      url("/fonts/caveat-regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+@layer components {
+  .my-comment {
+    @apply font-comment text-sm text-mr-text-content tracking-wider
+  }
+  .coding {
+    @apply font-code text-xs text-mr-text-content
+  }
 }
 
 /* General */
-body {
-  background-color: #0b0b0e;
+/* body {
+  background-color: var(--mr-bg);
 	color: #e5e7eb;
   @apply antialiased
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -96,18 +137,12 @@ h5,
 h6 {
   font-family: "MuseoModerno", system-ui, sans-serif;
   @apply font-medium text-[#e5e7eb] tracking-wider 
-}
-a {
-  font-family: "MuseoModerno", system-ui, sans-serif;
-  @apply tracking-wider 
-}
+} */
+/* a {
+  @apply tracking-wider font-museo_moderno
+} */
 
-p {
+/* p {
   font-family: 'Rubik', system-ui, sans-serif;
   @apply text-sm text-neutral-50 font-light tracking-wide
-}
-
-/* OWN CLASSES */
-.tags {
-  @apply tracking-wider
-}
+} */
