@@ -109,7 +109,7 @@
     @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide
   }
   a {
-    @apply font-museo_moderno tracking-wider text-mr-text-headers
+    @apply font-museo_moderno tracking-wider text-inherit
   }
 }
 
