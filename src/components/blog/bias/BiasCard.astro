@@ -28,7 +28,7 @@ const { biasName, description, biasImage, slug } = Astro.props;
     transition:name=`image-${biasName}`
   />
   <article
-    class="relative py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
+    class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
   >
     <div class="">
       <h3 transition:name=`title-${slug}` class="text-lg mb-2">{biasName}</h3>
@@ -38,7 +38,7 @@ const { biasName, description, biasImage, slug } = Astro.props;
 
       <a
         href=`/blog/bias/${slug}`
-        class="place-self-center w-fit absolute inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
+        class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
       >
         Saber más
       </a>
