@@ -1,5 +1,6 @@
 ---
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
+import { Image } from "astro:assets";
 import BiasImage from "./BiasImage.astro";
 
 interface Props {
@@ -25,23 +26,21 @@ const { biasName, description, biasImage, slug } = Astro.props;
     height={160}
     src={biasImage}
     alt={`${biasName} imagen`}
-    transition:name={`image-${slug}`}
+    transition:name={`${slug}-image`}
   />
   <article
     class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
   >
-    <div class="">
-      <h3 transition:name=`title-${slug}` class="text-lg mb-2">{biasName}</h3>
-      <p class="mb-4 line-clamp-3">
-        {description}
-      </p>
+    <h3 transition:name=`title-${slug}` class="text-lg mb-2">{biasName}</h3>
+    <p class="mb-4 line-clamp-3">
+      {description}
+    </p>
 
-      <a
-        href=`/essay/bias/${slug}`
-        class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
-      >
-        Saber más
-      </a>
-    </div>
+    <a
+      href=`/essay/bias/${slug}`
+      class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
+    >
+      Saber más
+    </a>
   </article>
 </section>

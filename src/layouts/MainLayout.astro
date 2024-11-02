@@ -1,5 +1,5 @@
 ---
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { ViewTransitions } from "astro:transitions";
 
 import "../styles/global.css";
 
@@ -23,8 +23,8 @@ const { title, subTitle = "immrjark" } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- <meta name="generator" content={Astro.generator} /> -->
-		<ViewTransitions />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
 		<Header />
