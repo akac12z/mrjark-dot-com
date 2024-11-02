@@ -11,29 +11,14 @@ const isActive = currentPath === href;
 
 const linkClasses = [
   customClasses,
-  isActive && href === "/essay"
-    ? "text-mr-neon-pink border-b border-mr-neon-pink"
-    : "",
-  isActive && href === "/book-notes"
-    ? "text-mr-neon-gold border-b border-mr-neon-gold"
-    : "",
-  isActive && href === "/about"
-    ? "text-mr-neon-blue border-b border-mr-neon-blue"
-    : "",
+  isActive && href === "/essay" ? "text-mr-neon-pink" : "",
+  isActive && href === "/book-notes" ? "text-mr-neon-gold" : "",
+  isActive && href === "/about" ? "text-mr-neon-blue" : "",
 ]
   .filter(Boolean)
   .join(" ");
 ---
 
-<span class="">
-  <a href={href} class={`${linkClasses}`}>
-    {text}
-    <!-- {
-      currentPath === href ? (
-        <div transition:name="nav-line" class={` h-px ${linkClasses}`} />
-      ) : (
-        <div class={` h-px border-b-transparent`} />
-      )
-    } -->
-  </a>
-</span>
+<a href={href} class={`${linkClasses}`}>
+  {text}
+</a>
