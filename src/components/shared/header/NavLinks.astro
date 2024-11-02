@@ -5,6 +5,7 @@ interface NavLinkProps {
   currentPath: string;
   customClasses: string;
 }
+
 const { href, text, currentPath, customClasses } = Astro.props as NavLinkProps;
 const isActive = currentPath === href;
 
@@ -24,8 +25,15 @@ const linkClasses = [
   .join(" ");
 ---
 
-<li>
-  <a href={href} class={linkClasses}>
+<span class="">
+  <a href={href} class={`${linkClasses}`}>
     {text}
+    <!-- {
+      currentPath === href ? (
+        <div transition:name="nav-line" class={` h-px ${linkClasses}`} />
+      ) : (
+        <div class={` h-px border-b-transparent`} />
+      )
+    } -->
   </a>
-</li>
+</span>
