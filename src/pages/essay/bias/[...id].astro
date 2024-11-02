@@ -29,15 +29,16 @@ const { Content } = await render(bias);
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
       <BiasImage
+        biasName={biasName}
         width={1020}
         height={510}
         src={biasImage.src}
         alt={biasImage.alt}
-        transition:name={`${slug}-image`}
+        transition:name=`${slug}-image`
       />
     </div>
     <article class="prose prose-invert mx-auto">
-      <h1 transition:name=`title-${slug}` class="text-center">
+      <h1 class="text-center">
         {biasName}
       </h1>
       <Content />
