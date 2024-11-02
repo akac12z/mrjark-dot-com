@@ -24,11 +24,8 @@
       "@essay/*": [
         "./src/components/essay/*"
       ],
-      "@styles/": [
-        "./src/styles/*"
-      ],
-      "@stylePages/": [
-        "./src/styles/pages/*"
+      "@lib/*": [
+        "./src/lib/*"
       ],
     }
   }

@@ -1,0 +1,30 @@
+---
+import { headerLinks } from "@lib/headerLinks";
+import { Image } from "astro:assets";
+import NavLinks from "./NavLinks.astro";
+
+const currentPath = Astro.url.pathname;
+// console.log(currentPath);
+---
+
+<header>
+  <nav class="text-mr-primary-green my-2 w-full">
+    <section class="flex justify-between items-center mx-auto">
+      <a href="/">
+        <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
+      </a>
+      <ul class="flex gap-4 justify-center items-center text-sm">
+        {
+          headerLinks.map(({ customClasses, href, text }) => (
+            <NavLinks
+              href={href}
+              text={text}
+              currentPath={currentPath}
+              customClasses={customClasses}
+            />
+          ))
+        }
+      </ul>
+    </section>
+  </nav>
+</header>
