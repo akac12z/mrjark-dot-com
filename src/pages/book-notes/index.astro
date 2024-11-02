@@ -1,12 +1,35 @@
 ---
-import BookNotesLayout from "@layouts/BookNotesLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+const notes = await getCollection("bookNotes");
 ---
 
-<BookNotesLayout
+<MainLayout
   title="Notas de libros - mrjark"
   subTitle="Una lista de los libros junto con algunas notas que he tomado y que considero importantes recordar"
 >
   <h1 class="text-xl mb-8">
     Books <span class="text-mr-neon-lime">page</span> in porgress
   </h1>
-</BookNotesLayout>
+  <section class="grid grid-cols-2 gap-6 my-12 mx-auto">
+    {
+      notes.map(({ slug, data }) => {
+        const { title } = data;
+        return (
+          <article class="flex flex-col text-center items-center">
+            <h1 class="" transition:name={`title-${slug}`}>
+              {title}
+            </h1>
+            <a
+              class="mt-4 text-mr-text-headers underline"
+              href={`/book-notes/${slug}`}
+            >
+              Ir al post
+            </a>
+          </article>
+        );
+      })
+    }
+  </section>
+</MainLayout>

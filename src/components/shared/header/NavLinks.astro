@@ -7,13 +7,19 @@ interface NavLinkProps {
 }
 
 const { href, text, currentPath, customClasses } = Astro.props as NavLinkProps;
-const isActive = currentPath === href;
+const isActive = currentPath.includes(href);
 
 const linkClasses = [
   customClasses,
-  isActive && href === "/essay" ? "text-mr-neon-pink" : "",
-  isActive && href === "/book-notes" ? "text-mr-neon-gold" : "",
-  isActive && href === "/about" ? "text-mr-neon-blue" : "",
+  isActive
+    ? href === "/essay"
+      ? "nav-essay_path"
+      : href === "/book-notes"
+        ? "nav-bookNotes_path"
+        : href === "/about"
+          ? "nav-about_path"
+          : ""
+    : "",
 ]
   .filter(Boolean)
   .join(" ");

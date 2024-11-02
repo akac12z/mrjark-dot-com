@@ -6,10 +6,9 @@ interface Props {
   alt: string;
   width: number;
   height: number;
-  moreClasses?: string;
 }
 
-const { alt, height, src, width, moreClasses } = Astro.props;
+const { alt, height, src, width } = Astro.props;
 ---
 
 <div class="relative inline-block aspect-video w-full overflow-hidden">
@@ -18,9 +17,6 @@ const { alt, height, src, width, moreClasses } = Astro.props;
     height={height}
     alt={alt}
     width={width}
-    class:list={[
-      "absolute h-full w-full object-cover object-center rounded-lg",
-      { moreClasses },
-    ]}
+    class="absolute h-full w-full object-cover object-center rounded-lg"
   />
 </div>

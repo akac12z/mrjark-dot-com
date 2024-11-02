@@ -1,0 +1,38 @@
+---
+/**
+ * Neceito porner el prerender porque aun no ha salido ASTRO 5 por ende, en las páginas dinámicas necesitas esto
+ */
+export const prerender = true;
+
+import MainLayout from "@layouts/MainLayout.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const bookNotes = await getCollection("bookNotes");
+
+  return bookNotes.map((note) => ({
+    params: { slug: note.slug },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { data, slug } = note;
+
+const { title } = data;
+
+const { Content } = await render(note);
+---
+
+<MainLayout title=`${title} - mrjark`>
+  <section class="">
+    <div class="mx-auto mb-2 w-3/4"></div>
+    <article class="prose prose-invert mx-auto">
+      <h1 transition:name=`title-${slug}` class="text-center">
+        {title}
+      </h1>
+      <Content />
+    </article>
+  </section>
+</MainLayout>

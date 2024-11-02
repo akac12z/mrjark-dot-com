@@ -4,7 +4,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
-const bias = await getCollection("bias");
+const biases = await getCollection("bias");
 ---
 
 <MainLayout
@@ -16,8 +16,8 @@ const bias = await getCollection("bias");
     class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3"
   >
     {
-      bias.map((b) => {
-        const { data, slug } = b;
+      biases.map((bias) => {
+        const { data, slug } = bias;
         const {
           biasImage,
           description,

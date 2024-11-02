@@ -25,7 +25,7 @@ const { biasName, description, biasImage, slug } = Astro.props;
     height={160}
     src={biasImage}
     alt={`${biasName} imagen`}
-    transition:name=`image-${biasName}`
+    transition:name={`image-${slug}`}
   />
   <article
     class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
