@@ -14,7 +14,7 @@ Lo primero que he hecho ha sido preguntarle a ChatGPT cuáles eras las formas co
 
 Esta ha sido su respuesta:
 
-### Frontmatter de la _Blog Collection_
+### Frontmatter de la _Essay Collection_
 
 title: "El título SEO-friendly del post" # (Máx. 60 caracteres, incluye una palabra clave)<br>
 slug: "titulo-seo-friendly" # (URL amigable, derivada del título) date: "2024-09-24" # Fecha de publicación<br>
@@ -37,19 +37,19 @@ twitterCard: "summary_large_image" # Configuración de la tarjeta de Twitter (pu
 keywords: ["growth", "psicología", "A/B testing"] # Palabras clave específicas para SEO<br>
 status: "published" # Estado del post ("draft" para borrador, "published" para publicado)<br>
 
-#### Schema ZOD para _Blog Collection_
+#### Schema ZOD para _Essay Collection_
 
 Cogiendo todo lo anterior, la configuración del esquema de colecciones tiene la siguiente forma:
 
 ```typescript
-const blogCollections = defineCollection({
+const essay = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), // Título del post
     date: z.date(), // Fecha de publicación
     description: z.string(), // Descripción del post
     tags: z.array(z.string()), // Tags del post
-    blogImage: z.object({
+    essayImage: z.object({
       src: z.union([z.string().url(), z.string()]), // Imagen de portada que puedo coger de una url o de una que tenga en mi librería
       alt: z.string(),
     }),
@@ -92,7 +92,7 @@ status: "published" # Estado del post ("draft" para borrador, "published" para p
 #### Zod para _BookNotes Collection_
 
 ```typescript
-const bookNoteCollections = defineCollection({
+const bookNote = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), // Título del libro
@@ -136,7 +136,7 @@ readingTime: "5 min"
 #### ZOD para _Bias Collections_
 
 ```typescript
-const biasCollection = defineCollection({
+const bias = defineCollection({
   schema: z.object({
     title: z.string(), // Título de la reflexión o idea
     publishDate: z.date(), // Fecha de publicación

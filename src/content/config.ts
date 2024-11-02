@@ -4,7 +4,7 @@ import { defineCollection, z } from "astro:content";
  * Las comento para que no me den errores
  */
 
-const blog = defineCollection({
+const essay = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
@@ -12,7 +12,7 @@ const blog = defineCollection({
     // lastTimeEdited: z.string().date().optional(), 
     // description: z.string(), 
     // tags: z.array(z.string()), 
-    // blogImage: z.object({
+    // essayImage: z.object({
     //   src: z.union([z.string().url(), z.string()]), 
     //   alt: z.string(),
     // }),
@@ -80,6 +80,6 @@ const bias = defineCollection({
 
 export const collections = {
   bias, 
-  blog, 
+  essay, 
   bookNotes
 }

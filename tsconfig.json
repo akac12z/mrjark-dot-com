@@ -21,8 +21,8 @@
       "@images/*": [
         "./src/assets/images/*"
       ],
-      "@blog/*": [
-        "./src/components/blog/*"
+      "@essay/*": [
+        "./src/components/essay/*"
       ],
       "@styles/": [
         "./src/styles/*"
