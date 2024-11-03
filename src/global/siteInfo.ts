@@ -1,5 +1,5 @@
 /**
- * Links Interfaces
+ * Social Links Interfaces
 */
 interface SocialLinksInterface  {
   [key: string]: SocialLink;
@@ -13,18 +13,34 @@ interface SocialLink  {
 /**
  * Site interface
 */
-interface SiteConfigInterface {
+interface SiteDefaultConfigInterface {
   title: string;
   description: string;
   url: string;
   author: string;
   location: string;
 };
+interface Site404ConfigInterface {
+  errorTitle: string;
+  errorDescription: string;
+  url: string;
+  author: string;
+  location: string;
+};
 
-export const SITE_CONFIG: SiteConfigInterface = {
-  title: "mrjark | Hablo sobre Growth, Behavioral Psychology, Startups y Crecimiento Personal",
+export const SITE_DEFAULT_CONFIG: SiteDefaultConfigInterface = {
+  title: "mrjark | Growth, Behavioral Psychology, Startups y Crecimiento Personal",
   description:
     "Un blog y mi 'build(me) in public'. Aquí voy a compartir aquello que voy haciendo, aprendiendo y pensando que considero que es importante, en mi carrera personal y profesional en Startups sobre Growth, Psicología del Comportamiento y Economía Conductual y Crecimiento Personal.",
+  url: "https://mrjark.com",
+  author: "Chema | mrjark",
+  location: "es-ES",
+}
+
+export const SITE_404_CONFIG: Site404ConfigInterface = {
+  errorTitle: "Hiuston, hemos tenido un problema 404 en mrjark",
+  errorDescription:
+    "Ha habido un problema con la página que estabas buscando y bueno... aquí estamos.",
   url: "https://mrjark.com",
   author: "Chema | mrjark",
   location: "es-ES",

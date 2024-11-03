@@ -1,31 +1,23 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
 import "../styles/global.css";
 
+import { SITE_404_CONFIG } from "@/global/siteInfo";
+
+import Head from "@shared/Head.astro";
 import Header from "@shared/header/Header.astro";
 import Footer from "@shared/Footer.astro";
 
-interface Props {
-	title: string;
-	subTitle?: string;
-}
-
-const { title, subTitle = "404 en mrjark" } = Astro.props;
+const { errorTitle, errorDescription, author, location, url } = SITE_404_CONFIG;
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name={title} content={subTitle} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<ViewTransitions />
-		<title>{title}</title>
-	</head>
+<html lang={location}>
+	<Head
+		title={errorTitle}
+		description={errorDescription}
+		canonicalURL={url}
+		author={author}
+	/>
 	<body class="mx-auto p-5 px-3 max-w-3xl">
 		<Header />
 		<main class="my-10 overflow-x-hidden">

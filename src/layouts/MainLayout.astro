@@ -1,14 +1,23 @@
 ---
 import "../styles/global.css";
 
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
 import Head from "@shared/Head.astro";
 import Header from "@shared/header/Header.astro";
 import Footer from "@shared/Footer.astro";
+
+const { title, description, author, location, url } = SITE_DEFAULT_CONFIG;
 ---
 
 <!doctype html>
-<html lang="es">
-	<Head />
+<html lang={location}>
+	<Head
+		title={title}
+		description={description}
+		canonicalURL={url}
+		author={author}
+	/>
 	<body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
 		<Header />
 		<main class="my-10 overflow-x-hidden">

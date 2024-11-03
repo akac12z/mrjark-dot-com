@@ -1,20 +1,54 @@
 ---
+/**
+ * TODO: HACER EL RSS -> <link rel="alternate" type="application/rss+xml" title={SITE.title} href={new URL("rss.xml", Astro.site)}/>
+ * TODO: HACER SITEMAP ->  <link rel="sitemap" href="/sitemap-index.xml" />
+ * TODO: HACER MANIFEST -> <link rel="manifest" href="/site.webmanifest" />
+ *
+ */
+
 import { ViewTransitions } from "astro:transitions";
-import { SITE_CONFIG } from "@/global/siteInfo";
+
 import Favicons from "./Favicons.astro";
 
-const { title, description } = SITE_CONFIG;
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL: string;
+  author: string;
+}
+
+const { title, description, canonicalURL, author } = Astro.props;
 ---
 
 <head>
+  <!-- METATAGS -->
   <meta charset="UTF-8" />
   <meta name={title} content={description} />
+  <meta name="author" content={author} />
+
+  <link rel="canonical" href={canonicalURL} />
+
   <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <meta name="generator" content={Astro.generator} /> -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="robots" content="index, follow" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=yes"
+  />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- OPEN GRAPH: GENERAL-->
+  <meta property="og:title" content={SITE_DEFAULT_CONFIG.title} />
+  <meta property="og:description" content={SITE_DEFAULT_CONFIG.description} />
+  <meta property="og:url" content={SITE_DEFAULT_CONFIG.url} />
+  <meta property="og:image" content="./public/og-image.png" />
+  <meta property="og:type" content="website" />
+
   <title>{title}</title>
 
-  <ViewTransitions />
   <Favicons />
+  <ViewTransitions />
 </head>
