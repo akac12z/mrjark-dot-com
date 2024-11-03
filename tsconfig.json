@@ -6,14 +6,17 @@
       "@shared/*": [
         "./src/components/shared/*"
       ],
+      "@static/*": [
+        "./src/components/static/*"
+      ],
       "@home/*": [
         "./src/components/static/home/*"
       ],
-      "@data/*": [
-        "./src/data/*"
-      ],
       "@about/*": [
         "./src/components/static/about/*"
+      ],
+      "@data/*": [
+        "./src/data/*"
       ],
       "@layouts/*": [
         "./src/layouts/*"
