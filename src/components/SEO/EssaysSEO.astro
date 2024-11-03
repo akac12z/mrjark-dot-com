@@ -1,43 +1,45 @@
 ---
-// TODO: CREAR LAS CONFIGS
-import { SITE_CONFIG } from "@/global/siteInfo";
-import { type CollectionEntry } from "astro:content";
+// TODO: CREAR LAS CONFIGS Y DESCOMENTAR CUANDO EMPIECE A SUBIR EL CONTENIDO YA QUE ESTÁ TODO HECHO, FALTA IMPLEMENTARLO
 
-const { entry } = Astro.props;
-const post = entry as CollectionEntry<"essay">;
+// import { SITE_CONFIG } from "@/global/siteInfo";
+// import { type CollectionEntry } from "astro:content";
 
-const postTitle = post.data.title || SITE_CONFIG.title;
-const postDescription = post.data.description || SITE_CONFIG.description;
-const ogImage = new URL("./og-image.png", Astro.site);
+// const { entry } = Astro.props;
+// const post = entry as CollectionEntry<"essay">;
+
+// const postTitle = post.data.title || SITE_CONFIG.title;
+// const postDescription = post.data.description || SITE_CONFIG.description;
+// const ogImage = new URL("./og-image.png", Astro.site);
+// ---
+
+// <title>{`${postTitle} | ${SITE_CONFIG.title}`}</title>
+// <meta name="title" content={`${postTitle} | ${SITE_CONFIG.title}`} />
+// <meta name="description" content={postDescription} />
+// <link rel="canonical" href={SITE_CONFIG.url} />
+
+// <meta property="og:title" content={postTitle} />
+// <meta property="og:description" content={postDescription} />
+// <meta
+//   property="og:image"
+//   content={`${SITE_CONFIG.url}${post?.data?.essayImage?.src}` || ogImage}
+// />
+// <meta property="og:image:alt" content={postTitle} />
+// <meta property="og:type" content="webSITE_CONFIG" />
+// <meta property="og:locale" content={SITE_CONFIG.location} />
+
+// <meta name="twitter:title" content={postTitle} />
+// <meta name="twitter:description" content={postDescription} />
+// <meta
+//   property="twitter:image"
+//   content={`${SITE_CONFIG.url}${post?.data?.essayImage?.src}` || ogImage}
+// />
+// <meta name="twitter:image:alt" content={postTitle} />
+// <meta name="twitter:card" content="summary_large_image" />
+
+// {
+//   post?.data.keywords &&
+//     post.data.keywords.map((keyword: string) => {
+//       return <meta property="article:tag" content={keyword} />;
+//     })
+// }
 ---
-
-<title>{`${postTitle} | ${SITE_CONFIG.title}`}</title>
-<meta name="title" content={`${postTitle} | ${SITE_CONFIG.title}`} />
-<meta name="description" content={postDescription} />
-<link rel="canonical" href={SITE_CONFIG.url} />
-
-<meta property="og:title" content={postTitle} />
-<meta property="og:description" content={postDescription} />
-<meta
-  property="og:image"
-  content={`${SITE_CONFIG.url}${post?.data?.essayImage?.src}` || ogImage}
-/>
-<meta property="og:image:alt" content={postTitle} />
-<meta property="og:type" content="webSITE_CONFIG" />
-<meta property="og:locale" content={SITE_CONFIG.location} />
-
-<meta name="twitter:title" content={postTitle} />
-<meta name="twitter:description" content={postDescription} />
-<meta
-  property="twitter:image"
-  content={`${SITE_CONFIG.url}${post?.data?.essayImage?.src}` || ogImage}
-/>
-<meta name="twitter:image:alt" content={postTitle} />
-<meta name="twitter:card" content="summary_large_image" />
-
-{
-  post?.data.keywords &&
-    post.data.keywords.map((keyword: string) => {
-      return <meta property="article:tag" content={keyword} />;
-    })
-}

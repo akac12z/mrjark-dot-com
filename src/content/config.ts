@@ -8,12 +8,12 @@ const essay = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
-    description: z.string(), 
-    essayImage: z.object({
-      src: z.union([z.string().url(), z.string()]), 
-      alt: z.string(),
-    }),
-    keywords: z.array(z.string()), 
+    // description: z.string(), 
+    // essayImage: z.object({
+    //   src: z.union([z.string().url(), z.string()]), 
+    //   alt: z.string(),
+    // }),
+    // keywords: z.array(z.string()), 
     // createdDate: z.date(), 
     // lastTimeEdited: z.string().date().optional(), 
     // tags: z.array(z.string()),
