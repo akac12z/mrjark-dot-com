@@ -11,3 +11,9 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam perspiciati
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam perspiciatis nemo **voluptates dolor corrupti labore quae perferendis, numquam nostrum quas** placeat. Ratione error minima maiores itaque repudiandae, nihil impedit vitae?
 
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam perspiciatis nemo voluptates dolor corrupti labore quae perferendis, numquam nostrum quas placeat. _Ratione error minima maiores itaque repudiandae, nihil impedit vitae?_
+
+> primer párrafo del bloquequote
+>
+> segundo párrafo
+
+fin

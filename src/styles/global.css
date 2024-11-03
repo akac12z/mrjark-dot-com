@@ -112,11 +112,32 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-museo_moderno tracking-wider text-mr-text-headers
   }
+  h1 {
+    @apply text-2xl
+  }
+  h2 {
+    @apply text-xl
+  }
+  h3 {
+    @apply text-lg
+  }
+  h4 {
+    @apply text-base
+  }
+  h5, h6 {
+    @apply text-sm
+  }
   p {
-    @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide
+    @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide leading-relaxed
   }
   a {
     @apply font-museo_moderno tracking-wider text-inherit
+  }
+  blockquote {
+    @apply font-rubik text-base italic border-l-2 pl-4 my-2 text-mr-text-relax
+  }
+  li {
+    @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide leading-relaxed mb-2
   }
 }
 
