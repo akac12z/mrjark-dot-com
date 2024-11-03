@@ -101,7 +101,7 @@
   
 }
 
-
+/* COMPONENTS */
 @layer base {
   html {
     @apply bg-mr-bg antialiased
@@ -141,6 +141,7 @@
   }
 }
 
+/* CUSTOM CLASSES */
 @layer components {
   .my-comment {
     @apply font-comment text-sm text-mr-text-content tracking-wider
