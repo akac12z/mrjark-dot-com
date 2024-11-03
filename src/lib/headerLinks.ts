@@ -1,4 +1,10 @@
-export const headerLinks = [
+interface HeaderLinksInterface {
+  href: string
+  text: string
+  customClasses: string
+}
+
+export const HEADER_LINKS: HeaderLinksInterface[] = [
   {
     href: '/essay', 
     text: 'Essays', 

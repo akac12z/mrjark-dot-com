@@ -1,5 +1,5 @@
 ---
-import { headerLinks } from "@lib/headerLinks";
+import { HEADER_LINKS } from "@lib/headerLinks";
 import { Image } from "astro:assets";
 import NavLinks from "./NavLinks.astro";
 
@@ -15,7 +15,7 @@ const currentPath = Astro.url.pathname;
       </a>
       <div class="flex gap-4 justify-center items-center text-sm">
         {
-          headerLinks.map(({ customClasses, href, text }) => (
+          HEADER_LINKS.map(({ customClasses, href, text }) => (
             <NavLinks
               href={href}
               text={text}

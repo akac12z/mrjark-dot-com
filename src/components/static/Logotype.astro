@@ -1,5 +1,5 @@
 ---
-import { headerLinks } from "@lib/headerLinks";
+import { HEADER_LINKS } from "@lib/headerLinks";
 
 interface LogoProps {
   href: string;
@@ -23,7 +23,7 @@ const linkClasses = [
 ---
 
 {
-  headerLinks.map(({ href }) => (
+  HEADER_LINKS.map(({ href }) => (
     <a href={href}>
       <svg
         width="150"

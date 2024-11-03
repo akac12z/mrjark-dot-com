@@ -1,0 +1,20 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { SITE_CONFIG } from "@/global/siteInfo";
+import Favicons from "./Favicons.astro";
+
+const { title, description } = SITE_CONFIG;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name={title} content={description} />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="generator" content={Astro.generator} /> -->
+  <title>{title}</title>
+
+  <ViewTransitions />
+  <Favicons />
+</head>
