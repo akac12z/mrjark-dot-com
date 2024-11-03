@@ -157,4 +157,13 @@
   .nav-about_path {
     @apply text-mr-neon-blue border-mr-neon-blue
   }
+  .logo-essay_path {
+    @apply text-mr-neon-pink
+  }
+  .logo-bookNotes_path {
+    @apply text-mr-neon-gold
+  }
+  .logo-about_path {
+    @apply text-mr-neon-blue
+  }
 }
