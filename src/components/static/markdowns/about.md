@@ -2,6 +2,8 @@
 title: "¿Quién carajos es mrjark?"
 ---
 
+> Esta parte es el bancoi de pruebas de los .md
+
 ¿Estoy trabajnado en mi about vale? Creo que es lo más dificil que he escrito
 
 Lorem lorem
