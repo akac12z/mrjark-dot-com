@@ -1,0 +1,14 @@
+---
+import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
+
+const about = await Astro.glob("@static/markdowns/about.md");
+---
+
+<ReaderStaticMarkdowns>
+  {
+    about.map((element) => (
+      <h1 class="text-3xl text-mr-text-headers">{element.frontmatter.title}</h1>
+      <p set:html={element.compiledContent()}/>
+    ))
+  }
+</ReaderStaticMarkdowns>
