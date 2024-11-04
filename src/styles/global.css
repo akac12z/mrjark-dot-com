@@ -103,6 +103,7 @@
 
 /* COMPONENTS */
 @layer base {
+  /* el root es para las clases de css que no se pueden usar en tailwind */
   html {
     @apply bg-mr-bg antialiased
   }
@@ -134,7 +135,7 @@
     @apply font-museo_moderno tracking-wider text-inherit
   }
   blockquote {
-    @apply font-rubik text-base italic border-l-2 pl-4 my-2 text-mr-text-relax
+    @apply font-rubik text-base border-l-2 pl-4 my-2 text-mr-text-relax
   }
   li {
     @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide leading-relaxed mb-2
@@ -167,4 +168,5 @@
   .logo-about_path {
     @apply text-mr-neon-blue
   }
+ 
 }
