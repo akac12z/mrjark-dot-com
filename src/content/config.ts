@@ -4,7 +4,7 @@ import { defineCollection, z } from "astro:content";
  * Las comento para que no me den errores
  */
 
-const essay = defineCollection({
+const essayCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
@@ -22,13 +22,13 @@ const essay = defineCollection({
     // authorLink: z.string(), 
     // readingTime: z.string(), 
     // categories: z.array(z.string()), 
-    // // slug: z.string(), // Slug para SEO
+    // // slug: z.string(), // Slug para SEO astro lo crea automáticamente por eso no hace falta tenerlo
     // status: z.boolean().default(true), 
     // canonicalURL: z.string().url(),
   }),
 });
 
-const bookNotes = defineCollection({
+const bookNotesCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
@@ -46,7 +46,7 @@ const bookNotes = defineCollection({
     // readingTime: z.string(), 
     // categories: z.array(z.string()), 
     // keywords: z.array(z.string()), 
-    // // slug: z.string(), // Slug para SEO
+    // // slug: z.string(), // Slug para SEO astro lo crea automáticamente por eso no hace falta tenerlo
     // status: z.boolean().default(true), 
     // canonicalURL: z.string().url(),
     // buyOnAmazon: z.object({
@@ -56,7 +56,7 @@ const bookNotes = defineCollection({
   }),
 });
 
-const bias = defineCollection({
+const biasCollection = defineCollection({
   schema: z.object({
     biasName: z.string(), 
     createdDate: z.string().date(), 
@@ -69,7 +69,7 @@ const bias = defineCollection({
     }),
     language: z.enum(["es"]),
     keywords: z.array(z.string()), 
-    // slug: z.string(), // Slug para SEO
+    // slug: z.string(), // Slug para SEO -> astro lo crea automáticamente por eso no hace falta tenerlo
     relatedLinks: z.array(z.object({
       label: z.string(), 
       url: z.string().url()
@@ -79,7 +79,7 @@ const bias = defineCollection({
 });
 
 export const collections = {
-  bias, 
-  essay, 
-  bookNotes
+  bias: biasCollection, 
+  essay: essayCollection, 
+  bookNotes: essayCollection
 }

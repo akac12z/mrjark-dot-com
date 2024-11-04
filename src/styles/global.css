@@ -103,7 +103,6 @@
 
 /* COMPONENTS */
 @layer base {
-  /* el root es para las clases de css que no se pueden usar en tailwind */
   html {
     @apply bg-mr-bg antialiased
   }
