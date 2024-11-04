@@ -4,19 +4,21 @@ import BiasImage from "./BiasImage.astro";
 
 interface Props {
   biasName: string;
-  createdDate: string;
+  publishDate: string; // espero un string en formato ISO
   description: string;
   tags: string[];
   biasImage: string;
   language: string | string[];
   keywords: string[];
   slug: string;
-  lastTimeEdited?: Date;
+  lastTimeEdited?: string;
   relatedLinks?: string[];
   readingTime?: number;
 }
 
-const { biasName, description, biasImage, slug } = Astro.props;
+const { biasName, description, biasImage, slug, lastTimeEdited, publishDate } =
+  Astro.props;
+const ifLastTimeEdited = lastTimeEdited || publishDate;
 ---
 
 <section class="w-full flex flex-col items-center justify-center">

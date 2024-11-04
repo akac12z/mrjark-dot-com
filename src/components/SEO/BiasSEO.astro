@@ -1,17 +1,17 @@
 <!-- ---
-TODO: CREAR LAS CONFIGS Y DESCOMENTAR CUANDO EMPIECE A SUBIR EL CONTENIDO YA QUE ESTÁ TODO HECHO, FALTA IMPLEMENTARLO
+// TODO: CREAR LAS CONFIGS Y DESCOMENTAR CUANDO EMPIECE A SUBIR EL CONTENIDO YA QUE ESTÁ TODO HECHO, FALTA IMPLEMENTARLO
 
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import { type CollectionEntry } from "astro:content";
 
 interface Props {
-  entry: CollectionEntry<"essay">;
+  entry: CollectionEntry<"bias">;
 }
 
 const { entry } = Astro.props;
-const post = entry as CollectionEntry<"essay">;
+const post = entry as CollectionEntry<"bias">;
 
-const postTitle = post.data.title || SITE_DEFAULT_CONFIG.title;
+const postTitle = post.data.biasName || SITE_DEFAULT_CONFIG.title;
 const postDescription =
   post.data.description || SITE_DEFAULT_CONFIG.description;
 const ogImage = new URL("./og-image.png", Astro.site);
@@ -26,8 +26,7 @@ const ogImage = new URL("./og-image.png", Astro.site);
 <meta property="og:description" content={postDescription} />
 <meta
   property="og:image"
-  content={`${SITE_DEFAULT_CONFIG.url}${post?.data?.essayImage?.src}` ||
-    ogImage}
+  content={`${SITE_DEFAULT_CONFIG.url}${post?.data?.biasImage?.src}` || ogImage}
 />
 <meta property="og:image:alt" content={postTitle} />
 <meta property="og:type" content="webSITE_DEFAULT_CONFIG" />
@@ -37,8 +36,7 @@ const ogImage = new URL("./og-image.png", Astro.site);
 <meta name="twitter:description" content={postDescription} />
 <meta
   property="twitter:image"
-  content={`${SITE_DEFAULT_CONFIG.url}${post?.data?.essayImage?.src}` ||
-    ogImage}
+  content={`${SITE_DEFAULT_CONFIG.url}${post?.data?.biasImage?.src}` || ogImage}
 />
 <meta name="twitter:image:alt" content={postTitle} />
 <meta name="twitter:card" content="summary_large_image" />
@@ -48,5 +46,4 @@ const ogImage = new URL("./og-image.png", Astro.site);
     post.data.keywords.map((keyword: string) => {
       return <meta property="article:tag" content={keyword} />;
     })
-}
--->
+} -->

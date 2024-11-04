@@ -7,11 +7,11 @@ import Head from "@shared/Head.astro";
 import Header from "@shared/header/Header.astro";
 import Footer from "@shared/Footer.astro";
 
-const { title, description, author, location, url } = SITE_DEFAULT_CONFIG;
+const { title, description, author, lang, url } = SITE_DEFAULT_CONFIG;
 ---
 
 <!doctype html>
-<html lang={location}>
+<html lang={lang}>
 	<Head
 		title={title}
 		description={description}

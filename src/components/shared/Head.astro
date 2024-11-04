@@ -11,6 +11,7 @@ import { ViewTransitions } from "astro:transitions";
 import Favicons from "./Favicons.astro";
 
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
   title: string;
@@ -51,4 +52,7 @@ const { title, description, canonicalURL, author } = Astro.props;
 
   <Favicons />
   <ViewTransitions />
+
+  <!-- El SLOT ES PARA EL SEO ESPECÍFICO DE CADA UNA DE LAS COLLECTIONS -->
+  <slot />
 </head>

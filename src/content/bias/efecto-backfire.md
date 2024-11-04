@@ -6,14 +6,14 @@ biasImage: {
   alt: 'Efecto Backfire iamgen'
 }
 slug: 'efecto-backfire'
-createdDate: '2024-10-30'
+publishDate: '2024-10-30'
 tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']
 keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
 readingTime: 5
 language: "es"
 ---
 
-## Qué son los sesgos?
+# Qué son los sesgos?
 
 Los sesgos **cognitivos son como atajos mentales que usa nuestro cerebro para procesar información rápidamente, ahorrando tiempo y energía. Estos atajos son muy útiles para tomar decisiones** rápidas, pero a veces nos llevan a conclusiones erróneas o a ver el mundo de manera distorsionada.
 

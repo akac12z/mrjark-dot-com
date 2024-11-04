@@ -14,8 +14,8 @@ const essayCollection = defineCollection({
     //   alt: z.string(),
     // }),
     // keywords: z.array(z.string()), 
-    // createdDate: z.date(), 
-    // lastTimeEdited: z.string().date().optional(), 
+    // publishDate: z.string(), 
+    // llastTimeEdited: z.string().optional(), 
     // tags: z.array(z.string()),
     // language: z.enum(["es"]),
     // author: z.string().default("mrjark"), 
@@ -32,8 +32,8 @@ const bookNotesCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
-    // createdDate: z.date(), 
-    // lastTimeEdited: z.string().date().optional(), 
+    // publishDate: z.string(), 
+    // lastTimeEdited: z.string().optional(),
     // description: z.string(),
     // tags: z.array(z.string()), 
     // bookImage: z.object({
@@ -59,8 +59,9 @@ const bookNotesCollection = defineCollection({
 const biasCollection = defineCollection({
   schema: z.object({
     biasName: z.string(), 
-    createdDate: z.string().date(), 
-    lastTimeEdited: z.string().date().optional(), 
+    // publishDate: z.string().date(), //para los metatags del SEO debe ser string y luego pasarlo a ISO
+    publishDate: z.string(), 
+    lastTimeEdited: z.string().optional(),
     description: z.string(), 
     tags: z.array(z.string()),
     biasImage: z.object({
@@ -81,5 +82,5 @@ const biasCollection = defineCollection({
 export const collections = {
   bias: biasCollection, 
   essay: essayCollection, 
-  bookNotes: essayCollection
+  bookNotes: bookNotesCollection,
 }

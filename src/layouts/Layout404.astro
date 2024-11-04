@@ -7,11 +7,11 @@ import Head from "@shared/Head.astro";
 import Header from "@shared/header/Header.astro";
 import Footer from "@shared/Footer.astro";
 
-const { errorTitle, errorDescription, author, location, url } = SITE_404_CONFIG;
+const { errorTitle, errorDescription, author, lang, url } = SITE_404_CONFIG;
 ---
 
 <!doctype html>
-<html lang={location}>
+<html lang={lang}>
 	<Head
 		title={errorTitle}
 		description={errorDescription}

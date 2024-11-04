@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
-console.log(biases);
+// console.log(biases);
 ---
 
 <MainLayout
@@ -23,16 +23,20 @@ console.log(biases);
           biasImage,
           description,
           biasName,
-          createdDate,
+          publishDate,
+          lastTimeEdited,
           keywords,
           tags,
         } = data;
+        // Hago toISO para los metatag, para convertirlo en formato que les guste a los ROBOTS
+        const dateToISO = new Date(publishDate);
+        // const lastTimetoEditedToISO = new Date(lastTimeEdited); //TODO:
         return (
           <BiasCard
             language="es"
             keywords={keywords}
             tags={tags}
-            createdDate={createdDate}
+            publishDate={dateToISO.toISOString()}
             biasName={biasName}
             description={description}
             biasImage={biasImage.src}
