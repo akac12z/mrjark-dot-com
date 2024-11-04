@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
+console.log(biases);
 ---
 
 <MainLayout
