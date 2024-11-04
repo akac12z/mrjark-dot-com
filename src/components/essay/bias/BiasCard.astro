@@ -16,9 +16,7 @@ interface Props {
   readingTime?: number;
 }
 
-const { biasName, description, biasImage, slug, lastTimeEdited, publishDate } =
-  Astro.props;
-const ifLastTimeEdited = lastTimeEdited || publishDate;
+const { biasName, description, biasImage, slug } = Astro.props;
 ---
 
 <section class="w-full flex flex-col items-center justify-center">

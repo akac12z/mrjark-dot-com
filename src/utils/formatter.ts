@@ -1,4 +1,4 @@
- export class Formatter {
+export class Formatter {
   static formatDate (value: Date): string {
     const date = new Date(value)
 
@@ -16,3 +16,4 @@
     return date.toISOString(); // Ejemplo: "2024-11-04T10:30:00.000Z"
   }
 }
+
