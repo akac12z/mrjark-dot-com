@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import isValidDateFormat  from '@utils/validatingDate'
 
 /**
  * Las comento para que no me den errores
@@ -14,8 +15,16 @@ const essayCollection = defineCollection({
     //   alt: z.string(),
     // }),
     // keywords: z.array(z.string()), 
-    // publishDate: z.string(), 
-    // llastTimeEdited: z.string().optional(), 
+    // publishDate: z.string().refine(isValidDateFormat, {
+    //   message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+    // }),  
+    // lastTimeEdited: z.string().refine(
+    //   (val) => (val ? isValidDateFormat(val) : true), {
+    //   message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+    //   }).transform((val, ctx) => {
+    //     const publishDate = ctx;
+    //     return val ?? publishDate;
+    //   }).optional(),
     // tags: z.array(z.string()),
     // language: z.enum(["es"]),
     // author: z.string().default("mrjark"), 
@@ -32,9 +41,16 @@ const bookNotesCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
-    // publishDate: z.string(), 
-    // lastTimeEdited: z.string().optional(),
-    // description: z.string(),
+    // publishDate: z.string().refine(isValidDateFormat, {
+    //   message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+    // }), 
+    // lastTimeEdited: z.string().refine(
+    //   (val) => (val ? isValidDateFormat(val) : true), {
+    //   message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+    //   }).transform((val, ctx) => {
+    //     const publishDate = ctx;
+    //     return val ?? publishDate;
+    //   }).optional(),
     // tags: z.array(z.string()), 
     // bookImage: z.object({
     //   src: z.union([z.string().url(), z.string()]), 
@@ -49,7 +65,7 @@ const bookNotesCollection = defineCollection({
     // // slug: z.string(), // Slug para SEO astro lo crea automáticamente por eso no hace falta tenerlo
     // status: z.boolean().default(true), 
     // canonicalURL: z.string().url(),
-    // buyOnAmazon: z.object({
+    // buyItOnAmazon: z.object({
     //   spain: z.string().url(),
     //   usa: z.string().url()
     // }).optional()
@@ -59,9 +75,16 @@ const bookNotesCollection = defineCollection({
 const biasCollection = defineCollection({
   schema: z.object({
     biasName: z.string(), 
-    // publishDate: z.string().date(), //para los metatags del SEO debe ser string y luego pasarlo a ISO
-    publishDate: z.string(), 
-    lastTimeEdited: z.string().optional(),
+    publishDate: z.string().refine(isValidDateFormat, {
+      message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+    }), 
+    lastTimeEdited: z.string().refine(
+      (val) => (val ? isValidDateFormat(val) : true), {
+      message: "The date must be in the format: YYYY-MM-DD. Make sure you have written it in the correct format.",
+      }).transform((val, ctx) => {
+        const publishDate = ctx;
+        return val ?? publishDate;
+      }).optional(),
     description: z.string(), 
     tags: z.array(z.string()),
     biasImage: z.object({
@@ -78,6 +101,7 @@ const biasCollection = defineCollection({
     readingTime: z.number().optional(), 
   }),
 });
+
 
 export const collections = {
   bias: biasCollection, 

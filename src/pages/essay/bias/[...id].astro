@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 const { bias } = Astro.props;
 const { data, slug } = bias;
-const { biasName, biasImage } = data;
+const { biasName, biasImage, publishDate, lastTimeEdited } = data;
 
 const { Content } = await render(bias);
 ---
@@ -38,6 +38,16 @@ const { Content } = await render(bias);
       />
     </div>
     <article class="prose prose-invert mx-auto">
+      <div class="flex items-center justify-between">
+        <p class="text-xs">Publish on: {publishDate}</p>
+        {
+          lastTimeEdited ? (
+            <p class="text-xs">Edited on: {lastTimeEdited}</p>
+          ) : (
+            ""
+          )
+        }
+      </div>
       <h1 class="text-center">
         {biasName}
       </h1>
