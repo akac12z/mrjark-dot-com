@@ -10,8 +10,6 @@ import { SOCIAL_LINKS } from "@/global/siteInfo";
 <ul class="flex list-none items-center gap-2 p-0 sm:gap-3">
   {
     Object.keys(SOCIAL_LINKS).map((navItemKey) => {
-      console.log("nav", navItemKey);
-
       return (
         <li>
           <a href={SOCIAL_LINKS[navItemKey].url}>

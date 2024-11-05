@@ -1,14 +1,18 @@
 ---
+import PageSEO from "@/components/SEO/PageSEO.astro";
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 const notes = await getCollection("bookNotes");
 ---
 
-<MainLayout
-  title="Notas de libros - mrjark"
-  subTitle="Una lista de los libros junto con algunas notas que he tomado y que considero importantes recordar"
->
+<MainLayout>
+  <PageSEO
+    title=`Notas de librso - ${SITE_DEFAULT_CONFIG.title}`
+    slot="head"
+    description="Una lista de los libros junto con algunas notas que he tomado y que considero importantes recordar"
+  />
   <h1 class="text-xl mb-8">
     Books <span class="text-mr-neon-lime">page</span> in porgress
   </h1>

@@ -4,6 +4,7 @@
  */
 export const prerender = true;
 
+import BiasSEO from "@/components/SEO/BiasSEO.astro";
 import BiasImage from "@essay/bias/BiasImage.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
@@ -25,7 +26,8 @@ const { biasName, biasImage, publishDate, lastTimeEdited } = data;
 const { Content } = await render(bias);
 ---
 
-<MainLayout title=`${biasName} - mrjark`>
+<MainLayout>
+  <BiasSEO slot="head" entry={bias} />
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
       <BiasImage

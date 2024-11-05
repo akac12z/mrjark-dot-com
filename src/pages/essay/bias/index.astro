@@ -1,17 +1,20 @@
 ---
+import PageSEO from "@/components/SEO/PageSEO.astro";
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import BiasCard from "@essay/bias/BiasCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
-// console.log(biases);
 ---
 
-<MainLayout
-  title="Lista de sesgos cognitivos"
-  subTitle="Una lista donde se muestras los distintos sesgos cognitivos que existen con sus explicaciones, algunos ejemplos y formas en las que los puedes aplicar"
->
+<MainLayout>
+  <PageSEO
+    slot="head"
+    title=`Sesgos - ${SITE_DEFAULT_CONFIG.title}`
+    description="Recopilación de sesgos cognitivos y heurísticas de los humanos junto con ejemplos y aplicaciones de los mismos."
+  />
   <h1 class="text-xl mb-8">Bias page in porgress</h1>
   <section
     class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3"

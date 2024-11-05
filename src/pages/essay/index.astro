@@ -1,8 +1,14 @@
 ---
+import PageSEO from "@/components/SEO/PageSEO.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Growth, psychology behavioral, y otra mierdas - mrjark">
+  <PageSEO
+    slot="head"
+    title="Ensayos - mrjark"
+    description="Un cunjunto de ensayos que voy recopilando en mi carrera como Growth en Startups y mi afan por conocer la psicologia del comportamiento"
+  />
   <h1>Work in progress</h1>
 
   <a class="text-sm text-green-500" href="/essay/bias">Go to bias</a>

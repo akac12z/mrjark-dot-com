@@ -30,8 +30,12 @@ interface Site404ConfigInterface {
   lang: string
 };
 
+/**
+ * TODO: Rotes sites interfaces 
+*/
+
 export const SITE_DEFAULT_CONFIG: SiteDefaultConfigInterface = {
-  title: "mrjark | Growth, Behavioral Psychology, Startups y Crecimiento Personal",
+  title: "mrjark",
   description:
     "Un blog y mi 'build(me) in public'. Aquí voy a compartir aquello que voy haciendo, aprendiendo y pensando que considero que es importante, en mi carrera personal y profesional en Startups sobre Growth, Psicología del Comportamiento y Economía Conductual y Crecimiento Personal.",
   url: "https://mrjark.com",
