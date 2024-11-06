@@ -2,7 +2,7 @@
 title: "¿Quién carajos es mrjark?"
 ---
 
-> **Esta parte es el banco de pruebas de los .md y .mdx**
+> **Esta parte es el banco de pruebas de los .md y .mdx. No lo tengas en cuenta por ahora.**
 
 ¿Estoy trabajnado en mi about vale? Creo que es lo más dificil que he escrito
 
