@@ -99,7 +99,7 @@ const biasCollection = defineCollection({
       const lastTimeEditedObj = new Date(data.lastTimeEdited);
       return lastTimeEditedObj >= publishDateObj;
     }
-    return true; // Si no hay lastTimeEdited, no aplica la validación
+    return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
   }, {
     message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
     path: ['lastTimeEdited'], // Indica el campo donde se muestra el error

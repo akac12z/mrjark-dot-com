@@ -41,13 +41,22 @@ const { Content } = await render(bias);
     </div>
     <article class="prose prose-invert mx-auto">
       <div class="flex items-center justify-between">
-        <p class="text-xs">Publish on: {publishDate}</p>
         {
-          lastTimeEdited ? (
-            <p class="text-xs">Edited on: {lastTimeEdited}</p>
-          ) : (
-            ""
-          )
+          lastTimeEdited && lastTimeEdited !== publishDate
+            ? (
+              <p class="text-xs">Publicado: {publishDate}</p>
+              <p class="text-xs">Editado: {lastTimeEdited}</p>
+            )
+            : (
+              <p class="text-xs">Publish on: {publishDate}</p>
+            )
+        }
+        {
+          // lastTimeEdited ? (
+          //   <p class="text-xs">Edited on: {lastTimeEdited}</p>
+          // ) : (
+          //   ""
+          // )
         }
       </div>
       <h1 class="text-center">
