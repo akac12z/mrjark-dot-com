@@ -1,0 +1,46 @@
+---
+/*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
+import BiasImage from "./BiasImage.astro";
+
+interface Props {
+  biasName: string;
+  publishDate: string; // espero un string en formato ISO
+  description: string;
+  tags: string[];
+  biasImage: string;
+  language: string | string[];
+  keywords: string[];
+  slug: string;
+  lastTimeEdited?: string;
+  relatedLinks?: string[];
+  readingTime?: number;
+}
+
+const { biasName, description, biasImage, slug } = Astro.props;
+---
+
+<section class="w-full flex flex-col items-center justify-center">
+  <BiasImage
+    biasName={biasName}
+    width={240}
+    height={160}
+    src={biasImage}
+    alt={`${biasName} imagen`}
+    transition:name=`${slug}-image`
+  />
+  <article
+    class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
+  >
+    <h3 class="text-lg mb-2">{biasName}</h3>
+    <p class="mb-4 line-clamp-3">
+      {description}
+    </p>
+
+    <a
+      href=`/essay/bias/${slug}`
+      class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
+    >
+      Saber más
+    </a>
+  </article>
+</section>
