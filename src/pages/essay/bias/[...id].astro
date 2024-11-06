@@ -6,9 +6,11 @@ export const prerender = true;
 
 import { getCollection, render } from "astro:content";
 
-import BiasSEO from "@/components/SEO/BiasSEO.astro";
-import BiasImage from "@essay/bias/BiasImage.astro";
+
 import MainLayout from "@layouts/MainLayout.astro";
+import BiasSEO from "@/components/SEO/BiasSEO.astro";
+
+import BiasImage from "@/components/pages/bias/BiasImage.astro";
 
 export async function getStaticPaths() {
   const biases = await getCollection("bias");

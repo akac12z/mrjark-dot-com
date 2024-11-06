@@ -5,7 +5,7 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
-import BiasCard from "@essay/bias/BiasCard.astro";
+import BiasCard from "@/components/pages/bias/BiasCard.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
