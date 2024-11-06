@@ -1,32 +1,20 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
 import "../styles/global.css";
 
-import Header from "@shared/header/Header.astro";
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
+import Head from "@shared/Head.astro";
+import Header from "@shared/Header.astro";
 import Footer from "@shared/Footer.astro";
 
-interface Props {
-  title: string;
-  subTitle?: string;
-}
-
-const { title, subTitle = "Notas de libros interesante | mrjark" } =
-  Astro.props;
+const { lang } = SITE_DEFAULT_CONFIG;
 ---
 
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name={title} content={subTitle} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta name="generator" content={Astro.generator} /> -->
-    <ViewTransitions />
-    <title>{title}</title>
-  </head>
+<html lang={lang}>
+  <Head>
+    <slot name="head" />
+  </Head>
   <body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
     <Header />
     <main class="my-10 overflow-x-hidden">
