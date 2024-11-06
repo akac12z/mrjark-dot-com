@@ -10,7 +10,7 @@ const essayCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), 
-    // description: z.string(), 
+    description: z.string(), 
     // essayImage: z.object({
     //   src: z.union([z.string().url(), z.string()]), 
     //   alt: z.string(),

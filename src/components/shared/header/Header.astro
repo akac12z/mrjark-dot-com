@@ -2,7 +2,6 @@
 import { HEADER_LINKS } from "@lib/headerLinks";
 import { Image } from "astro:assets";
 import NavLinks from "./NavLinks.astro";
-import Logo from "@static/Logo.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -10,7 +9,6 @@ const currentPath = Astro.url.pathname;
 <header>
   <nav class="text-mr-primary-green my-2 w-full">
     <section class="flex justify-between items-center mx-auto">
-      <Logo href={currentPath} />
       <a href="/">
         <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
       </a>

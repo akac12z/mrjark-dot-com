@@ -143,7 +143,7 @@
     @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide leading-relaxed
   }
   a {
-    @apply font-museo_moderno tracking-wider text-inherit
+    @apply font-museo_moderno tracking-wider text-mr-text-headers
   }
   blockquote {
     @apply font-rubik text-base border-l-2 pl-4 my-2 text-mr-text-relax

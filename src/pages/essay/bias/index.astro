@@ -1,9 +1,11 @@
 ---
-import PageSEO from "@/components/SEO/PageSEO.astro";
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
-import BiasCard from "@essay/bias/BiasCard.astro";
-import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
+
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
+import MainLayout from "@layouts/MainLayout.astro";
+import PageSEO from "@/components/SEO/PageSEO.astro";
+import BiasCard from "@essay/bias/BiasCard.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
@@ -44,8 +46,5 @@ const biases = await getCollection("bias");
         );
       })
     }
-    <!-- <BiasCard />
-    <BiasCard />
-    <BiasCard /> -->
   </section>
 </MainLayout>
