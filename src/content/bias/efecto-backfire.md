@@ -6,8 +6,7 @@ biasImage: {
   alt: 'Efecto Backfire iamgen'
 }
 slug: 'efecto-backfire'
-publishDate: '2024-10-30'
-lastTimeEdited: '2024-11-09'
+publishDate: '2024-02-10'
 tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']
 keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
 readingTime: 5

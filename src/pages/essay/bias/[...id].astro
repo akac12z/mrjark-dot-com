@@ -4,11 +4,11 @@
  */
 export const prerender = true;
 
+import { getCollection, render } from "astro:content";
+
 import BiasSEO from "@/components/SEO/BiasSEO.astro";
 import BiasImage from "@essay/bias/BiasImage.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-
-import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const biases = await getCollection("bias");
@@ -32,8 +32,8 @@ const { Content } = await render(bias);
     <div class="w-3/4 pb-6">
       <BiasImage
         biasName={biasName}
-        width={1020}
-        height={510}
+        width={600}
+        height={320}
         src={biasImage.src}
         alt={biasImage.alt}
         transition:name=`${slug}-image`

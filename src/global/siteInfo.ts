@@ -31,7 +31,7 @@ interface Site404ConfigInterface {
 };
 
 /**
- * TODO: Rotes sites interfaces 
+ * TODO: Make Routes sites interfaces 
 */
 
 export const SITE_DEFAULT_CONFIG: SiteDefaultConfigInterface = {

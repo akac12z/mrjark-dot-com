@@ -1,11 +1,15 @@
 ---
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
+import { convertDateToISO8601 } from "@utils/validatingDate";
 
 const about = await Astro.glob("@static/markdowns/about.md");
+
+const date = '2027-12-09'
 ---
 
 <ReaderStaticMarkdowns>
   <article>
+    <p class="text-blue-400">{convertDateToISO8601(date)}</p>
     {
       about.map((element) => (
         <h1 class="text-3xl text-mr-text-headers">{element.frontmatter.title}</h1>
