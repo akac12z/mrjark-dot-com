@@ -75,7 +75,7 @@ const biasCollection = defineCollection({
   schema: z.object({
     biasName: z.string(), 
     publishDate: z.string().refine(isValidDateFormat), 
-    lastTimeEdited: z.string().refine(
+    lastTimeEdited: z.string().refine(isValidDateFormat).refine(
       (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
         const publishDate = ctx;
         return val ?? publishDate;
@@ -93,6 +93,16 @@ const biasCollection = defineCollection({
       url: z.string().url()
     })).optional(),
     readingTime: z.number().optional(), 
+  }).refine((data) => {
+    if (data.lastTimeEdited && data.publishDate) {
+      const publishDateObj = new Date(data.publishDate);
+      const lastTimeEditedObj = new Date(data.lastTimeEdited);
+      return lastTimeEditedObj >= publishDateObj;
+    }
+    return true; // Si no hay lastTimeEdited, no aplica la validación
+  }, {
+    message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
+    path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
   }),
 });
 
