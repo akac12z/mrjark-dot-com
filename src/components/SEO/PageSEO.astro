@@ -19,11 +19,13 @@ const ogImage = new URL(
   `${SITE_DEFAULT_CONFIG.url}/og-image.png`,
 );
 const ogImageAlt = title;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
+<link rel="canonical" href={canonicalURL} />
 
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
