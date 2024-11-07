@@ -1,0 +1,63 @@
+---
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
+interface Props {
+  title: string;
+  description: string;
+  thumbnail?: string;
+}
+
+const {
+  title = SITE_DEFAULT_CONFIG.title,
+  description = SITE_DEFAULT_CONFIG.description,
+  thumbnail = `${SITE_DEFAULT_CONFIG.url}/og-image.png`,
+} = Astro.props;
+
+const ogImage = thumbnail;
+const ogImageAlt = title;
+
+const pageTitle = `${title} - ${SITE_DEFAULT_CONFIG.title}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
+<meta name="description" content={description} />
+{
+  /*
+  searchImage && (
+    <meta
+      data-pagefind-meta="image[content]"
+      content={searchImage}
+      property="search:image"
+    />
+  )
+*/
+}
+
+<!-- Open Grapth / Facebook / LinkedIn -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
