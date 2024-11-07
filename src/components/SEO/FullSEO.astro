@@ -1,5 +1,7 @@
 ---
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import Favicons from "@shared/Favicons.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -20,21 +22,44 @@ const pageTitle = `${title} - ${SITE_DEFAULT_CONFIG.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<head>
+  <!-- Global Metadata -->
+  <meta charset="UTF-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="robots" content="index, follow" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=yes, shrink-to-fit=no"
+  />
+  <meta name="generator" content={Astro.generator} />
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+  {/*FONT PRELOAD*/}
+  <link
+    rel="preload"
+    href="/fonts/MuseoModerno-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/rubik-regular-webfont.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
 
-<!-- Primary Meta Tags -->
-<title>{pageTitle}</title>
-<meta name="title" content={pageTitle} />
-<meta name="description" content={description} />
-{
-  /*
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Primary Meta Tags -->
+  <title>{pageTitle}</title>
+  <meta name="title" content={pageTitle} />
+  <meta name="description" content={description} />
+  {
+    /*
   searchImage && (
     <meta
       data-pagefind-meta="image[content]"
@@ -43,21 +68,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
   )
 */
-}
+  }
 
-<!-- Open Grapth / Facebook / LinkedIn -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
-<meta property="og:image:alt" content={ogImageAlt} />
-<meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+  <!-- Open Grapth / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content={ogImageAlt} />
+  <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
 
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:url" content={Astro.url} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImage} />
-<meta name="twitter:image:alt" content={ogImageAlt} />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:url" content={Astro.url} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={ogImageAlt} />
+
+  <Favicons />
+  <ViewTransitions />
+</head>
