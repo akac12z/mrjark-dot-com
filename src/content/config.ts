@@ -83,16 +83,16 @@ const biasCollection = defineCollection({
       }).optional(),
     description: z.string(), 
     tags: z.array(z.string()),
-    biasImage: z.object({
-      src: z.union([z.string().url(), z.string()]).transform((val) =>
-      val.startsWith("http") ? val : new URL(val, SITE_DEFAULT_CONFIG.url).href
-    ), 
-      alt: z.string(),
-    }),
     // biasImage: z.object({
-    //   src: z.union([z.string().url(), z.string()]), 
+    //   src: z.union([z.string().url(), z.string()]).transform((val) =>
+    //   val.startsWith("http") ? val : new URL(val, SITE_DEFAULT_CONFIG.url).href
+    // ), 
     //   alt: z.string(),
     // }),
+    biasImage: z.object({
+      src: z.union([z.string().url(), z.string()]), 
+      alt: z.string(),
+    }),
     language: z.enum(["es"]),
     keywords: z.array(z.string()), 
     relatedLinks: z.array(z.object({
