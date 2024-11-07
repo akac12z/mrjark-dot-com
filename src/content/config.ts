@@ -75,18 +75,19 @@ const bookNotesCollection = defineCollection({
 const biasCollection = defineCollection({
   type: "content",
   schema: ({ image }) => z.object({
-    name: z.string(), 
-    image: image().refine((img) => img.width >= 1080, {
-      message: "Image should be 560px × 320px.",
+    name: z.string().max(60), 
+    cover: z.object({
+      src: image(),
+      alt: z.string()
     }),
-    imageAlt: z.string(),
+    description: z.string().min(40).max(160), 
+    // imageAlt: z.string(),
   //   publishDate: z.string().refine(isValidDateFormat), 
   //   lastTimeEdited: z.string().refine(isValidDateFormat).refine(
   //     (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
   //       const publishDate = ctx;
   //       return val ?? publishDate;
   //     }).optional(),
-  //   description: z.string(), 
   //   tags: z.array(z.string()),
   //   language: z.enum(["es"]),
   //   keywords: z.array(z.string()), 

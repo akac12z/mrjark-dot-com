@@ -1,32 +1,33 @@
 ---
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import BiasImage from "./BiasImage.astro";
 
 interface Props {
-  name: string;
-  publishDate?: string; // espero un string en formato ISO
-  description?: string;
-  tags?: string[];
-  image: string;
-  imageAlt: string;
-  language?: string | string[];
-  keywords?: string[];
-  slug?: string;
-  lastTimeEdited?: string;
-  relatedLinks?: string[];
-  readingTime?: number;
+  entry: CollectionEntry<"bias">;
 }
 
-const { name, slug, image, imageAlt, description } = Astro.props;
+export async function getStaticPaths() {
+  const biases = await getCollection("bias");
+
+  return biases.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data, slug } = entry;
+const { name, cover, description } = data;
 ---
 
 <section class="w-full flex flex-col items-center justify-center">
   <BiasImage
     name={name}
-    width={560}
-    height={320}
-    src={image}
-    alt={`${imageAlt} imagen`}
+    width={cover.src.width}
+    height={cover.src.height}
+    src={cover.src.src}
+    alt={`${cover.alt} imagen`}
     transition:name=`${slug}-image`
   />
   <article

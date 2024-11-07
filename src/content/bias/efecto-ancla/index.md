@@ -1,8 +1,9 @@
 ---
-name: Efecto Ancla
-# description: Un ejemplo del primer bias con su descripción para ver cómo queda
-image: './images/markus-spiske-IiEFmIXZWSw-unsplash.jpg'
-imageAlt: efecto ancla imagen
+name: "Efecto Ancla"
+cover: 
+  src: "./markus.jpg"
+  alt: "Markus unsplash image"
+description: Un ejemplo del primer bias con su descripción para ver cómo queda y un pooc mas por si acaso
 # slug: efecto-ancla
 # publishDate: '2023-10-30'
 # lastTimeEdited: '2025-10-31'

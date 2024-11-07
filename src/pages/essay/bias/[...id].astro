@@ -26,13 +26,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const {
-  // publishDate,
-  // lastTimeEdited,
-  image,
-  name,
-  imageAlt,
-} = data;
+const { name, cover } = data;
 
 const { Content } = await render(entry);
 ---
@@ -43,10 +37,10 @@ const { Content } = await render(entry);
     <div class="w-3/4 pb-6">
       <BiasImage
         name={name}
-        src={image.src}
-        width={600}
-        height={320}
-        alt={imageAlt}
+        src={cover.src.src}
+        width={cover.src.width}
+        height={cover.src.height}
+        alt={cover.alt}
         transition:name=`${slug}-image`
       />
     </div>
