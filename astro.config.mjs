@@ -9,6 +9,7 @@ import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig( {
+  site: 'https://mrjark.com',
   integrations: [ tailwind(), mdx() ],
   /*
   Tiene sentido que sea hybrid porque las páginas que yo tengo son estáticas
