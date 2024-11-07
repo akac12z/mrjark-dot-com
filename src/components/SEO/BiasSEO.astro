@@ -67,28 +67,15 @@ const lastTimeEditedInISO = convertDateToISO8601(
 <link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
 
 {/* OPEN GRAPH - Facebook , LinkedIn */}
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="mrjark" />
 <meta property="og:title" content={biasTitle} />
 <meta property="og:description" content={biasDescription} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:type" content="article" />
-{
-  /*LAS IMÁGENES LAS SACARÉ DEPENDIENDO DEL PATH RELATIVO DEL BIAS TODO: (O CLOUDINARY A FUTURO)*/
-}
+<meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+
 <meta property="og:image" content={justInCaseNoImageSrc} />
 <meta property="og:image:alt" content={justInCaseNoImageAlt} />
-<meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
-<meta property="og:site_name" content="mrjark" />
-
-{/*META ESPECÍFICO DEL POST*/}
-<meta property="article:published_time" content={publisDateInISO} />
-<meta property="article:modified_time" content={lastTimeEditedInISO} />
-
-{/* TWITTER/X */}
-<meta name="twitter:title" content={biasTitle} />
-<meta name="twitter:description" content={biasDescription} />
-<meta property="twitter:image" content={justInCaseNoImageSrc} />
-<meta name="twitter:image:alt" content={justInCaseNoImageAlt} />
-<meta name="twitter:card" content="summary_large_image" />
 
 {
   keywords &&
@@ -96,3 +83,14 @@ const lastTimeEditedInISO = convertDateToISO8601(
       return <meta property="article:tag" content={keyword} />;
     })
 }
+
+{/*META ESPECÍFICO DEL POST*/}
+<meta property="article:published_time" content={publisDateInISO} />
+<meta property="article:modified_time" content={lastTimeEditedInISO} />
+
+{/* TWITTER/X */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={biasTitle} />
+<meta name="twitter:description" content={biasDescription} />
+<meta name="twitter:image" content={justInCaseNoImageSrc} />
+<meta name="twitter:image:alt" content={justInCaseNoImageAlt} />
