@@ -34,17 +34,13 @@ const biasDescription =
 const ogImage = new URL("./og-image.png", Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const all = `${Astro.site} + ${Astro.url.pathname}`;
+// const all = `${Astro.site} + ${Astro.url.pathname}`;
 // console.log(
 //   { pathname: Astro.url.pathname },
 //   { canocinalURLHREF: canonicalURL },
 //   { all: all },
 //   { site: Astro.site },
 // );
-
-{
-  /*a futuro cambiarlo 👇🏽 por cloudinary o si hago rutas de archivos dentro de los blogs*/
-}
 
 const imageSrc = biasImage.src.startsWith("http")
   ? biasImage.src
@@ -53,8 +49,8 @@ const imageSrc = biasImage.src.startsWith("http")
 const justInCaseNoImageSrc = imageSrc || ogImage;
 const justInCaseNoImageAlt = biasImage.alt || biasName;
 
+// Validación de fechas. lastTimeEdited puede ser undefined en la collection pero en la práctica no pero para evitar el error hago la validación
 const publisDateInISO = convertDateToISO8601(publishDate);
-// el lastTimeEdited siempre va a venir porque le estoy diciendo que si no viene, sea el publishDate pero para no obligarlo desde el config de la collection lo hago así
 const lastTimeEditedInISO = convertDateToISO8601(
   !lastTimeEdited ? publishDate : lastTimeEdited,
 );

@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import {isValidDateFormat}  from '@utils/validatingDate'
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
 /**
  * ? Los slug: z.string(), en las colecciones dan error porque ya los está creando astro por defecto. Por ende, al desestructurarlo te dará error si los tienes.
@@ -83,9 +84,15 @@ const biasCollection = defineCollection({
     description: z.string(), 
     tags: z.array(z.string()),
     biasImage: z.object({
-      src: z.union([z.string().url(), z.string()]), 
+      src: z.union([z.string().url(), z.string()]).transform((val) =>
+      val.startsWith("http") ? val : new URL(val, SITE_DEFAULT_CONFIG.url).href
+    ), 
       alt: z.string(),
     }),
+    // biasImage: z.object({
+    //   src: z.union([z.string().url(), z.string()]), 
+    //   alt: z.string(),
+    // }),
     language: z.enum(["es"]),
     keywords: z.array(z.string()), 
     relatedLinks: z.array(z.object({
