@@ -18,7 +18,6 @@ const {
 const ogImage = thumbnail;
 const ogImageAlt = title;
 
-const pageTitle = `${title} - ${SITE_DEFAULT_CONFIG.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -55,8 +54,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="canonical" href={canonicalURL} />
 
   <!-- Primary Meta Tags -->
-  <title>{pageTitle}</title>
-  <meta name="title" content={pageTitle} />
+  <title>{title}</title>
+  <meta name="title" content={title} />
   <meta name="description" content={description} />
   {
     /*

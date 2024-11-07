@@ -12,6 +12,7 @@ import Favicons from "./Favicons.astro";
 ---
 
 <head>
+  {/* Global Metadata */}
   <meta charset="UTF-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta name="format-detection" content="telephone=no" />
@@ -38,6 +39,20 @@ import Favicons from "./Favicons.astro";
     type="font/woff2"
     crossorigin
   />
+
+  {/* TODO: Por construir sitemap, webmanifest y rss */}
+  {
+    /*
+      <link rel="sitemap" href="/sitemap-index.xml" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={SITE.title}
+        href={new URL("rss.xml", Astro.site)}
+      />
+    */
+  }
 
   <Favicons />
   <ViewTransitions />

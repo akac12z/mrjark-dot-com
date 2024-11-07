@@ -4,13 +4,17 @@
  */
 export const prerender = true;
 
-import { getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 
 
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@/components/SEO/BiasSEO.astro";
 
 import BiasImage from "@/components/pages/bias/BiasImage.astro";
+
+interface Props {
+  entry: CollectionEntry<'bias'>
+}
 
 export async function getStaticPaths() {
   const biases = await getCollection("bias");
@@ -21,15 +25,15 @@ export async function getStaticPaths() {
   }));
 }
 
-const { bias } = Astro.props;
-const { data, slug } = bias;
+const { entry } = Astro.props;
+const { data, slug } = entry;
 const { biasName, biasImage, publishDate, lastTimeEdited } = data;
 
-const { Content } = await render(bias);
+const { Content } = await render(entry);
 ---
 
 <MainLayout>
-  <BiasSEO slot="head" entry={bias} />
+  <BiasSEO slot="head" entry={entry} />
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
       <BiasImage
