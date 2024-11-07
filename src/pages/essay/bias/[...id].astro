@@ -19,9 +19,9 @@ interface Props {
 export async function getStaticPaths() {
   const biases = await getCollection("bias");
 
-  return biases.map((bias) => ({
-    params: { id: bias.slug },
-    props: { bias },
+  return biases.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
   }));
 }
 
