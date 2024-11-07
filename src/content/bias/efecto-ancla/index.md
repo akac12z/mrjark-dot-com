@@ -1,15 +1,15 @@
 ---
 name: Efecto Ancla
-description: Un ejemplo del primer bias con su descripción para ver cómo queda
-image: ./markus-spiske-IiEFmIXZWSw-unsplash.jpg
+# description: Un ejemplo del primer bias con su descripción para ver cómo queda
+image: './images/markus-spiske-IiEFmIXZWSw-unsplash.jpg'
 imageAlt: efecto ancla imagen
-slug: efecto-ancla
-publishDate: '2023-10-30'
-lastTimeEdited: '2025-10-31'
-tags: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
-keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
-readingTime: 5
-language: es
+# slug: efecto-ancla
+# publishDate: '2023-10-30'
+# lastTimeEdited: '2025-10-31'
+# tags: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
+# keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
+# readingTime: 5
+# language: es
 ---
 
 # hola señor

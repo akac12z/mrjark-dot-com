@@ -6,14 +6,13 @@ export const prerender = true;
 
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
-
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@/components/SEO/BiasSEO.astro";
 
 import BiasImage from "@/components/pages/bias/BiasImage.astro";
 
 interface Props {
-  entry: CollectionEntry<'bias'>
+  entry: CollectionEntry<"bias">;
 }
 
 export async function getStaticPaths() {
@@ -27,7 +26,13 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const {  publishDate, lastTimeEdited, image, name, imageAlt } = data;
+const {
+  // publishDate,
+  // lastTimeEdited,
+  image,
+  name,
+  imageAlt,
+} = data;
 
 const { Content } = await render(entry);
 ---
@@ -48,14 +53,14 @@ const { Content } = await render(entry);
     <article class="prose prose-invert mx-auto">
       <div class="flex items-center justify-between">
         {
-          lastTimeEdited && lastTimeEdited !== publishDate
-            ? (
-              <p class="text-xs">Publicado: {publishDate}</p>
-              <p class="text-xs">Editado: {lastTimeEdited}</p>
-            )
-            : (
-              <p class="text-xs">Publicado: {publishDate}</p>
-            )
+          // lastTimeEdited && lastTimeEdited !== publishDate
+          //   ? (
+          //     <p class="text-xs">Publicado: {publishDate}</p>
+          //     <p class="text-xs">Editado: {lastTimeEdited}</p>
+          //   )
+          //   : (
+          //     <p class="text-xs">Publicado: {publishDate}</p>
+          //   )
         }
       </div>
       <h1 class="text-center">

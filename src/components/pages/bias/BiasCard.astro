@@ -4,14 +4,14 @@ import BiasImage from "./BiasImage.astro";
 
 interface Props {
   name: string;
-  publishDate: string; // espero un string en formato ISO
-  description: string;
-  tags: string[];
+  publishDate?: string; // espero un string en formato ISO
+  description?: string;
+  tags?: string[];
   image: string;
   imageAlt: string;
-  language: string | string[];
-  keywords: string[];
-  slug: string;
+  language?: string | string[];
+  keywords?: string[];
+  slug?: string;
   lastTimeEdited?: string;
   relatedLinks?: string[];
   readingTime?: number;
