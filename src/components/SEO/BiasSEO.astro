@@ -32,6 +32,8 @@ const ogImage = new URL(
 );
 
 const siteBiasURL = `${SITE_DEFAULT_CONFIG.url}/essay/bias/${slug}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
 {
   /*a futuro cambiarlo 👇🏽 por cloudinary o si hago rutas de archivos dentro de los blogs*/
 }
@@ -49,7 +51,7 @@ const lastTimeEditedInISO = convertDateToISO8601(
 <title>{`${biasTitle} - ${SITE_DEFAULT_CONFIG.title}`}</title>
 <meta name="title" content={`${biasTitle} | ${SITE_DEFAULT_CONFIG.title}`} />
 <meta name="description" content={biasDescription} />
-<link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
+<link rel="canonical" href={canonicalURL} />
 
 {/*OPEN GRAPH METATAGS*/}
 <meta property="og:title" content={biasTitle} />
