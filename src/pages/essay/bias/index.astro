@@ -25,22 +25,27 @@ const biases = await getCollection("bias");
       biases.map((bias) => {
         const { data, slug } = bias;
         const {
-          biasImage,
           description,
-          biasName,
+          name,
           publishDate,
           keywords,
           tags,
+          image,
+          imageAlt,
+          language,
         } = data;
+        console.log(image.src);
+
         return (
           <BiasCard
-            language="es"
+            imageAlt={imageAlt}
+            language={language}
+            image={image.src}
             keywords={keywords}
             tags={tags}
             publishDate={publishDate}
-            biasName={biasName}
+            name={name}
             description={description}
-            biasImage={biasImage.src}
             slug={slug}
           />
         );

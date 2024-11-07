@@ -3,11 +3,12 @@
 import BiasImage from "./BiasImage.astro";
 
 interface Props {
-  biasName: string;
+  name: string;
   publishDate: string; // espero un string en formato ISO
   description: string;
   tags: string[];
-  biasImage: string;
+  image: string;
+  imageAlt: string;
   language: string | string[];
   keywords: string[];
   slug: string;
@@ -16,22 +17,22 @@ interface Props {
   readingTime?: number;
 }
 
-const { biasName, description, biasImage, slug } = Astro.props;
+const { name, slug, image, imageAlt, description } = Astro.props;
 ---
 
 <section class="w-full flex flex-col items-center justify-center">
   <BiasImage
-    biasName={biasName}
-    width={240}
-    height={160}
-    src={biasImage}
-    alt={`${biasName} imagen`}
+    name={name}
+    width={560}
+    height={320}
+    src={image}
+    alt={`${imageAlt} imagen`}
     transition:name=`${slug}-image`
   />
   <article
     class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
   >
-    <h3 class="text-lg mb-2">{biasName}</h3>
+    <h3 class="text-lg mb-2">{}</h3>
     <p class="mb-4 line-clamp-3">
       {description}
     </p>

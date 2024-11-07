@@ -1,10 +1,8 @@
 ---
-biasName: 'Efecto Backfire'
+name: 'Efecto Backfire'
 description: 'Un ejemplo del primer bias con su descripción para ver cómo queda'
-biasImage: {
-  src: '/images/andrew-robinson-xh3DYZLFfgA-unsplash.jpg',
-  alt: 'Efecto Backfire iamgen'
-}
+image: ./andrew-robinson-xh3DYZLFfgA-unsplash-copy.jpg
+imageAlt:  'Efecto Backfire iamgen'
 slug: 'efecto-backfire'
 publishDate: '2024-02-10'
 tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']

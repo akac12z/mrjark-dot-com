@@ -7,8 +7,8 @@ const home = await Astro.glob("@static/markdowns/home.md");
 <ReaderStaticMarkdowns>
   {
     home.map((element) => (
-      <h2 class="">{element.frontmatter.title}</h2>
-      <p class="" set:html={element.compiledContent()}/>
+      <h2 >{element.frontmatter.title}</h2>
+      <p  set:html={element.compiledContent()}/>
     ))
   }
 </ReaderStaticMarkdowns>
