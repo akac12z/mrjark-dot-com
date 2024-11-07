@@ -7,7 +7,6 @@ import { type CollectionEntry } from "astro:content";
 
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import { convertDateToISO8601 } from "@utils/validatingDate";
-import { callSafely } from "astro:actions";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -46,8 +45,8 @@ const all = `${Astro.site} + ${Astro.url.pathname}`;
 {
   /*a futuro cambiarlo 👇🏽 por cloudinary o si hago rutas de archivos dentro de los blogs*/
 }
-const justInCaseNoImageSrc = biasImage.src || ogImage;
-const justInCaseNoImageAlt = biasImage.alt || biasName;
+// const justInCaseNoImageSrc = biasImage.src || ogImage;
+// const justInCaseNoImageAlt = biasImage.alt || biasName;
 
 const publisDateInISO = convertDateToISO8601(publishDate);
 // el lastTimeEdited siempre va a venir porque le estoy diciendo que si no viene, sea el publishDate pero para no obligarlo desde el config de la collection lo hago así
@@ -70,8 +69,8 @@ const lastTimeEditedInISO = convertDateToISO8601(
 {
   /*LAS IMÁGENES LAS SACARÉ DEPENDIENDO DEL PATH RELATIVO DEL BIAS TODO: (O CLOUDINARY A FUTURO)*/
 }
-<meta property="og:image" content={justInCaseNoImageSrc} />
-<meta property="og:image:alt" content={justInCaseNoImageAlt} />
+<meta property="og:image" content={biasImage.src} />
+<meta property="og:image:alt" content={biasImage.src} />
 <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
 <meta property="og:site_name" content="mrjark" />
 
@@ -82,8 +81,8 @@ const lastTimeEditedInISO = convertDateToISO8601(
 {/*OG TWITTER/X - LINKEDIN - FACERBOOK*/}
 <meta name="twitter:title" content={biasTitle} />
 <meta name="twitter:description" content={biasDescription} />
-<meta property="twitter:image" content={justInCaseNoImageSrc} />
-<meta name="twitter:image:alt" content={justInCaseNoImageAlt} />
+<meta property="twitter:image" content={biasImage.src} />
+<meta name="twitter:image:alt" content={biasImage.src} />
 <meta name="twitter:card" content="summary_large_image" />
 
 {
