@@ -8,12 +8,14 @@ const date = '2027-12-09'
 
 // const canonicalURL =  new URL(Astro.url.pathname, Astro.site);
 const currentPath = Astro.url
+console.log(currentPath.href);
+
 ---
 
 <ReaderStaticMarkdowns>
   <article>
     <p class="text-blue-400">{convertDateToISO8601(date)}</p>
-    <p class="text-green-400">{currentPath}</p>
+    <p class="text-green-400">{currentPath.href}</p>
     {
       about.map((element) => (
         <h1 class="text-3xl text-mr-text-headers">{element.frontmatter.title}</h1>
