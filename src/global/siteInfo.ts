@@ -8,6 +8,7 @@ interface SocialLinksInterface  {
 interface SocialLink  {
   name: string;
   url: string;
+  userName: string;
 };
 
 /**
@@ -37,7 +38,7 @@ interface Site404ConfigInterface {
 export const SITE_DEFAULT_CONFIG: SiteDefaultConfigInterface = {
   title: "mrjark",
   description:
-    "Un blog y mi 'build(me) in public'. Aquí voy a compartir aquello que voy haciendo, aprendiendo y pensando que considero que es importante, en mi carrera personal y profesional en Startups sobre Growth, Psicología del Comportamiento y Economía Conductual y Crecimiento Personal.",
+    "Un 'build(me) in public' donde compartiré aquello que voy haciendo, aprendiendo y pensando en mi carrera como Growth en Startups",
   url: "https://mrjark.com",
   author: "Chema | mrjark",
   location: "es_ES",
@@ -57,19 +58,23 @@ export const SITE_404_CONFIG: Site404ConfigInterface = {
 export const SOCIAL_LINKS: SocialLinksInterface = {
   github: {
     name: 'Github',
-    url: 'https://github.com/immrjark'
+    url: 'https://github.com/immrjark',
+    userName: 'immrjark'
   },
   twitter: {
     name: 'Twitter/𝕏',
-    url: 'https://x.com/immrjark'
+    url: 'https://x.com/immrjark',
+    userName: '@immrjark'
   },
   linkedin: {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/chemaferrandez/'
+    url: 'https://www.linkedin.com/in/chemaferrandez/',
+    userName: 'ChemaFerrandez'
   },
   substack: {
     name: 'Substack',
-    url: 'https://mrjark.substack.com'
+    url: 'https://mrjark.substack.com',
+    userName: '@mrjark'
   },
 }
 

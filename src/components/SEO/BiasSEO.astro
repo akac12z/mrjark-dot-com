@@ -18,11 +18,13 @@ const { data } = bias;
 const { cover, name, description, keywords, publishDate, lastTimeEdited } =
   data;
 
-const biasTitle = name || `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
+const biasTitle =
+  `${name} - ${SITE_DEFAULT_CONFIG.title}` ||
+  `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
 const biasDescription =
   description || `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.description}`;
 
-const ogImage = new URL("./og-image.png", Astro.site);
+const ogImage = new URL("./og-image.png", Astro.site).href;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // const all = `${Astro.site} + ${Astro.url.pathname}`;
@@ -33,12 +35,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 //   { site: Astro.site },
 // );
 
-const imageStart = cover.src.src.startsWith("http")
-  ? cover.src.src
-  : `${SITE_DEFAULT_CONFIG.url}${cover.src.src}`;
+// const imageStart = cover.src.src.startsWith("http")
+//   ? cover.src.src
+//   : `${SITE_DEFAULT_CONFIG.url}${cover.src.src}`;
 
-const justInCaseNoImageSrc = imageStart || ogImage;
-const justInCaseNoImageAlt = cover.alt || name;
+const justInCaseNoImageSrc = cover.src.src ? cover.src.src : ogImage;
+const justInCaseNoImageAlt = cover.alt ? cover.alt : name;
 
 // Validación de fechas. lastTimeEdited puede ser undefined en la collection pero en la práctica no pero para evitar el error hago la validación
 const publisDateInISO = convertDateToISO8601(publishDate);
@@ -48,14 +50,16 @@ const lastTimeEditedInISO = convertDateToISO8601(
 ---
 
 {/* OBLIGATORIOS DEL SITIO */}
-<title>{`${biasTitle} - ${SITE_DEFAULT_CONFIG.title}`}</title>
-<meta name="title" content={`${biasTitle} | ${SITE_DEFAULT_CONFIG.title}`} />
+<title>{biasTitle}</title>
+<meta name="title" content={biasTitle} />
 <meta name="description" content={biasDescription} />
-<link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
+<meta name="author" content={SITE_DEFAULT_CONFIG.author} />
+
+<link rel="canonical" href={canonicalURL} />
 
 {/* OPEN GRAPH - Facebook , LinkedIn */}
 <meta property="og:type" content="article" />
-<meta property="og:site_name" content="mrjark" />
+<meta property="og:site_name" content={SITE_DEFAULT_CONFIG.title} />
 <meta property="og:title" content={biasTitle} />
 <meta property="og:description" content={biasDescription} />
 <meta property="og:url" content={canonicalURL} />
@@ -63,6 +67,11 @@ const lastTimeEditedInISO = convertDateToISO8601(
 
 <meta property="og:image" content={justInCaseNoImageSrc} />
 <meta property="og:image:alt" content={justInCaseNoImageAlt} />
+<meta content="1200" property="og:image:width" />
+<meta content="630" property="og:image:height" />
+
+<meta property="article:published_time" content={publisDateInISO} />
+<meta property="article:modified_time" content={lastTimeEditedInISO} />
 
 {
   keywords &&
@@ -71,13 +80,21 @@ const lastTimeEditedInISO = convertDateToISO8601(
     })
 }
 
-{/*META ESPECÍFICO DEL POST*/}
-<meta property="article:published_time" content={publisDateInISO} />
-<meta property="article:modified_time" content={lastTimeEditedInISO} />
-
 {/* TWITTER/X */}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={biasTitle} />
 <meta name="twitter:description" content={biasDescription} />
 <meta name="twitter:image" content={justInCaseNoImageSrc} />
+<meta content={canonicalURL} property="twitter:url" />
 <meta name="twitter:image:alt" content={justInCaseNoImageAlt} />
+
+{/* Sitemap */}
+<!-- <link href="/sitemap-index.xml" rel="sitemap" /> -->
+
+{/* RSS auto-discovery */}
+<!-- <link
+  href="/rss.xml"
+  rel="alternate"
+  title={SITE_DEFAULT_CONFIG.title}
+  type="application/rss+xml"
+/> -->

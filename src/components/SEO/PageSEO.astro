@@ -3,40 +3,65 @@
  * !Esto se le tiene que poner a todas las páginas estáticas por defecto para que coja los metatags
  */
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import { convertDateToISO8601 } from "@utils/validatingDate";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   thumbnail?: string;
 }
 
 const {
   title = SITE_DEFAULT_CONFIG.title,
   description = SITE_DEFAULT_CONFIG.description,
-  thumbnail = `${SITE_DEFAULT_CONFIG.url}/og-image.png`,
+  thumbnail,
 } = Astro.props;
 
-const ogImage = thumbnail;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const ogImage = new URL("./og-image.png", Astro.site).href;
 const ogImageAlt = title;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDateInISO = convertDateToISO8601("2024-11-08");
 ---
 
 <title>{title}</title>
+<meta content={title} name="title" />
 <meta name="description" content={description} />
+<meta content={SITE_DEFAULT_CONFIG.author} name="author" />
+
 <link rel="canonical" href={canonicalURL} />
 
-{/* OpenGraph / Facebook / LinkedIn */}
+{/* Open Graph / Facebook */}
 <meta property="og:title" content={title} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:description" content={description} />
+<meta content={SITE_DEFAULT_CONFIG.title} property="og:site_name" />
+<meta content={SITE_DEFAULT_CONFIG.location} property="og:locale" />
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:alt" content={ogImageAlt} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+<meta content="1200" property="og:image:width" />
+<meta content="630" property="og:image:height" />
+<meta property="article:published_time" content={publishDateInISO} />
 
-{/* Twitter / X */}
+{/* Twitter */}
 <meta name="twitter:title" content={title} />
+<meta content={canonicalURL} property="twitter:url" />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:site" content="@immrjark" />
 <meta name="twitter:image:alt" content={ogImageAlt} />
 <meta name="twitter:card" content="summary_large_image" />
+
+{/* Sitemap */}
+<!-- <link href="/sitemap-index.xml" rel="sitemap" /> -->
+
+{/* RSS auto-discovery */}
+<!-- <link
+  href="/rss.xml"
+  rel="alternate"
+  title={SITE_DEFAULT_CONFIG.title}
+  type="application/rss+xml"
+/> -->

@@ -40,8 +40,8 @@ import Favicons from "./Favicons.astro";
     crossorigin
   />
 
-  {/* TODO: Por construir sitemap, webmanifest y rss */}
   {
+    /* TODO: Por construir sitemap, webmanifest y rss */
     /*
       <link rel="sitemap" href="/sitemap-index.xml" />
       <link rel="manifest" href="/site.webmanifest" />
@@ -57,6 +57,5 @@ import Favicons from "./Favicons.astro";
   <Favicons />
   <ViewTransitions />
 
-  {/*El SLOT ES PARA EL SEO ESPECÍFICO DE CADA UNA DE LAS COLLECTIONS*/}
   <slot />
 </head>
