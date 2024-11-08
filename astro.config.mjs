@@ -17,5 +17,11 @@ export default defineConfig( {
   En casos de APIs y demás, cosa que por ahora no
   */
   output: 'hybrid',
-  adapter: vercel()
+  adapter: vercel( {
+    imagesConfig: {
+      domains: [],
+      sizes: [ 160, 240, 320, 640, 1080, 1280 ],
+      formats: [ "image/avif", "image/webp" ]
+    }
+  } )
 } );
