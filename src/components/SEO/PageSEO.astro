@@ -14,7 +14,6 @@ interface Props {
 const {
   title = SITE_DEFAULT_CONFIG.title,
   description = SITE_DEFAULT_CONFIG.description,
-  thumbnail,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
