@@ -15,15 +15,8 @@ interface Props {
 const { entry } = Astro.props;
 const bias = entry as CollectionEntry<"bias">;
 const { data } = bias;
-const {
-  image,
-  name,
-  imageAlt,
-  description,
-  keywords,
-  publishDate,
-  lastTimeEdited,
-} = data;
+const { cover, name, description, keywords, publishDate, lastTimeEdited } =
+  data;
 
 const biasTitle = name || `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
 const biasDescription =
@@ -40,12 +33,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 //   { site: Astro.site },
 // );
 
-const imageSrc = image.src.startsWith("http")
-  ? image.src
-  : `${SITE_DEFAULT_CONFIG.url}${image.src}`;
+const imageStart = cover.src.src.startsWith("http")
+  ? cover.src.src
+  : `${SITE_DEFAULT_CONFIG.url}${cover.src.src}`;
 
-const justInCaseNoImageSrc = imageSrc || ogImage;
-const justInCaseNoImageAlt = imageAlt || name;
+const justInCaseNoImageSrc = imageStart || ogImage;
+const justInCaseNoImageAlt = cover.alt || name;
 
 // Validación de fechas. lastTimeEdited puede ser undefined en la collection pero en la práctica no pero para evitar el error hago la validación
 const publisDateInISO = convertDateToISO8601(publishDate);

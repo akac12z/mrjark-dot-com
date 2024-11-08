@@ -2,6 +2,7 @@
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BiasImage from "./BiasImage.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -18,17 +19,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const { name, cover, description } = data;
+const { cover, description } = data;
 ---
 
 <section class="w-full flex flex-col items-center justify-center">
-  <BiasImage
-    name={name}
+  <Image
     width={cover.src.width}
     height={cover.src.height}
-    src={cover.src.src}
+    src={cover.src}
     alt={`${cover.alt} imagen`}
     transition:name=`${slug}-image`
+    class="for-covers"
   />
   <article
     class="py-2 px-1 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"

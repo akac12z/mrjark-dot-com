@@ -81,31 +81,30 @@ const biasCollection = defineCollection({
       alt: z.string()
     }),
     description: z.string().min(40).max(160), 
-    // imageAlt: z.string(),
-  //   publishDate: z.string().refine(isValidDateFormat), 
-  //   lastTimeEdited: z.string().refine(isValidDateFormat).refine(
-  //     (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
-  //       const publishDate = ctx;
-  //       return val ?? publishDate;
-  //     }).optional(),
-  //   tags: z.array(z.string()),
-  //   language: z.enum(["es"]),
-  //   keywords: z.array(z.string()), 
-  //   relatedLinks: z.array(z.object({
-  //     label: z.string(), 
-  //     url: z.string().url()
-  //   })).optional(),
-  //   readingTime: z.number().optional(), 
-  // }).refine((data) => {
-  //   if (data.lastTimeEdited && data.publishDate) {
-  //     const publishDateObj = new Date(data.publishDate);
-  //     const lastTimeEditedObj = new Date(data.lastTimeEdited);
-  //     return lastTimeEditedObj >= publishDateObj;
-  //   }
-  //   return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
-  // }, {
-  //   message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
-  //   path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
+    publishDate: z.string().refine(isValidDateFormat), 
+    lastTimeEdited: z.string().refine(isValidDateFormat).refine(
+      (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
+        const publishDate = ctx;
+        return val ?? publishDate;
+      }).optional(),
+    tags: z.array(z.string()),
+    language: z.enum(["es"]),
+    keywords: z.array(z.string()), 
+    relatedLinks: z.array(z.object({
+      label: z.string(), 
+      url: z.string().url()
+    })).optional(),
+    readingTime: z.number().optional(), 
+  }).refine((data) => {
+    if (data.lastTimeEdited && data.publishDate) {
+      const publishDateObj = new Date(data.publishDate);
+      const lastTimeEditedObj = new Date(data.lastTimeEdited);
+      return lastTimeEditedObj >= publishDateObj;
+    }
+    return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
+  }, {
+    message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
+    path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
   }),
 });
 

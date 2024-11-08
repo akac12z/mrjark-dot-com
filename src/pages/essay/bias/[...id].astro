@@ -10,6 +10,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@/components/SEO/BiasSEO.astro";
 
 import BiasImage from "@/components/pages/bias/BiasImage.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -26,7 +27,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const { name, cover } = data;
+const { name, cover, publishDate, lastTimeEdited } = data;
 
 const { Content } = await render(entry);
 ---
@@ -35,26 +36,26 @@ const { Content } = await render(entry);
   <BiasSEO slot="head" entry={entry} />
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
-      <BiasImage
-        name={name}
-        src={cover.src.src}
+      <Image
+        src={cover.src}
         width={cover.src.width}
         height={cover.src.height}
         alt={cover.alt}
         transition:name=`${slug}-image`
+        class="for-covers"
       />
     </div>
     <article class="prose prose-invert mx-auto">
       <div class="flex items-center justify-between">
         {
-          // lastTimeEdited && lastTimeEdited !== publishDate
-          //   ? (
-          //     <p class="text-xs">Publicado: {publishDate}</p>
-          //     <p class="text-xs">Editado: {lastTimeEdited}</p>
-          //   )
-          //   : (
-          //     <p class="text-xs">Publicado: {publishDate}</p>
-          //   )
+          lastTimeEdited && lastTimeEdited !== publishDate
+            ? (
+              <p class="text-xs">Publicado: {publishDate}</p>
+              <p class="text-xs">Editado: {lastTimeEdited}</p>
+            )
+            : (
+              <p class="text-xs">Publicado: {publishDate}</p>
+            )
         }
       </div>
       <h1 class="text-center">

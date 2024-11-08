@@ -1,4 +1,24 @@
+<!-- ---
+// ImageComponent.astro
+import { getImage, Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props<T> {
+  entry: CollectionEntry<T>; // Usamos un genérico en lugar de `any`
+}
+
+const { entry }: = Astro.props;
+const { data } = entry;
+const { cover } = data;
 ---
+
+<Image
+  src={cover.src}
+  alt={cover.alt}
+  width={cover.width}
+  height={cover.height}
+  class="inline-block aspect-video w-full h-full overflow-hidden object-cover object-center rounded-lg"
+/> --><!-- ---
 import { Image } from "astro:assets";
 
 interface Props {
@@ -20,4 +40,4 @@ const { alt, height, src, width, name } = Astro.props;
   alt={alt}
   class="inline-block aspect-video w-full h-full overflow-hidden object-cover object-center rounded-lg"
   transition:name={`${name}-image`}
-/>
+/> -->

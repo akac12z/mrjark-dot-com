@@ -22,12 +22,9 @@ const biases = await getCollection("bias");
     class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3"
   >
     {
-      biases.map((bias) => {
-        const { data } = bias;
-        const { name, cover } = data;
-
-        return <BiasCard />;
-      })
+      biases.map((bias) => (
+        <BiasCard entry={bias} transition:name={`${bias.slug}-image`} />
+      ))
     }
   </section>
 </MainLayout>

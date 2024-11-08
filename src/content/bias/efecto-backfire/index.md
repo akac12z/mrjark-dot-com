@@ -1,19 +1,19 @@
 ---
-name: "Efecto Ancla"
+name: 'Efecto Backfire'
+description: 'Un ejemplo del primer bias con su descripción para ver cómo queda'
 cover: 
-  src: "./markus.jpg"
-  alt: "Markus unsplash image"
-description: Un ejemplo del primer bias con su descripción para ver cómo queda y un pooc mas por si acaso
-slug: efecto-ancla
-publishDate: '2023-10-30'
-lastTimeEdited: '2025-10-31'
-tags: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
+  src: ./andrew-robinson-xh3DYZLFfgA-unsplash-copy.jpg
+  alt: 'Efecto Backfire iamgen'
+slug: 'efecto-backfire'
+publishDate: '2024-02-10'
+lastTimeEdited: '2024-02-10'
+tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']
 keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
 readingTime: 5
-language: es
+language: "es"
 ---
 
-# hola señor
+# Qué son los sesgos?
 
 Los sesgos **cognitivos son como atajos mentales que usa nuestro cerebro para procesar información rápidamente, ahorrando tiempo y energía. Estos atajos son muy útiles para tomar decisiones** rápidas, pero a veces nos llevan a conclusiones erróneas o a ver el mundo de manera distorsionada.
 

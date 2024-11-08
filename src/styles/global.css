@@ -179,5 +179,7 @@
   .logo-about_path {
     @apply text-mr-neon-blue
   }
- 
+  .for-covers {
+    @apply inline-block aspect-video w-full h-full overflow-hidden object-cover object-center rounded-lg
+  }
 }
