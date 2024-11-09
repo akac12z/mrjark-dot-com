@@ -25,7 +25,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <meta
   property="og:image"
-  content={`${SITE_DEFAULT_CONFIG.url}${bias.data.cover.src.src}` || ogImage}
+  content={`${SITE_DEFAULT_CONFIG.url}${bias.data.cover.src}` || ogImage}
 />
 <meta property="og:image:alt" content={postTitle} />
 <meta property="og:type" content="website" />
@@ -36,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name="twitter:description" content={postDescription} />
 <meta
   property="twitter:image"
-  content={`${SITE_DEFAULT_CONFIG.url}${bias.data.cover.src.src}` || ogImage}
+  content={`${SITE_DEFAULT_CONFIG.url}${bias.data.cover.src}` || ogImage}
 />
 <meta name="twitter:image:alt" content={postTitle} />
 <meta name="twitter:card" content="summary_large_image" />
