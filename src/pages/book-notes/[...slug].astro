@@ -28,14 +28,9 @@ const { data, slug } = entry;
 const { title } = data;
 
 const { Content } = await render(entry);
-
-const meta = {
-  description: "Book Note",
-  title: "Book Note",
-};
 ---
 
-<MainLayout meta={meta}>
+<MainLayout>
   <section class="">
     <div class="mx-auto mb-2 w-3/4"></div>
     <article class="prose prose-invert mx-auto">

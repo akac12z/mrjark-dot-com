@@ -2,16 +2,14 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import Home from "@static/Home.astro";
-import BarebonesPageSEO from "@/components/SEO/otros/BarebonesPageSEO.astro";
-
-const meta = {
-  description: "mrjark",
-  title: "mrjark",
-};
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 ---
 
-<MainLayout meta={meta}>
-  <!-- <PageSEO slot="head" /> -->
-  <BarebonesPageSEO slot="head" />
+<MainLayout>
+  <PageSEO
+    slot="head"
+    pageTitle={SITE_DEFAULT_CONFIG.title}
+    pageDescription={SITE_DEFAULT_CONFIG.description}
+  />
   <Home />
 </MainLayout>

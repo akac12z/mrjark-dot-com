@@ -6,21 +6,14 @@ import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import { SITE_404_CONFIG } from "@/global/siteInfo";
-import BarebonesPageSEO from "@/components/SEO/otros/BarebonesPageSEO.astro";
-
-const meta = {
-  description: "404 PAGE",
-  title: "404 PAGE",
-};
 ---
 
-<MainLayout meta={meta}>
-  <!-- <PageSEO
+<MainLayout>
+  <PageSEO
     slot="head"
-    title=`${SITE_404_CONFIG.errorTitle}`
-    description=`${SITE_404_CONFIG.errorDescription}`
-  /> -->
-  <BarebonesPageSEO slot="head" title="404" />
+    pageTitle=`${SITE_404_CONFIG.errorTitle}`
+    pageDescription=`${SITE_404_CONFIG.errorDescription}`
+  />
   <section class="flex text-center justify-center items-center flex-col">
     <h1 class="mb-12">Ups... hay un 404 entre manos 😅</h1>
     <Image

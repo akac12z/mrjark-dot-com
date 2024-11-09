@@ -9,7 +9,6 @@ import { Image } from "astro:assets";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@/components/SEO/BiasSEO.astro";
-import BarebonesPostSEO from "@/components/SEO/otros/BarebonesPostSEO.astro";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -33,8 +32,7 @@ const { Content } = await render(entry);
 ---
 
 <MainLayout>
-  <!-- <BiasSEO slot="head" entry={entry} /> -->
-   <BarebonesPostSEO slot="head" entry={entry} />
+  <BiasSEO slot="head" entry={entry} />
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
       <Image

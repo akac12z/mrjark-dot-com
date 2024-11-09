@@ -31,6 +31,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:type" content="website" />
 <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
 <meta property="og:site_name" content={SITE_DEFAULT_CONFIG.title} />
+{
+  bias.data.keywords &&
+    bias.data.keywords.map((keyword: string) => {
+      return <meta property="article:tag" content={keyword} />;
+    })
+}
 
 <meta name="twitter:title" content={postTitle} />
 <meta name="twitter:description" content={postDescription} />
@@ -40,10 +46,4 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta name="twitter:image:alt" content={postTitle} />
 <meta name="twitter:card" content="summary_large_image" />
-
-{
-  bias.data.keywords &&
-    bias.data.keywords.map((keyword: string) => {
-      return <meta property="article:tag" content={keyword} />;
-    })
-}
+<!--  -->

@@ -8,41 +8,26 @@ import { type CollectionEntry } from "astro:content";
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import { convertDateToISO8601 } from "@utils/validatingDate";
 
-interface Props {
-  entry: CollectionEntry<"bias">;
-}
-
 const { entry } = Astro.props;
+
 const bias = entry as CollectionEntry<"bias">;
 const { data } = bias;
 const { cover, name, description, keywords, publishDate, lastTimeEdited } =
   data;
 
-const biasTitle =
-  `${name} - ${SITE_DEFAULT_CONFIG.title}` ||
-  `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
-const biasDescription =
-  description || `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.description}`;
+const postName =
+  `${name} - ${SITE_DEFAULT_CONFIG.title}` || SITE_DEFAULT_CONFIG.title;
 
-const ogImage = new URL("./og-image.png", Astro.site).href;
+const postDescription =
+  `${description} - ${SITE_DEFAULT_CONFIG.title}` ||
+  `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
+
+const ogImage = new URL("./og-image.png", Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-// const all = `${Astro.site} + ${Astro.url.pathname}`;
-// console.log(
-//   { pathname: Astro.url.pathname },
-//   { canocinalURLHREF: canonicalURL },
-//   { all: all },
-//   { site: Astro.site },
-// );
-
-// const imageStart = cover.src.src.startsWith("http")
-//   ? cover.src.src
-//   : `${SITE_DEFAULT_CONFIG.url}${cover.src.src}`;
-
-const justInCaseNoImageSrc = cover.src.src
-  ? `${SITE_DEFAULT_CONFIG.url}${cover.src.src}`
-  : ogImage;
-const justInCaseNoImageAlt = cover.alt ? cover.alt : name;
+const justInCaseNoCoverSrc =
+  `${SITE_DEFAULT_CONFIG.url}${cover.src.src}` || ogImage;
+const justInCaseNoCoverAlt = cover.alt || postName;
 
 // Validación de fechas. lastTimeEdited puede ser undefined en la collection pero en la práctica no pero para evitar el error hago la validación
 const publisDateInISO = convertDateToISO8601(publishDate);
@@ -52,9 +37,9 @@ const lastTimeEditedInISO = convertDateToISO8601(
 ---
 
 {/* OBLIGATORIOS DEL SITIO */}
-<title>{biasTitle}</title>
-<meta name="title" content={biasTitle} />
-<meta name="description" content={biasDescription} />
+<title>{postName}</title>
+<meta name="title" content={postName} />
+<meta name="description" content={postDescription} />
 <meta name="author" content={SITE_DEFAULT_CONFIG.author} />
 
 <link rel="canonical" href={canonicalURL} />
@@ -62,15 +47,15 @@ const lastTimeEditedInISO = convertDateToISO8601(
 {/* OPEN GRAPH - Facebook , LinkedIn */}
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content={SITE_DEFAULT_CONFIG.title} />
-<meta property="og:title" content={biasTitle} />
-<meta property="og:description" content={biasDescription} />
+<meta property="og:title" content={postName} />
+<meta property="og:description" content={postDescription} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
 
-<meta property="og:image" content={justInCaseNoImageSrc} />
-<meta property="og:image:alt" content={justInCaseNoImageAlt} />
-<meta content="1200" property="og:image:width" />
-<meta content="630" property="og:image:height" />
+<meta property="og:site_name" content={SITE_DEFAULT_CONFIG.title} />
+
+<meta property="og:image" content={justInCaseNoCoverSrc} />
+<meta property="og:image:alt" content={justInCaseNoCoverAlt} />
 
 <meta property="article:published_time" content={publisDateInISO} />
 <meta property="article:modified_time" content={lastTimeEditedInISO} />
@@ -82,13 +67,12 @@ const lastTimeEditedInISO = convertDateToISO8601(
     })
 }
 
-{/* TWITTER/X */}
+{/* TWITTER - X */}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={biasTitle} />
-<meta name="twitter:description" content={biasDescription} />
-<meta name="twitter:image" content={justInCaseNoImageSrc} />
-<meta content={canonicalURL} property="twitter:url" />
-<meta name="twitter:image:alt" content={justInCaseNoImageAlt} />
+<meta name="twitter:title" content={postName} />
+<meta name="twitter:description" content={postDescription} />
+<meta name="twitter:image" content={justInCaseNoCoverSrc} />
+<meta name="twitter:image:alt" content={justInCaseNoCoverAlt} />
 
 {/* RSS auto-discovery */}
 <!-- <link

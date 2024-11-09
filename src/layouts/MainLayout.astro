@@ -6,19 +6,15 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import Header from "@shared/Header.astro";
 import BaseHead from "@shared/BaseHead.astro";
 import Footer from "@shared/Footer.astro";
-import BabareboneBaseHeadSEO from "@/components/SEO/otros/BabareboneBaseHeadSEO.astro";
 
 const { lang } = SITE_DEFAULT_CONFIG;
 ---
 
 <!doctype html>
 <html lang={lang}>
-	<!-- <BaseHead>
+	<BaseHead>
 		<slot name="head" />
-	</BaseHead> -->
-	<BabareboneBaseHeadSEO>
-		<slot name="head" />
-	</BabareboneBaseHeadSEO>
+	</BaseHead>
 	<body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
 		<Header />
 		<main class="my-10 overflow-x-hidden">
