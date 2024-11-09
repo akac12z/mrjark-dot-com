@@ -1,4 +1,8 @@
----
+<!-- ---
+/** !NO ME FUNCIONA DE ESTA FORMA */
+
+// ESTA ES UNA COPIA DEL BasaHead del proyecto de Astro -> https://astro-theme-resume.vercel.app/
+
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
@@ -84,17 +88,17 @@ const socialImageURL = new URL(ogImage ? ogImage : "/og-image.png", Astro.url)
 {/* Twitter */}
 
 <meta content="summary_large_image" property="twitter:card" />
-<!--  -->
+
 <meta content={canonicalURL} property="twitter:url" />
 <meta content={title} property="twitter:title" />
 <meta content={description} property="twitter:description" />
 <meta content={socialImageURL} property="twitter:image" />
-<!--  -->
+
 
 {/* Sitemap */}
-<link href="/sitemap-index.xml" rel="sitemap" />
-
-{/* RSS auto-discovery */}
+<link href="/sitemap-index.xml" rel="sitemap" /> -->{
+  /* RSS auto-discovery */
+}
 <!-- <link
   href="/rss.xml"
   rel="alternate"
@@ -102,4 +106,4 @@ const socialImageURL = new URL(ogImage ? ogImage : "/og-image.png", Astro.url)
   type="application/rss+xml"
 /> -->
 
-<meta content={Astro.generator} name="generator" />
+<!-- <meta content={Astro.generator} name="generator" /> -->

@@ -6,6 +6,7 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import BiasCard from "@/components/pages/bias/BiasCard.astro";
+import BarebonesPageSEO from "@/components/SEO/otros/BarebonesPageSEO.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
@@ -22,7 +23,7 @@ const meta = {
     title=`Sesgos - ${SITE_DEFAULT_CONFIG.title}`
     description="Recopilación de sesgos cognitivos y heurísticas de los humanos junto con ejemplos y aplicaciones de los mismos."
   /> -->
-
+  <BarebonesPageSEO slot="head" title="BIAS" />
   <h1 class="text-xl mb-8">Bias page in porgress</h1>
   <section
     class="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3"

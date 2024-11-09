@@ -2,6 +2,7 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import Home from "@static/Home.astro";
+import BarebonesPageSEO from "@/components/SEO/otros/BarebonesPageSEO.astro";
 
 const meta = {
   description: "mrjark",
@@ -11,5 +12,6 @@ const meta = {
 
 <MainLayout meta={meta}>
   <!-- <PageSEO slot="head" /> -->
+  <BarebonesPageSEO slot="head" />
   <Home />
 </MainLayout>

@@ -1,0 +1,34 @@
+---
+/** ESTA TIENE QUE IR EN LOS INDEX.ASTRO */
+import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = SITE_DEFAULT_CONFIG.title,
+  description = SITE_DEFAULT_CONFIG.description,
+} = Astro.props;
+
+const ogImage = new URL("./og-image.png", Astro.site);
+const ogImageAlt = title;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+<meta name="twitter:card" content="summary_large_image" />
