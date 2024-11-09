@@ -4,7 +4,6 @@
  */
 
 import { type CollectionEntry } from "astro:content";
-
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import { convertDateToISO8601 } from "@utils/validatingDate";
 
@@ -75,9 +74,11 @@ const lastTimeEditedInISO = convertDateToISO8601(
 <meta name="twitter:image:alt" content={justInCaseNoCoverAlt} />
 
 {/* RSS auto-discovery */}
-<!-- <link
+{
+  /*<link
   href="/rss.xml"
   rel="alternate"
   title={SITE_DEFAULT_CONFIG.title}
   type="application/rss+xml"
-/> -->
+/>*/
+}
