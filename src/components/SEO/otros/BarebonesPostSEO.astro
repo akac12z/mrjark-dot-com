@@ -11,14 +11,15 @@ const postDescription =
   bias.data.description || SITE_DEFAULT_CONFIG.description;
 
 const ogImage = new URL("./og-image.png", Astro.site);
-const canocicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <title>{`${postTitle} | ${SITE_DEFAULT_CONFIG.title}`}</title>
 <meta name="title" content={`${postTitle} | ${SITE_DEFAULT_CONFIG.title}`} />
 <meta name="description" content={postDescription} />
 
-<link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
+<meta property="og:url" content={canonicalURL} />
+<link rel="canonical" href={canonicalURL} />
 <meta property="og:title" content={postTitle} />
 <meta property="og:description" content={postDescription} />
 
@@ -29,6 +30,7 @@ const canocicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:image:alt" content={postTitle} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content={SITE_DEFAULT_CONFIG.location} />
+<meta property="og:site_name" content={SITE_DEFAULT_CONFIG.title} />
 
 <meta name="twitter:title" content={postTitle} />
 <meta name="twitter:description" content={postDescription} />
