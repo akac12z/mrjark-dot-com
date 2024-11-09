@@ -2,9 +2,14 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import Home from "@static/Home.astro";
+
+const meta = {
+  description: "mrjark",
+  title: "mrjark",
+};
 ---
 
-<MainLayout>
-  <PageSEO slot="head" />
+<MainLayout meta={meta}>
+  <!-- <PageSEO slot="head" /> -->
   <Home />
 </MainLayout>

@@ -6,15 +6,38 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import Header from "@shared/Header.astro";
 import BaseHead from "@shared/BaseHead.astro";
 import Footer from "@shared/Footer.astro";
+import type { SiteMeta } from "@interfaces/interfaces.otros";
+import ResumeSEO from "@/components/SEO/otros/ResumeSEO.astro";
 
 const { lang } = SITE_DEFAULT_CONFIG;
+
+interface Props {
+	meta: SiteMeta;
+}
+
+const {
+	meta: {
+		title,
+		description = SITE_DEFAULT_CONFIG.description,
+		ogImage,
+		publishDate,
+	},
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
-	<BaseHead>
+	<!-- <BaseHead>
 		<slot name="head" />
-	</BaseHead>
+	</BaseHead> -->
+	<head>
+		<ResumeSEO
+			publishDate={publishDate}
+			description={description}
+			ogImage={ogImage}
+			title={title}
+		/>
+	</head>
 	<body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
 		<Header />
 		<main class="my-10 overflow-x-hidden">

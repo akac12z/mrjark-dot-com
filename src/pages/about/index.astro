@@ -3,13 +3,18 @@ import PageSEO from "@/components/SEO/PageSEO.astro";
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import About from "@static/About.astro";
+
+const meta = {
+  description: "About",
+  title: "About",
+};
 ---
 
-<MainLayout>
-  <PageSEO
+<MainLayout meta={meta}>
+  <!-- <PageSEO
     slot="head"
     title={`Un poco sobre ${SITE_DEFAULT_CONFIG.title} ✌🏽`}
     description={SITE_DEFAULT_CONFIG.description}
-  />
+  /> -->
   <About />
 </MainLayout>

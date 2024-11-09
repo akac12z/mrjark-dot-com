@@ -28,10 +28,15 @@ const { data, slug } = entry;
 const { name, cover, publishDate, lastTimeEdited } = data;
 
 const { Content } = await render(entry);
+
+const meta = {
+	description: 'Bias',
+	title: 'Bias'
+}
 ---
 
-<MainLayout>
-  <BiasSEO slot="head" entry={entry} />
+<MainLayout meta={meta}>
+  <!-- <BiasSEO slot="head" entry={entry} /> -->
   <section class="flex flex-col justify-center items-center">
     <div class="w-3/4 pb-6">
       <Image
