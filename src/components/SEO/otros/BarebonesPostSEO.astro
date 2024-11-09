@@ -6,32 +6,22 @@ const { entry } = Astro.props;
 const bias = entry as CollectionEntry<"bias">;
 
 const postTitle = bias.data.name || SITE_DEFAULT_CONFIG.title;
-{
-  /* ✅ */
-}
+
 const postDescription =
   bias.data.description || SITE_DEFAULT_CONFIG.description;
-{
-  /* ✅ */
-}
-const ogImage = new URL("./og-image.png", Astro.site);
-{
-  /* ✅ */
-}
 
-const bb = Astro.url.pathname;
+const ogImage = new URL("./og-image.png", Astro.site);
 const canocicalURL = new URL(Astro.url.pathname, Astro.site);
-console.log({ lkasdjhf: bb }, canocicalURL.href);
 ---
 
 <title>{`${postTitle} | ${SITE_DEFAULT_CONFIG.title}`}</title>
 <meta name="title" content={`${postTitle} | ${SITE_DEFAULT_CONFIG.title}`} />
 <meta name="description" content={postDescription} />
-{/* ✅ */}
+
 <link rel="canonical" href={SITE_DEFAULT_CONFIG.url} />
 <meta property="og:title" content={postTitle} />
 <meta property="og:description" content={postDescription} />
-<!--  -->
+
 <meta
   property="og:image"
   content={`${SITE_DEFAULT_CONFIG.url}${bias.data.cover.src.src}` || ogImage}
