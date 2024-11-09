@@ -7,7 +7,6 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 interface Props {
   pageTitle: string;
   pageDescription: string;
-  thumbnail?: string;
 }
 
 const { pageTitle, pageDescription } = Astro.props;
@@ -46,9 +45,12 @@ const ogImageAlt = pageTitle;
 <meta name="twitter:card" content="summary_large_image" />
 
 {/* RSS auto-discovery */}
-<!-- <link
+{
+  /* <link
   href="/rss.xml"
   rel="alternate"
   title={SITE_DEFAULT_CONFIG.title}
   type="application/rss+xml"
-/> -->
+/>
+*/
+}
