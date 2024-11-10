@@ -9,10 +9,12 @@ import vercel from '@astrojs/vercel/serverless';
 
 import sitemap from '@astrojs/sitemap';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig( {
   site: 'https://mrjark.com',
-  integrations: [ tailwind(), mdx(), sitemap() ],
+  integrations: [tailwind(), mdx(), sitemap(), react()],
   /*
   Tiene sentido que sea hybrid porque las páginas que yo tengo son estáticas
   y solo cuando sea necesario tendrá que hacer la carga de las mismas. 
