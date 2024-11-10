@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 
 import Courege from "@imageAssets/courage-404-error.gif";
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
-const errorInPath = Astro.request.url;
-console.log(errorInPath);
+let errorInPath = "";
+if (typeof window !== "undefined") {
+  errorInPath = window.location.pathname;
+}
 
-const lastStrings = errorInPath.split(SITE_DEFAULT_CONFIG.url).pop();
+// const errorInPath = new URL(Astro.request.url).pathname;
 ---
 
 <section class="flex text-center justify-center items-center flex-col">
@@ -24,7 +25,7 @@ const lastStrings = errorInPath.split(SITE_DEFAULT_CONFIG.url).pop();
     <p>
       La ruta <span
         class="bg-mr-neon-red/20 text-xs rounded py-0.5 px-2 text-mr-neon-red font-code hover:underline decoration-mr-neon-red underline-offset-4 hover:cursor-help transition-all hover:decoration-mr-neon-red/70"
-        >{lastStrings}</span
+        >{errorInPath}</span
       > no existe.
     </p>
     <p>
