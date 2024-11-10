@@ -6,7 +6,7 @@ import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import Header from "@shared/Header.astro";
 import BaseHead from "@shared/BaseHead.astro";
 import Footer from "@shared/Footer.astro";
-import ScrollToTopBtn from "@shared/ScrollToTopBtn.astro";
+import ScrollToTopBtn from "@shared/ScrollToTopBtn";
 
 const { lang } = SITE_DEFAULT_CONFIG;
 ---
@@ -20,7 +20,7 @@ const { lang } = SITE_DEFAULT_CONFIG;
 		<Header />
 		<main class="my-10 overflow-x-hidden">
 			<slot />
-			<ScrollToTopBtn />
+			<ScrollToTopBtn client:idle />
 		</main>
 		<Footer />
 	</body>
