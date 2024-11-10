@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 import Courege from "@imageAssets/courage-404-error.gif";
 
-const errorInPath = new URL(Astro.request.url).pathname;
+const errorInPath = new URL(Astro.url).pathname;
 
 // const lastStrings = errorInPath.split("/").filter(Boolean).pop();
 ---
