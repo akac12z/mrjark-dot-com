@@ -2,20 +2,43 @@
 import { Image } from "astro:assets";
 
 import Courege from "@imageAssets/courage-404-error.gif";
+
+const errorInPath = new URL(Astro.request.url).pathname;
+
+// const lastStrings = errorInPath.split("/").filter(Boolean).pop();
 ---
 
 <section class="flex text-center justify-center items-center flex-col">
-  <h1 class="mb-12">Ups... hay un 404 entre manos 😅</h1>
   <Image
-    class="rounded-lg flex aspect-video text-mr-text-content"
+    class="rounded-lg flex aspect-video text-mr-text-content mb-6"
     src={Courege}
     width={500}
     height={100}
     alt="courage dog terror gif to 404 page for mrjark"
     quality="low"
   />
+  <article class="flex flex-col text-mr-text-content text-center mb-6">
+    <h1 class="mb-6">Ups... hay un 404 entre manos 😅</h1>
+    <p>
+      La ruta <span
+        class="bg-mr-neon-red/20 text-xs rounded py-0.5 px-2 text-mr-neon-red font-code hover:underline decoration-mr-neon-red underline-offset-4 hover:cursor-help transition-all hover:decoration-mr-neon-red/70"
+        >{errorInPath}</span
+      > no existe.
+    </p>
+    <p>
+      ¿Es posible que hayas querido ir a <span
+        class="bg-mr-neon-orange/20 text-xs rounded py-0.5 px-2 text-mr-neon-orange font-code hover:underline decoration-mr-neon-orange underline-offset-4 hover:cursor-pointer transition-all hover:decoration-mr-neon-orange/70"
+        >/ruta-sugerida-por-AI</span
+      >?
+    </p>
+    <p class="mt-4 font-code text-xs italic text-mr-text-relax">
+      Esto deberá funciona con AI y mostrarte la ruta a la cual querías ir. Pero
+      es algo que está pendiente. Hasta entonces, solo te puedo decir que te
+      fijes un poco más al escribir las rutas.
+    </p>
+  </article>
   <a
-    class="mt-5 underline text-mr-primary-green hover:text-mr-primary-green/80"
-    href="/">Go Home</a
+    class="hover:underline text-mr-primary-green"
+    href="javascript:history.back()">Volver atrás ↩︎</a
   >
 </section>
