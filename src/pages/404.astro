@@ -6,6 +6,7 @@ import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 import PageSEO from "@/components/SEO/PageSEO.astro";
 import { SITE_404_CONFIG } from "@/global/siteInfo";
+import Error404Layout from "@/components/pages/layouts/Error404Layout.astro";
 ---
 
 <MainLayout>
@@ -14,18 +15,5 @@ import { SITE_404_CONFIG } from "@/global/siteInfo";
     pageTitle=`${SITE_404_CONFIG.errorTitle}`
     pageDescription=`${SITE_404_CONFIG.errorDescription}`
   />
-  <section class="flex text-center justify-center items-center flex-col">
-    <h1 class="mb-12">Ups... hay un 404 entre manos 😅</h1>
-    <Image
-      class="rounded-lg flex aspect-video"
-      src="/images/courage-404-error.gif"
-      width={500}
-      height={100}
-      alt="courage dog terror gif to 404 page for mrjark"
-    />
-    <a
-      class="mt-5 underline text-mr-primary-green hover:text-mr-primary-green/80"
-      href="/">Go Home</a
-    >
-  </section>
+  <Error404Layout />
 </MainLayout>

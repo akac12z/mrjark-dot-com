@@ -7,16 +7,16 @@
   /* headers */
   @font-face {
     font-family: "MuseoModerno";
-    src: url("/fonts/MuseoModerno-Medium.woff2") format("woff2"),
-      url("/fonts/MuseoModerno-Medium.woff") format("woff");
+    src: url("/src/assets/fonts/MuseoModerno-Medium.woff2") format("woff2"),
+      url("/src/assets/fonts/MuseoModerno-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "MuseoModerno";
-    src: url("/fonts/MuseoModerno-MediumItalic.woff2") format("woff2"),
-      url("/fonts/MuseoModerno-MediumItalic.woff") format("woff");
+    src: url("/src/assets/fonts/MuseoModerno-MediumItalic.woff2") format("woff2"),
+      url("/src/assets/fonts/MuseoModerno-MediumItalic.woff") format("woff");
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -26,32 +26,32 @@
   /* text: normal*/
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-light-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-light-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-light-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-light-webfont.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-regular-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-regular-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-regular-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-regular-webfont.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-medium-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-medium-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-medium-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-medium-webfont.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-bold-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-bold-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-bold-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-bold-webfont.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -60,32 +60,32 @@
   /* text: italic */
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-lightitalic-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-lightitalic-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-lightitalic-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-lightitalic-webfont.woff") format("woff");
     font-weight: 300;
     font-style: italic;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-italic-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-italic-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-italic-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-italic-webfont.woff") format("woff");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-mediumitalic-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-mediumitalic-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-mediumitalic-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-mediumitalic-webfont.woff") format("woff");
     font-weight: 500;
     font-style: italic;
     font-display: swap;
   }
   @font-face {
     font-family: "Rubik";
-    src: url("/fonts/rubik-bolditalic-webfont.woff2") format("woff2"),
-        url("/fonts/rubik-bolditalic-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/rubik-bolditalic-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/rubik-bolditalic-webfont.woff") format("woff");
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -94,8 +94,8 @@
   /* CODE */
   @font-face {
     font-family: "Cascadia";
-    src: url("/fonts/cascadia-webfont.woff2") format("woff2"),
-        url("/fonts/cascadia-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/cascadia-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/cascadia-webfont.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -104,8 +104,8 @@
   /* MY COMMENTS */
   @font-face {
     font-family: "Note_This";
-    src: url("/fonts/note_this-webfont.woff2") format("woff2"),
-        url("/fonts/note_this-webfont.woff") format("woff");
+    src: url("/src/assets/fonts/note_this-webfont.woff2") format("woff2"),
+        url("/src/assets/fonts/note_this-webfont.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
