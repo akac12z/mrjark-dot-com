@@ -27,16 +27,32 @@ const { data, slug } = entry;
 
 const { title } = data;
 
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
 
 <MainLayout>
   <section class="">
-    <div class="mx-auto mb-2 w-3/4"></div>
     <article class="prose prose-invert mx-auto">
       <h1 transition:name=`title-${slug}` class="text-center">
         {title}
       </h1>
+      <section>
+        <p class="text-lg -mb-3">Tabla de contenidos</p>
+        <ul class="list-none pl-0">
+          {
+            headings.map((heading, index) => (
+              <li class=" leading-3 ">
+                <a
+                  class="no-underline text-center text-gray-300 text-xs"
+                  href={`#${heading.slug}`}
+                >
+                  {index + 1} - {heading.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
       <Content />
     </article>
   </section>
