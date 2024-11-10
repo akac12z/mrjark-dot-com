@@ -1,13 +1,12 @@
 ---
-export const prerender = true;
 import { Image } from "astro:assets";
 
 import Courege from "@imageAssets/courage-404-error.gif";
 
-let errorInPath = "";
-if (typeof window !== "undefined") {
-  errorInPath = window.location.pathname;
-}
+// let errorInPath: string = "";
+// if (typeof window !== "undefined") {
+//   errorInPath = window.location.pathname;
+// }
 
 // const errorInPath = new URL(Astro.request.url).pathname;
 ---
@@ -25,9 +24,9 @@ if (typeof window !== "undefined") {
     <h1 class="mb-6">Ups... hay un 404 entre manos 😅</h1>
     <p>
       La ruta <span
+        id="error-in-path"
         class="bg-mr-neon-red/20 text-xs rounded py-0.5 px-2 text-mr-neon-red font-code hover:underline decoration-mr-neon-red underline-offset-4 hover:cursor-help transition-all hover:decoration-mr-neon-red/70"
-        >{errorInPath}</span
-      > no existe.
+      ></span> no existe.
     </p>
     <p>
       ¿Es posible que hayas querido ir a <span
@@ -46,3 +45,13 @@ if (typeof window !== "undefined") {
     href="javascript:history.back()">Volver atrás ↩︎</a
   >
 </section>
+
+<script>
+  if (typeof window !== "undefined") {
+    const errorInPath = window.location.pathname;
+    const pathElement = document.getElementById("error-in-path");
+    if (pathElement) {
+      pathElement.textContent = errorInPath;
+    }
+  }
+</script>
