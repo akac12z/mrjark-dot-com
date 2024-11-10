@@ -22,6 +22,10 @@ export default defineConfig( {
   adapter: vercel( {
     webAnalytics: {
       enabled: true,
-    }
+    },
+    // isr: {
+    // TODO: para un futuro tenerlo en caché
+    //   expiration: 60 * 60 * 24, // ESTO ES UN DÍA
+    // }
   } )
 } );
