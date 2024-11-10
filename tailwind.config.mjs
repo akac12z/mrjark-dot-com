@@ -26,6 +26,9 @@ export default {
 				rubik: 'Rubik, system-ui, sans-serif',
 				code: "Cascadia, ui-monospace, monospace",
 				comment: "Note_This, system-ui, sans-serif"
+			},
+			screens: {
+				'xs': '460px'
 			}
 		},
 	},
