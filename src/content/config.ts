@@ -1,6 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import {isValidDateFormat}  from '@utils/validatingDate'
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+// import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
 /**
  * ? Los slug: z.string(), en las colecciones dan error porque ya los está creando astro por defecto. Por ende, al desestructurarlo te dará error si los tienes.
