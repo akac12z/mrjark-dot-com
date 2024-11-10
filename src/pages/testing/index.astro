@@ -1,0 +1,269 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  {
+    /*<div class="mx-auto w-full">
+    <div class="mx-auto mt-16 grid grid-cols-1 gap-x-8 gap-y-20 sm:grid-cols-2">
+      <article class="flex flex-col items-start justify-between">
+        <div class="relative w-full">
+          <img
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+            alt=""
+            class="aspect-video w-full rounded-2xl object-cover"
+          />
+          <div
+            class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+          >
+          </div>
+        </div>
+        <div>
+          <div class="mt-2 flex items-center gap-x-4 text-xs">
+            <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time
+            >
+            <a
+              href="#"
+              class="relative z-10 rounded-full bg-gray-50 px-2 py-1 font-medium text-gray-600 hover:bg-gray-100"
+              >Marketing</a
+            >
+          </div>
+          <div class="group relative">
+            <h3 class="mt-3 text-lg/6 font-semibold">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                Boost your conversion rate
+              </a>
+            </h3>
+            <p class="mt-2 line-clamp-3 text-sm">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam
+              vitae illo. Non aliquid explicabo necessitatibus unde. Sed
+              exercitationem placeat consectetur nulla deserunt vel. Iusto
+              corrupti dicta.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="flex flex-col items-start justify-between">
+        <div class="relative w-full">
+          <img
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+            alt=""
+            class="aspect-video w-full rounded-2xl object-cover"
+          />
+          <div
+            class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+          >
+          </div>
+        </div>
+        <div>
+          <div class="mt-2 flex items-center gap-x-4 text-xs">
+            <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time
+            >
+            <a
+              href="#"
+              class="relative z-10 rounded-full bg-gray-50 px-2 py-1 font-medium text-gray-600 hover:bg-gray-100"
+              >Marketing</a
+            >
+          </div>
+          <div class="group relative">
+            <h3 class="mt-3 text-lg/6 font-semibold">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                Boost your conversion rate
+              </a>
+            </h3>
+            <p class="mt-2 line-clamp-3 text-sm">
+              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam
+              vitae illo. Non aliquid explicabo necessitatibus unde. Sed
+              exercitationem placeat consectetur nulla deserunt vel. Iusto
+              corrupti dicta.
+            </p>
+          </div>
+          <div class="relative mt-8 flex items-center gap-x-4">
+            <img
+              src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+              class="h-10 w-10 rounded-full bg-gray-100"
+            />
+            <div class="text-sm/6">
+              <p class="font-semibold text-gray-900">
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                  Michael Foster
+                </a>
+              </p>
+              <p class="text-gray-600">Co-Founder / CTO</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <hr class="border border-green-50 py-28" />
+
+  <!-- component -->
+  <section
+    class="relative min-h-screen flex flex-col justify-center bg-slate-50 overflow-hidden"
+  >
+    <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+      <div
+        class="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-16"
+      >
+        <div class="w-full max-w-3xl mx-auto">
+          <!-- Vertical Timeline #1 -->
+          <div class="-my-6">
+            <!-- Item #1 -->
+            <div class="relative pl-8 sm:pl-32 py-6 group">
+              <!-- Purple label -->
+              <div class="font-medium text-indigo-500 mb-1 sm:mb-0">
+                The origin
+              </div>
+              <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+              <div
+                class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5"
+              >
+                <time
+                  class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full"
+                  >May, 2020</time
+                >
+                <div class="text-xl font-bold text-slate-900">
+                  Acme was founded in Milan, Italy
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="text-slate-500">
+                Pretium lectus quam id leo. Urna et pharetra pharetra massa
+                massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit
+                cursus risus.
+              </div>
+            </div>
+
+            <!-- Item #2 -->
+            <div class="relative pl-8 sm:pl-32 py-6 group">
+              <!-- Purple label -->
+              <div class="font-medium text-indigo-500 mb-1 sm:mb-0">
+                The milestone
+              </div>
+              <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+              <div
+                class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5"
+              >
+                <time
+                  class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full"
+                  >May, 2021</time
+                >
+                <div class="text-xl font-bold text-slate-900">
+                  Reached 5K customers
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="text-slate-500">
+                Pretium lectus quam id leo. Urna et pharetra pharetra massa
+                massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit
+                cursus risus.
+              </div>
+            </div>
+
+            <!-- Item #3 -->
+            <div class="relative pl-8 sm:pl-32 py-6 group">
+              <!-- Purple label -->
+              <div class="font-medium text-indigo-500 mb-1 sm:mb-0">
+                The acquisitions
+              </div>
+              <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+              <div
+                class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5"
+              >
+                <time
+                  class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full"
+                  >May, 2022</time
+                >
+                <div class="text-xl font-bold text-slate-900">
+                  Acquired various companies, inluding Technology Inc.
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="text-slate-500">
+                Pretium lectus quam id leo. Urna et pharetra pharetra massa
+                massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit
+                cursus risus.
+              </div>
+            </div>
+
+            <!-- Item #4 -->
+            <div class="relative pl-8 sm:pl-32 py-6 group">
+              <!-- Purple label -->
+              <div class="font-medium text-indigo-500 mb-1 sm:mb-0">
+                The IPO
+              </div>
+              <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+              <div
+                class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5"
+              >
+                <time
+                  class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full"
+                  >May, 2023</time
+                >
+                <div class="text-xl font-bold text-slate-900">
+                  Acme went public at the New York Stock Exchange
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="text-slate-500">
+                Pretium lectus quam id leo. Urna et pharetra pharetra massa
+                massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit
+                cursus risus.
+              </div>
+            </div>
+          </div>
+          <!-- End: Vertical Timeline #1 -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="border border-green-50 py-28" />*/
+  }
+
+  <div class="mx-auto grid auto-rows-fr grid-cols-1 sm:grid-cols-2">
+    <article
+      class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-2 pb-2 pt-24"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+        alt=""
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+      <div
+        class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/70"
+      >
+      </div>
+      <div
+        class="flex flex-wrap justify-between items-center gap-y-1 overflow-hidden text-sm/6 text-mr-text-content"
+      >
+        <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+        <a
+          href="#"
+          class="relative z-10 text-xs rounded-full bg-gray-50 px-1 py-px font-medium text-gray-600 hover:bg-gray-100"
+          >Marketing</a
+        >
+      </div>
+      <div class="group relative">
+        <h3 class="mt-3 text-lg/6 font-semibold">
+          <a href="#">
+            <span class="absolute inset-0"></span>
+            Boost your conversion rate
+          </a>
+        </h3>
+        <p class="mt-2 line-clamp-3 text-sm">
+          Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam
+          vitae illo. Non aliquid explicabo necessitatibus unde. Sed
+          exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti
+          dicta.
+        </p>
+      </div>
+    </article>
+
+    <!-- More posts... -->
+  </div>
+</MainLayout>
