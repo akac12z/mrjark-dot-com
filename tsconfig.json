@@ -36,6 +36,9 @@
       "@interfaces/*": [
         "./src/interfaces/*"
       ],
+      "@imageAssets/*": [
+        "./src/assets/images/*"
+      ],
       "@/*": [
         "./src/*"
       ],

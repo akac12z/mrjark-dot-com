@@ -1,15 +1,18 @@
 ---
 import { Image } from "astro:assets";
+
+import Courege from "@imageAssets/courage-404-error.gif";
 ---
 
 <section class="flex text-center justify-center items-center flex-col">
   <h1 class="mb-12">Ups... hay un 404 entre manos 😅</h1>
   <Image
     class="rounded-lg flex aspect-video text-mr-text-content"
-    src="src/assets/images/courage-404-error.gif"
+    src={Courege}
     width={500}
     height={100}
     alt="courage dog terror gif to 404 page for mrjark"
+    quality="low"
   />
   <a
     class="mt-5 underline text-mr-primary-green hover:text-mr-primary-green/80"
