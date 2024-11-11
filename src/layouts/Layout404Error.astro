@@ -3,9 +3,6 @@ import "../styles/global.css";
 
 import { SITE_404_CONFIG } from "@/global/siteInfo";
 
-import Header from "@shared/Header.astro";
-
-import Footer from "@shared/Footer.astro";
 import BaseHead404 from "@SEO/pages/404/BaseHead404.astro";
 
 const { lang } = SITE_404_CONFIG;
@@ -17,10 +14,8 @@ const { lang } = SITE_404_CONFIG;
     <slot name="head" />
   </BaseHead404>
   <body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
-    <Header />
     <main class="my-10 overflow-x-hidden">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
