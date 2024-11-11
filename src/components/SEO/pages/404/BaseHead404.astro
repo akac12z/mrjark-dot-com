@@ -1,12 +1,7 @@
 ---
-/**
- * TODO: HACER EL RSS -> <link rel="alternate" type="application/rss+xml" title={SITE.title} href={new URL("rss.xml", Astro.site)}/>
- * TODO: HACER MANIFEST -> <link rel="manifest" href="/site.webmanifest" />
- *
- */
-
 import { ViewTransitions } from "astro:transitions";
-import "../../styles/global.css";
+
+import "../../../../styles/global.css";
 
 import Favicons from "@SEO/Favicons.astro";
 ---
@@ -17,14 +12,12 @@ import Favicons from "@SEO/Favicons.astro";
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="robots" content="index, follow" />
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=yes, shrink-to-fit=no"
   />
   <meta name="generator" content={Astro.generator} />
-
-  {/* NO INDEX PARA EL 404 */}
-  <meta name="robots" content="noindex" />
 
   {/*FONT PRELOAD*/}
   <link
