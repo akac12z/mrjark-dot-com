@@ -1,12 +1,12 @@
 ---
-import PageSEO from "@/components/SEO/PageSEO.astro";
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
+import MainSEO from "@SEO/pages/MainSEO.astro";
 import About from "@static/About.astro";
 ---
 
 <MainLayout>
-  <PageSEO
+  <MainSEO
     slot="head"
     pageTitle={`Un poco sobre ${SITE_DEFAULT_CONFIG.title} ✌🏽`}
     pageDescription={SITE_DEFAULT_CONFIG.description}
