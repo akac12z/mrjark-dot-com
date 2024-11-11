@@ -36,6 +36,9 @@
       "@imageAssets/*": [
         "./src/assets/images/*"
       ],
+      "@SEO/*": [
+        "./src/components/SEO/*"
+      ],
       "@/*": [
         "./src/*"
       ]
