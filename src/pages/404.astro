@@ -7,7 +7,7 @@ import CourageError404Image from "@imageAssets/OpenGraph/404/og-404-error.png";
 
 import PageSEO404Error from "@SEO/pages/404/PageSEO404Error.astro";
 import Layout404Error from "@layouts/Layout404Error.astro";
-import ShowContent404 from "@/components/pages/layouts/ShowContent404.astro";
+import Content404 from "@/components/pages/contents/Content404.astro";
 ---
 
 <Layout404Error>
@@ -17,5 +17,5 @@ import ShowContent404 from "@/components/pages/layouts/ShowContent404.astro";
     pageDescription={SITE_404_CONFIG.errorDescription}
     pageThumbnail={CourageError404Image.src}
   />
-  <ShowContent404 />
+  <Content404 />
 </Layout404Error>
