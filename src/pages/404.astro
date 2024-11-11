@@ -1,21 +1,14 @@
 ---
 import "../styles/global.css";
 
-import MainLayout from "@layouts/MainLayout.astro";
-import PageSEO from "@/components/SEO/PageSEO.astro";
-import { SITE_404_CONFIG } from "@/global/siteInfo";
-import PageSEO404Error from "@SEO/pages/PageSEO404Error.astro";
-
 import Error404Layout from "@/components/pages/layouts/Error404Layout.astro";
+import { SITE_404_CONFIG } from "@/global/siteInfo";
+
 import CourageError404Image from "@imageAssets/OpenGraph/404/og-404-error.png";
+import PageSEO404Error from "@SEO/pages/404/PageSEO404Error.astro";
 ---
 
-<MainLayout>
-  <!-- <PageSEO
-    slot="head"
-    pageTitle=`${SITE_404_CONFIG.errorTitle}`
-    pageDescription=`${SITE_404_CONFIG.errorDescription}`
-  /> -->
+<Error404Layout>
   <PageSEO404Error
     slot="head"
     pageTitle={SITE_404_CONFIG.errorTitle}
@@ -23,4 +16,4 @@ import CourageError404Image from "@imageAssets/OpenGraph/404/og-404-error.png";
     pageThumbnail={CourageError404Image.src}
   />
   <Error404Layout />
-</MainLayout>
+</Error404Layout>
