@@ -20,7 +20,7 @@ const {
 const canonicalURL = `${SITE_404_CONFIG.url}/404`;
 
 const ogImage = pageThumbnail
-  ? pageThumbnail
+  ? `${SITE_404_CONFIG.url}${pageThumbnail}`
   : new URL("./og-image.png", Astro.site);
 const ogImageAlt = pageTitle;
 ---
