@@ -76,6 +76,11 @@ export const SOCIAL_LINKS: SocialLinksInterface = {
     url: 'https://mrjark.substack.com',
     userName: '@mrjark'
   },
+  goodreads: {
+    name: 'Goodreads',
+    url: 'goodreads.com/immrjark',
+    userName: 'immrjark'
+  }
 }
 
 // "Mi 'build(me) in public', aquí te compartiré aquello que voy aprendiendo, haciendo y pensando, y que considero que es importante, en mi carrera en Growth y alguna que otra cosas que me parece interesante.",
