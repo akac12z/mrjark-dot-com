@@ -1,4 +1,4 @@
-import type { PageKeywords } from "@interfaces/keywords";
+import type { PageKeywords } from "@interfaces/keywords.interface";
 
 
 export const aboutKeywords: PageKeywords = {
