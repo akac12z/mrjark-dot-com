@@ -1,39 +1,5 @@
-/**
- * Social Links Interfaces
-*/
-interface SocialLinksInterface  {
-  [key: string]: SocialLink;
-};
+import type { Site404ConfigInterface, SiteDefaultConfigInterface, SocialLinksInterface } from "@interfaces/siteInfo.interface"
 
-interface SocialLink  {
-  name: string;
-  url: string;
-  userName: string;
-};
-
-/**
- * Site interface
-*/
-interface SiteDefaultConfigInterface {
-  title: string;
-  description: string;
-  url: string;
-  author: string;
-  location: string;
-  lang:string
-};
-interface Site404ConfigInterface {
-  errorTitle: string;
-  errorDescription: string;
-  url: string;
-  author: string;
-  location: string;
-  lang: string
-};
-
-/**
- * TODO: Make Routes sites interfaces 
-*/
 
 export const SITE_DEFAULT_CONFIG: SiteDefaultConfigInterface = {
   title: "mrjark",
