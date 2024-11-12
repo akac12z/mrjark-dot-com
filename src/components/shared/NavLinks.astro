@@ -1,10 +1,5 @@
 ---
-interface NavLinkProps {
-  href: string;
-  text: string;
-  currentPath: string;
-  customClasses: string;
-}
+import type { NavLinkProps } from "@interfaces/navLinks.interface";
 
 const { href, text, currentPath, customClasses } = Astro.props as NavLinkProps;
 const isActive = currentPath.includes(href);
