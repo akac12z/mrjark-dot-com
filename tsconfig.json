@@ -7,7 +7,7 @@
         "./src/components/shared/*"
       ],
       "@static/*": [
-        "./src/components/static/*"
+        "./src/components/pages/static/*"
       ],
       "@home/*": [
         "./src/components/static/home/*"
