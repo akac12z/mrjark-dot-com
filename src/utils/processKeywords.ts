@@ -1,4 +1,4 @@
-import type { PageKeywords } from "@interfaces/keywords";
+import type { PageKeywords } from "@interfaces/keywords.interface";
 
 
 export default function processKeywords(pageKeywords: PageKeywords): PageKeywords {
