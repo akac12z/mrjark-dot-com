@@ -12,7 +12,7 @@ export const isValidDateFormat = (dateString: string): boolean => {
     date.getUTCMonth() !== month - 1 ||
     date.getUTCDate() !== day
   ) {
-    throw new Error('The date is invalid, make sure you have spelled the date correctly. Remember, must be YYYY-MM-DD and to be real!')
+    throw new Error('The date is invalid, make sure you have spelled the date correctly. Remember, must be YYYY-MM-DD and be real!')
   }
   return true;
 }
