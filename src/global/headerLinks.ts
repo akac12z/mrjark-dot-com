@@ -1,8 +1,5 @@
-interface HeaderLinksInterface {
-  href: string
-  text: string
-  customClasses: string
-}
+import type { HeaderLinksInterface } from "@interfaces/headerLinks.interface";
+
 
 export const HEADER_LINKS: HeaderLinksInterface[] = [
   {
