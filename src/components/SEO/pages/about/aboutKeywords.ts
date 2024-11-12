@@ -1,7 +1,6 @@
-interface PageKeywords {
-  keywords: string[];
-}
+import type { PageKeywords } from "@interfaces/keywords";
+
 
 export const aboutKeywords: PageKeywords = {
-  keywords: ["mrjark", "mrJark", 'patatas jamon', 'Brochetas pollo', 'Brochetas Pollo']
+  keywords: ["mrjark", "quien es mrjark", "growth", "about"]
 }
