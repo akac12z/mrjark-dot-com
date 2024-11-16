@@ -1,0 +1,41 @@
+---
+import TestIconBias from "./TestIconBias.astro";
+
+interface Props {
+  bias: string;
+  premise: string;
+  linkTo: string;
+}
+
+// class="w-full rounded-2xl p-px bg-gradient-to-br from-mr-primary-green to-mr-neon-lime"
+const {
+  bias = "Nombre del bias",
+  linkTo = "/abot",
+  premise = "Un texto cualquiera como si fuera una pregunta del bias como buena premisa",
+} = Astro.props;
+---
+
+<article
+  class="flex flex-col justify-between rounded-xl py-4 px-3 h-full border border-mr-bias"
+>
+  <div class="">
+    <section class="flex items-center justify-start gap-x-3 pb-3">
+      <TestIconBias
+        width="32px"
+        height="32px"
+        customClass="flex-shrink-0 text-mr-text-headers"
+      />
+      <h2 class="line-clamp-2 text-ellipsis overflow-hidden flex-grow">
+        {bias}
+      </h2>
+    </section>
+    <section class="flex flex-col gap-2 mb-4">
+      <p class="line-clamp-3">{premise}</p>
+      <span
+        class="text-[#eac9f1] border border-mr-bias px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider"
+        >Memory</span
+      >
+    </section>
+  </div>
+  <a class="text-mr-primary-green" href={linkTo}>Saber más</a>
+</article>
