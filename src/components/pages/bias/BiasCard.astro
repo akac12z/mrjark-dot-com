@@ -2,6 +2,7 @@
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 import { getCollection, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import TestIconBias from "../tests/TestIconBias.astro";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -21,30 +22,27 @@ const { data, slug } = entry;
 const { cover, description, name } = data;
 ---
 
-<section class="w-full flex flex-col items-center justify-center">
-  <Image
-    width={cover.src.width}
-    height={cover.src.height}
-    src={cover.src}
-    alt={`${cover.alt} imagen`}
-    transition:name=`${slug}-image`
-    class="for-covers"
-    quality="mid"
-    loading="lazy"
-  />
-  <article
-    class="py-2 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
-  >
-    <h3 class="text-lg line-clamp-1">{name}</h3>
-    <p class="mb-4 line-clamp-2">
-      {description}
-    </p>
-
-    <a
-      href=`/essay/bias/${slug}`
-      class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
-    >
-      Saber más
-    </a>
-  </article>
-</section>
+<article
+  class="flex flex-col justify-between rounded-xl py-4 px-3 h-full border border-mr-bias"
+>
+  <div class="">
+    <section class="flex items-center justify-start gap-x-3 pb-1">
+      <TestIconBias
+        width="32px"
+        height="32px"
+        customClass="flex-shrink-0 text-mr-text-headers"
+      />
+      <h2 class="line-clamp-2 text-ellipsis overflow-hidden flex-grow">
+        {name}
+      </h2>
+    </section>
+    <section class="flex flex-col gap-2 mb-4">
+      <p class="line-clamp-3">{description}</p>
+      <span
+        class="text-[#eac9f1] border border-mr-bias px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider"
+        >Memory</span
+      >
+    </section>
+  </div>
+  <a class="text-mr-primary-green" href=`/essay/bias/${slug}`>Saber más</a>
+</article>
