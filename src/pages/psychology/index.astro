@@ -1,0 +1,53 @@
+---
+import TestBiasCard from "@/components/pages/tests/TestBiasCard.astro";
+import { PSYCHOLOGY_PAGE_INFO } from "@/global/pagesInfo";
+import MainLayout from "@layouts/MainLayout.astro";
+import PsychologyPageSEO from "@SEO/pages/psychology/PsychologyPageSEO.astro";
+
+// Provisional
+const biases = [
+  {
+    bias: "Efecto ancla",
+    linkTo: "/about",
+    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
+  },
+  {
+    bias: "Efecto Backfire sfgdhjklsd aeiudfgakjf asdlufhasl",
+    linkTo: "/about",
+    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
+  },
+  {
+    bias: "Efecto Marco",
+    linkTo: "/about",
+    premise:
+      "Un texto cualquiera como si fuera una pregunta del bias como buena premisa",
+  },
+  {
+    bias: "Efecto ancla",
+    linkTo: "/about",
+    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
+  },
+];
+---
+
+<MainLayout>
+  <PsychologyPageSEO
+    slot="head"
+    pageTitle={PSYCHOLOGY_PAGE_INFO.title}
+    pageDescription={PSYCHOLOGY_PAGE_INFO.description}
+  />
+  <h1>Psychology</h1>
+  <p>aquí debe ir un header muy bonito explicando las cosas</p>
+  <h2>Bias</h2>
+  <a class="text-xs underline text-mr-neon-blue" href="/essay/bias">Ir a bias</a
+  >
+  <section
+    class="grid grid-cols-1 gap-x-1 gap-y-3 sm:gap-x-3 sm:gap-y-4 xs:grid-cols-2 sm:grid-cols-3 mt-4"
+  >
+    {
+      biases.map(({ bias, linkTo, premise }) => (
+        <TestBiasCard bias={bias} linkTo={linkTo} premise={premise} />
+      ))
+    }
+  </section>
+</MainLayout>
