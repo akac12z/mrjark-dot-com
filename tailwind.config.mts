@@ -29,6 +29,9 @@ export default {
 			},
 			screens: {
 				'xs': '460px'
+			},
+			fontSize: {
+				'xxs': '10px'
 			}
 		},
 	},
