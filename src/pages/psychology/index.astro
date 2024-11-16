@@ -1,33 +1,13 @@
 ---
-import TestBiasCard from "@/components/pages/tests/TestBiasCard.astro";
-import { PSYCHOLOGY_PAGE_INFO } from "@/global/pagesInfo";
+import { getCollection } from "astro:content";
+
 import MainLayout from "@layouts/MainLayout.astro";
+import { PSYCHOLOGY_PAGE_INFO } from "@/global/pagesInfo";
 import PsychologyPageSEO from "@SEO/pages/psychology/PsychologyPageSEO.astro";
 
-// Provisional
-const biases = [
-  {
-    bias: "Efecto ancla",
-    linkTo: "/about",
-    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
-  },
-  {
-    bias: "Efecto Backfire sfgdhjklsd aeiudfgakjf asdlufhasl",
-    linkTo: "/about",
-    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
-  },
-  {
-    bias: "Efecto Marco",
-    linkTo: "/about",
-    premise:
-      "Un texto cualquiera como si fuera una pregunta del bias como buena premisa",
-  },
-  {
-    bias: "Efecto ancla",
-    linkTo: "/about",
-    premise: "Has pensado alguna vez cómo aprendemos los humanos?",
-  },
-];
+import BiasCard from "@/components/pages/psychology/bias/BiasCard.astro";
+
+const biases = await getCollection("bias");
 ---
 
 <MainLayout>
@@ -45,8 +25,8 @@ const biases = [
     class="grid grid-cols-1 gap-x-1 gap-y-3 sm:gap-x-3 sm:gap-y-4 xs:grid-cols-2 sm:grid-cols-3 mt-4"
   >
     {
-      biases.map(({ bias, linkTo, premise }) => (
-        <TestBiasCard bias={bias} linkTo={linkTo} premise={premise} />
+      biases.map((bias) => (
+        <BiasCard entry={bias} transition:name={`${bias.slug}-name`} />
       ))
     }
   </section>

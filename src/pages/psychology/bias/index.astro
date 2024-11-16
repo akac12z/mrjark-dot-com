@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import MainSEO from "@SEO/pages/MainSEO.astro";
-import BiasCard from "@/components/pages/bias/BiasCard.astro";
+import BiasCard from "@/components/pages/psychology/bias/BiasCard.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
@@ -22,7 +22,7 @@ const biases = await getCollection("bias");
   >
     {
       biases.map((bias) => (
-        <BiasCard entry={bias} transition:name={`${bias.slug}-image`} />
+        <BiasCard entry={bias} transition:name={`${bias.slug}-name`} />
       ))
     }
   </section>
