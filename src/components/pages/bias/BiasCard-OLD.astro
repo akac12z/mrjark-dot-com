@@ -1,0 +1,50 @@
+---
+/*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
+import { getCollection, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  entry: CollectionEntry<"bias">;
+}
+
+export async function getStaticPaths() {
+  const biases = await getCollection("bias");
+
+  return biases.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data, slug } = entry;
+const { cover, description, name } = data;
+---
+
+<section class="w-full flex flex-col items-center justify-center">
+  <Image
+    width={cover.src.width}
+    height={cover.src.height}
+    src={cover.src}
+    alt={`${cover.alt} imagen`}
+    transition:name=`${slug}-image`
+    class="for-covers"
+    quality="mid"
+    loading="lazy"
+  />
+  <article
+    class="py-2 w-full h-40 rounded-b-lg mx-auto text-center bg-transparent"
+  >
+    <h3 class="text-lg line-clamp-1">{name}</h3>
+    <p class="mb-4 line-clamp-2">
+      {description}
+    </p>
+
+    <a
+      href=`/essay/bias/${slug}`
+      class="w-fit inset-x-0 bottom-0 mb-4 underline text-mr-text-content decoration-mr-primary-green underline-offset-4 transition-all hover:decoration-mr-primary-green/70"
+    >
+      Saber más
+    </a>
+  </article>
+</section>
