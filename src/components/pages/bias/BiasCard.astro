@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const { cover, description, name } = data;
+const { description, name } = data;
 ---
 
 <article
@@ -32,7 +32,10 @@ const { cover, description, name } = data;
         height="32px"
         customClass="flex-shrink-0 text-mr-text-headers"
       />
-      <h2 class="line-clamp-2 text-ellipsis overflow-hidden flex-grow">
+      <h2
+        class="line-clamp-2 text-ellipsis overflow-hidden flex-grow"
+        transition:name=`${slug}-name`
+      >
         {name}
       </h2>
     </section>
@@ -44,5 +47,5 @@ const { cover, description, name } = data;
       >
     </section>
   </div>
-  <a class="text-mr-primary-green" href=`/essay/bias/${slug}`>Saber más</a>
+  <a class="text-mr-primary-green" href=`/psychology/bias/${slug}`>Saber más</a>
 </article>
