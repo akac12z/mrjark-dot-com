@@ -15,6 +15,7 @@ const { pageTitle, pageDescription } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+// TODO: CAMBIAR EL OG POR UNO PERSONALIZADO
 const ogImage = new URL("./og-image.png", Astro.site);
 const ogImageAlt = pageTitle;
 
