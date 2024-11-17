@@ -1,9 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
+import { BIAS_PAGE_INFO } from "@/global/pagesInfo";
 import MainSEO from "@SEO/pages/MainSEO.astro";
+
 import BiasCard from "@/components/pages/psychology/bias/BiasCard.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
@@ -13,8 +14,8 @@ const biases = await getCollection("bias");
 <MainLayout>
   <MainSEO
     slot="head"
-    pageTitle=`Sesgos y Heurísticas - ${SITE_DEFAULT_CONFIG.title}`
-    pageDescription="Recopilación de sesgos cognitivos y heurísticas de los humanos junto con ejemplos y aplicaciones de los mismos."
+    pageTitle={BIAS_PAGE_INFO.title}
+    pageDescription={BIAS_PAGE_INFO.description}
   />
   <h1 class="text-xl mb-8">Bias page in porgress</h1>
   <section class="grid grid-cols-1 xs:grid-cols-2 gap-x-4 mx-auto gap-y-4">

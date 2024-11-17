@@ -1,7 +1,6 @@
 ---
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import { ABOUT_PAGE_INFO } from "@/global/pagesInfo";
 import MainLayout from "@layouts/MainLayout.astro";
-
 import AboutSEO from "@SEO/pages/about/AboutSEO.astro";
 
 import About from "@static/About.astro";
@@ -10,8 +9,8 @@ import About from "@static/About.astro";
 <MainLayout>
   <AboutSEO
     slot="head"
-    pageTitle={`Un poco sobre ${SITE_DEFAULT_CONFIG.title} ✌🏽`}
-    pageDescription={SITE_DEFAULT_CONFIG.description}
+    pageTitle={ABOUT_PAGE_INFO.title}
+    pageDescription={ABOUT_PAGE_INFO.description}
   />
   <About />
 </MainLayout>

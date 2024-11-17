@@ -1,8 +1,9 @@
 ---
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import { getCollection } from "astro:content";
+
+import { ESSAY_PAGE_INFO } from "@/global/pagesInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import MainSEO from "@SEO/pages/MainSEO.astro";
-import { getCollection } from "astro:content";
 
 const essays = await getCollection("essay");
 ---
@@ -10,8 +11,8 @@ const essays = await getCollection("essay");
 <MainLayout>
   <MainSEO
     slot="head"
-    pageTitle=`Ensayos - ${SITE_DEFAULT_CONFIG.title}`
-    pageDescription="Un cunjunto de ensayos que voy recopilando en mi carrera como Growth en Startups y mi afan por conocer la psicologia del comportamiento"
+    pageTitle={ESSAY_PAGE_INFO.title}
+    pageDescription={ESSAY_PAGE_INFO.description}
   />
   <h1>Work in progress</h1>
   <a class="text-sm text-green-500" href="/psychology/bias">Go to bias</a>
