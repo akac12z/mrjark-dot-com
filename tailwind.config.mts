@@ -19,7 +19,12 @@ export default {
         "mr-neon-orange": "#FF8A33",
         "mr-neon-green": "#AFFF33",
         "mr-neon-aqua": "#33FFE8",
-        "mr-bias": "#a58faa",
+        "mr-bias-300": "#C3B4C6",
+        "mr-bias-500": "#a58faa",
+        "mr-bias-700": "#756679",
+        "mr-error": "#ef4444",
+        "mr-warning": "#eab308",
+        "mr-success": "#22c55e",
       },
       fontFamily: {
         museo_moderno: "MuseoModerno, system-ui, sans-serif",
