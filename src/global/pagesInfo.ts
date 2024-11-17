@@ -1,15 +1,15 @@
 import type { PagesInfo } from "@interfaces/pagesInfo.interface";
 import { SITE_DEFAULT_CONFIG } from "./siteInfo";
 
-export const BOOKNOTES_PAGE_INFO: PagesInfo = {
-  title: `Notas de librso - ${SITE_DEFAULT_CONFIG.title}`,
-  description:
-    "Una lista de los libros junto con algunas notas que he tomado y que considero importantes recordar",
-};
-
 export const ABOUT_PAGE_INFO: PagesInfo = {
   title: `Un poco sobre ${SITE_DEFAULT_CONFIG.title} ✌🏽`,
   description: SITE_DEFAULT_CONFIG.description,
+};
+
+export const BOOKNOTES_PAGE_INFO: PagesInfo = {
+  title: `Notas de librso - ${SITE_DEFAULT_CONFIG.title}`,
+  description:
+    "Una recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento entre otros, que me han resultado interesantes y útiles para mi carrera y que necesitaba recopilar en un solo lugar.",
 };
 
 export const PSYCHOLOGY_PAGE_INFO: PagesInfo = {
