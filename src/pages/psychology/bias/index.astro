@@ -17,7 +17,7 @@ const biases = await getCollection("bias");
     pageDescription="Recopilación de sesgos cognitivos y heurísticas de los humanos junto con ejemplos y aplicaciones de los mismos."
   />
   <h1 class="text-xl mb-8">Bias page in porgress</h1>
-  <section class="container grid grid-cols-1 sm:grid-cols-2 gap-x-4 mx-auto">
+  <section class="grid grid-cols-1 xs:grid-cols-2 gap-x-4 mx-auto gap-y-4">
     {
       biases.map((bias) => (
         <BiasCard entry={bias} transition:name={`${bias.slug}-name`} />
