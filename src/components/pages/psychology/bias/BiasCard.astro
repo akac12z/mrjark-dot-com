@@ -23,29 +23,62 @@ const { description, name } = data;
 ---
 
 <article
-  class="flex flex-col justify-between rounded-xl py-4 px-3 h-full border border-mr-bias"
+  class="group flex rounded-xl h-full border bg-clip-border border-mr-bias-500"
 >
-  <div class="">
-    <section class="flex items-center justify-start gap-x-3 pb-1">
-      <TestIconBias
-        width="32px"
-        height="32px"
-        customClass="flex-shrink-0 text-mr-text-headers"
-      />
-      <h2
-        class="line-clamp-2 text-ellipsis overflow-hidden flex-grow"
-        transition:name=`${slug}-name`
+  <a
+    href=`/psychology/bias/${slug}`
+    class="py-4 px-3 flex flex-col justify-between"
+  >
+    <article>
+      <div class="flex items-center justify-start gap-x-3 pb-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-8 h-8 text-mr-text-headers flex-shrink-0"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+            clip-rule="evenodd"></path>
+          <path
+            d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"
+          >
+          </path>
+        </svg>
+        <h2
+          class="line-clamp-2 text-ellipsis overflow-hidden flex-wrap"
+          transition:name=`${slug}-name`
+        >
+          {name}
+        </h2>
+      </div>
+      <div class="flex flex-col gap-2 my-4">
+        <p class="line-clamp-3">{description}</p>
+        <span
+          class="text-mr-bias-300 border border-mr-bias-500 px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider"
+          >Memory</span
+        >
+      </div>
+    </article>
+    <button
+      type="button"
+      class="w-fit flex items-center gap-2 pt-2 font-sans text-xs font-bold text-center text-mr-primary-green/90 align-middle transition-all rounded-lg select-none disabled:pointer-events-none"
+    >
+      Learn More
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="w-4 h-4 text-mr-bias transform transition-transform duration-300 ease-linear group-hover:translate-x-2"
       >
-        {name}
-      </h2>
-    </section>
-    <section class="flex flex-col gap-2 mb-4">
-      <p class="line-clamp-3">{description}</p>
-      <span
-        class="text-[#eac9f1] border border-mr-bias px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider"
-        >Memory</span
-      >
-    </section>
-  </div>
-  <a class="text-mr-primary-green" href=`/psychology/bias/${slug}`>Saber más</a>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+      </svg>
+    </button>
+  </a>
 </article>
