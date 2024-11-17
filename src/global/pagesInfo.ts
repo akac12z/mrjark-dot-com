@@ -1,5 +1,4 @@
 import type { PagesInfo } from "@interfaces/pagesInfo.interface";
-import { SITE_DEFAULT_CONFIG } from "./siteInfo";
 
 export const PSYCHOLOGY_PAGE_INFO: PagesInfo = {
   title: `Psycología del comportamiento y heurísticas aplicada a growth`,
