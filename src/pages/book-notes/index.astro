@@ -1,9 +1,9 @@
 ---
+import { getCollection } from "astro:content";
+
 import { BOOKNOTES_PAGE_INFO } from "@/global/pagesInfo";
-import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import MainSEO from "@SEO/pages/MainSEO.astro";
-import { getCollection } from "astro:content";
 
 const notes = await getCollection("bookNotes");
 ---
