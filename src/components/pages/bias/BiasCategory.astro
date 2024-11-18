@@ -3,14 +3,25 @@ interface Props {
   category: string[];
 }
 
-// Mapeo de categorías a colores de Tailwind
-const categoryColors: Record<string, string> = {
-  speed: "text-blue-500 border-blue-500 bg-blue-100/10",
-  judgment: "text-green-500 border-green-500 bg-green-100/10",
-  memory: "text-purple-500 border-purple-500 bg-purple-100/10",
-  perception: "text-yellow-500 border-yellow-500 bg-yellow-100/10",
-  context: "text-red-500 border-red-500 bg-red-100/10",
-};
+// Categorías disponibles
+const categories = [
+  { key: "speed", color: "blue" },
+  { key: "judgment", color: "green" },
+  { key: "memory", color: "purple" },
+  { key: "perception", color: "yellow" },
+  { key: "context", color: "red" },
+];
+
+// Función para encontrar clases según la categoría
+function getCategoryClass(category: string) {
+  const foundCategory = categories.find(
+    (cat) => cat.key === category.toLowerCase()
+  );
+  if (foundCategory) {
+    return `border text-${foundCategory.color}-500 border-${foundCategory.color}-500 bg-${foundCategory.color}-100`;
+  }
+  return "text-gray-500 border-gray-500 bg-gray-100/10"; // Fallback
+}
 
 const { category } = Astro.props;
 ---
@@ -19,9 +30,9 @@ const { category } = Astro.props;
   {
     category.map((c) => (
       <span
-        class={`capitalize px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider ${
-          categoryColors[c]
-        }`}
+        class={` capitalize px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-widest ${getCategoryClass(
+          c
+        )}`}
       >
         {c}
       </span>
