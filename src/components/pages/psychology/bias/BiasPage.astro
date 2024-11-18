@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+import BiasCard from "@/components/pages/psychology/bias/BiasCard.astro";
+import BiasHeader from "./BiasHeader.astro";
+
+// const bias = await Astro.glob("../../../content/bias/*.md");
+const biases = await getCollection("bias");
+---
+
+<div class="flex flex-col gap-y-4 xs:gap-y-16">
+  <BiasHeader />
+
+  <div class="max-w-2xl mx-auto flex flex-col">
+    <h3 class="text-xl mb-4">Investiga</h3>
+    <section class="grid grid-cols-1 xs:grid-cols-2 gap-x-4 mx-auto gap-y-4">
+      {
+        biases.map((bias) => (
+          <BiasCard entry={bias} transition:name={`${bias.slug}-name`} />
+        ))
+      }
+    </section>
+  </div>
+</div>
