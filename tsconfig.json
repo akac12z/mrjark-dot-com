@@ -39,6 +39,9 @@
       "@SEO/*": [
         "./src/components/SEO/*"
       ],
+      "@icons/*": [
+        "./src/components/icons/*"
+      ],
       "@/*": [
         "./src/*"
       ]
