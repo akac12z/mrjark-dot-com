@@ -105,6 +105,9 @@ const biasCollection = defineCollection({
           )
           .optional(),
         readingTime: z.number().optional(),
+        category: z.array(
+          z.enum(["speed", "memory", "perception", "context", "judgment"])
+        ),
       })
       .refine(
         (data) => {
