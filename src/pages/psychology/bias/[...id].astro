@@ -43,6 +43,8 @@ const { Content } = await render(entry);
         alt={cover.alt}
         transition:name=`${slug}-image`
         class="for-covers"
+        quality="low"
+        loading="lazy"
       />
     </div>
     <article class="prose prose-invert mx-auto">
