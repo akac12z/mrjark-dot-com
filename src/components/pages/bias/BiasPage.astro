@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import BiasCard from "@/components/pages/psychology/bias/BiasCard.astro";
 import BiasHeader from "./BiasHeader.astro";
+import BiasCard from "./BiasCard.astro";
 
 // const bias = await Astro.glob("../../../content/bias/*.md");
 const biases = await getCollection("bias");
