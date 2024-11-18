@@ -3,13 +3,13 @@ import { getCollection } from "astro:content";
 
 import { BOOKNOTES_PAGE_INFO } from "@/global/pagesInfo";
 import MainLayout from "@layouts/MainLayout.astro";
-import MainSEO from "@SEO/pages/MainSEO.astro";
+import BookPageSEO from "@SEO/pages/book-notes/BookPageSEO.astro";
 
 const notes = await getCollection("bookNotes");
 ---
 
 <MainLayout>
-  <MainSEO
+  <BookPageSEO
     slot="head"
     pageTitle={BOOKNOTES_PAGE_INFO.title}
     pageDescription={BOOKNOTES_PAGE_INFO.description}
