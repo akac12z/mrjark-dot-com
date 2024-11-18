@@ -3,6 +3,8 @@
  * !Esto se le tiene que poner a todas las páginas estáticas por defecto para que coja los metatags
  */
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
+import processKeywords from "@utils/processKeywords";
+import { bookNotesKeywords } from "./bookNotes.keywords";
 
 interface Props {
   pageTitle: string;
@@ -15,6 +17,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const ogImage = new URL("./og-image.png", Astro.site);
 const ogImageAlt = pageTitle;
+
+const keywords = processKeywords(bookNotesKeywords).keywords;
 ---
 
 <title>{pageTitle}</title>
@@ -39,10 +43,10 @@ const ogImageAlt = pageTitle;
 {/* PARA TODAS MENOS EL MAIN */}
 <meta property="og:type" content="article" />
 {
-  // keywords &&
-  //   keywords.map((keyword: string) => {
-  //     return <meta property="article:tag" content={keyword} />;
-  //   })
+  keywords &&
+    keywords.map((keyword: string) => {
+      return <meta property="article:tag" content={keyword} />;
+    })
 }
 
 {/* Twitter */}
