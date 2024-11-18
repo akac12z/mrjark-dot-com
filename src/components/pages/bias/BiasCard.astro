@@ -1,6 +1,7 @@
 ---
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 import { getCollection, type CollectionEntry } from "astro:content";
+import BiasCategory from "./BiasCategory.astro";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, slug } = entry;
-const { description, name } = data;
+const { description, name, category } = data;
 ---
 
 <article
@@ -52,10 +53,7 @@ const { description, name } = data;
         <p class="line-clamp-2">
           {description}
         </p>
-        <span
-          class="text-mr-bias-300 border border-mr-bias-500 px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-wider"
-          >Memoria</span
-        >
+        <BiasCategory category={category} />
       </div>
     </article>
     <button
