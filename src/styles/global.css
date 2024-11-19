@@ -193,7 +193,7 @@
 
   /* BIAS CATEGORIES */
   .common-classes-bias-category {
-    @apply border py-0.5 px-1 w-fit rounded-lg tracking-widest capitalize text-xxs font-semibold;
+    @apply border py-0.5 px-1 w-fit rounded-lg tracking-widest capitalize text-xxs;
   }
   .speed-bias-category {
     @apply text-mr-bias-category-speed border-mr-bias-category-speed bg-mr-bias-category-speed/10 common-classes-bias-category;
