@@ -193,21 +193,21 @@
 
   /* BIAS CATEGORIES */
   .common-classes-bias-category {
-    @apply border py-0.5 px-1 w-fit rounded-lg tracking-widest capitalize text-xxs;
+    @apply border py-0.5 px-1 w-fit rounded-lg tracking-widest capitalize text-xxs font-semibold;
   }
   .speed-bias-category {
-    @apply text-[#FF4C4C] border-[#FF4C4C] common-classes-bias-category;
+    @apply text-mr-bias-category-speed border-mr-bias-category-speed bg-mr-bias-category-speed/10 common-classes-bias-category;
   }
   .memory-bias-category {
-    @apply text-[#af76ff] border-[#af76ff] common-classes-bias-category;
+    @apply text-mr-bias-category-memory border-mr-bias-category-memory bg-mr-bias-category-memory/10 common-classes-bias-category;
   }
   .judgment-bias-category {
-    @apply text-[#4C9DFF] border-[#4C9DFF] common-classes-bias-category;
+    @apply text-mr-bias-category-judgment border-mr-bias-category-judgment bg-mr-bias-category-judgment/10 common-classes-bias-category;
   }
   .context-bias-category {
-    @apply text-[#43ebda] border-[#43ebda] common-classes-bias-category;
+    @apply text-mr-bias-category-context border-mr-bias-category-context bg-mr-bias-category-context/10 common-classes-bias-category;
   }
   .perception-bias-category {
-    @apply text-[#f2ce57] border-[#f2ce57] common-classes-bias-category;
+    @apply text-mr-bias-category-perception border-mr-bias-category-perception bg-mr-bias-category-perception/10 common-classes-bias-category;
   }
 }
