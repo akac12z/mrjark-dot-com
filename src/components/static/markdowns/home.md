@@ -2,8 +2,8 @@
 title: "Aquí mrjark, aunque offline me dicen Chema ✌🏽"
 ---
 
-Un Growth en startups, apasionado por la psicología del comportamiento, obsesionado con el aprendizaje, amante del arte del tatuaje y programador en mi tiempo libre.
+Growth, actualmente en [DataPilot](https://www.datapilotagency.com/), apasionado por la psicología del comportamiento, obsesionado con el aprendizaje, amante del arte del tattoo y desarrollador en mi tiempo libre.
 
-Este es mi build(me) in public. Mi objetivo con esto, es recopilar información y reflexiones que consumo y que considero interesantes y útiles para mi carrera, de forma que pueda consultarlas cuando las necesite y seguir añadiendo nuevas constantemente.
+Este es mi build(me) in public: espacio donde recopilo las ideas, conocimientos y recursos que encuentro útiles e interesantes, tanto para consultarlos cuando los necesite y, tal vez, a ti también te resulten útiles.
 
-¡Bienvenido/a a mi creative sorted chaos hub 💭
+Welcome to my creative sorted chaos hub 💭
