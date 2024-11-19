@@ -1,9 +1,11 @@
 ---
+import "../../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 
-import Elemento from "@test/testHome.mdx";
+import Elemento from "../../components/test/testHome.mdx";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
-// const OtraHome = await Astro.glob("../../components/test/testHome.mdx");
+// const otraHome = await Astro.glob("@test/testHome.mdx");
+// console.log(Elemento);
 ---
 
 <MainLayout>
@@ -12,9 +14,3 @@ import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro
     <Elemento />
   </ReaderStaticMarkdowns>
 </MainLayout>
-
-<style>
-  h1 {
-    @apply text-lg;
-  }
-</style>
