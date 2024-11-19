@@ -42,6 +42,9 @@
       "@icons/*": [
         "./src/components/icons/*"
       ],
+      "@test/*": [
+        "./src/components/test/*"
+      ],
       "@/*": [
         "./src/*"
       ]
