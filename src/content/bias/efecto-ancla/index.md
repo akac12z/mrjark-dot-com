@@ -11,7 +11,7 @@ tags: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
 keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
 readingTime: 5
 language: es
-category: [speed]
+category: [perception, judgment, context ]
 ---
 
 # hola señor
