@@ -103,16 +103,6 @@
     font-style: normal;
     font-display: swap;
   }
-
-  /* MY COMMENTS */
-  @font-face {
-    font-family: "Note_This";
-    src: url("/src/assets/fonts/note_this-webfont.woff2") format("woff2"),
-      url("/src/assets/fonts/note_this-webfont.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
 }
 
 /* COMPONENTS */
@@ -163,9 +153,6 @@
 
 /* CUSTOM CLASSES */
 @layer components {
-  .my-comment {
-    @apply font-comment text-sm text-mr-text-content tracking-wider;
-  }
   .coding {
     @apply font-code text-xs text-mr-text-content;
   }

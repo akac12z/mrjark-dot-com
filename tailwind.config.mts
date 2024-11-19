@@ -35,7 +35,6 @@ export default {
         museo_moderno: "MuseoModerno, system-ui, sans-serif",
         rubik: "Rubik, system-ui, sans-serif",
         code: "Cascadia, ui-monospace, monospace",
-        comment: "Note_This, system-ui, sans-serif",
       },
       screens: {
         xs: "460px",
