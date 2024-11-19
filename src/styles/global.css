@@ -169,6 +169,8 @@
   .coding {
     @apply font-code text-xs text-mr-text-content;
   }
+
+  /* NAVBAR COLOR ELEMENTS */
   .nav-essay_path {
     @apply text-mr-neon-pink border-mr-neon-pink;
   }
@@ -178,21 +180,18 @@
   .nav-about_path {
     @apply text-mr-neon-blue border-mr-neon-blue;
   }
-  .logo-essay_path {
-    @apply text-mr-neon-pink;
-  }
-  .logo-bookNotes_path {
-    @apply text-mr-neon-gold;
-  }
-  .logo-about_path {
-    @apply text-mr-neon-blue;
-  }
+
+  /* COVER IMAGES */
   .for-covers {
     @apply inline-block aspect-video w-full h-full overflow-hidden object-cover object-center rounded-lg;
   }
+
+  /* TO TOP BOTTON */
   .to-top-btn {
     @apply fixed bottom-5 right-5 w-8 h-8 rounded-full border border-green-500 bg-transparent text-green-500 hidden items-center justify-center;
   }
+
+  /* BIAS CATEGORIES */
   .common-classes-bias-category {
     @apply border py-0.5 px-1 w-fit rounded-lg tracking-widest capitalize text-xxs;
   }
