@@ -3,39 +3,35 @@ interface Props {
   category: string[];
 }
 
-// Categorías disponibles
-const categories = [
-  { key: "speed", color: "blue" },
-  { key: "judgment", color: "green" },
-  { key: "memory", color: "purple" },
-  { key: "perception", color: "yellow" },
-  { key: "context", color: "red" },
+// Configuración de categorías con colores
+const biasCategories = [
+  { key: "speed", classes: "speed-bias-category" },
+  { key: "judgment", classes: "memory-bias-category" },
+  { key: "memory", classes: "judgment-bias-category" },
+  { key: "perception", classes: "context-bias-category" },
+  { key: "context", classes: "perception-bias-category" },
 ];
 
-// Función para encontrar clases según la categoría
-function getCategoryClass(category: string) {
-  const foundCategory = categories.find(
-    (cat) => cat.key === category.toLowerCase()
+// Generador de clases dinámicas según categoría
+function getBiasCategoryClass(category: string) {
+  const matchedCategory = biasCategories.find(
+    (cat) => cat.key.toLowerCase() === category.toLowerCase()
   );
-  if (foundCategory) {
-    return `border text-${foundCategory.color}-500 border-${foundCategory.color}-500 bg-${foundCategory.color}-100`;
+  if (matchedCategory) {
+    return matchedCategory.classes;
+  } else {
+    throw new Error("The bias category is not correct. Make sure it exists!");
   }
-  return "text-gray-500 border-gray-500 bg-gray-100/10"; // Fallback
 }
 
 const { category } = Astro.props;
 ---
 
-<div class="flex gap-2">
+<div class="flex flex-wrap gap-3">
   {
-    category.map((c) => (
-      <span
-        class={` capitalize px-1 py-0.5 text-xxs rounded-lg w-fit font-museo_moderno tracking-widest ${getCategoryClass(
-          c
-        )}`}
-      >
-        {c}
-      </span>
-    ))
+    category.map((c) => {
+      const dynamicClasses = getBiasCategoryClass(c);
+      return <span class={` ${dynamicClasses}`}>{c}</span>;
+    })
   }
 </div>
