@@ -1,10 +1,14 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
-import Elemento from "../../components/test/testHome.mdx";
+import Elemento from "@test/testHome.mdx";
+import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
+// const OtraHome = await Astro.glob("../../components/test/testHome.mdx");
 ---
 
 <MainLayout>
   <!-- <h1>Pagina de testin de componentes</h1> -->
-  <Elemento />
+  <ReaderStaticMarkdowns>
+    <Elemento />
+  </ReaderStaticMarkdowns>
 </MainLayout>
