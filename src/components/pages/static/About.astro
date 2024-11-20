@@ -3,7 +3,7 @@ import { convertDateToISO8601 } from "@utils/validatingDate";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 
 // const about = await Astro.glob("@static/markdowns/about.md");
-import { Content } from "@static/markdowns/about.mdx";
+import { Content as AboutContent } from "@static/markdowns/about.mdx";
 
 // HACIENDO PRUEBAS 👇🏽
 const date = "2027-12-10";
@@ -11,7 +11,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <ReaderStaticMarkdowns>
-  <Content />
+  <AboutContent />
   <article>
     <p class="text-blue-400">
       {convertDateToISO8601(date)} | {new Date(Date.now())}

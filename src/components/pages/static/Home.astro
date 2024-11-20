@@ -1,14 +1,9 @@
 ---
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 
-const home = await Astro.glob("@static/markdowns/home.md");
+import { Content as HomeContent } from "@static/markdowns/home.mdx";
 ---
 
 <ReaderStaticMarkdowns>
-  {
-    home.map((element) => (
-      <h2 >{element.frontmatter.title}</h2>
-      <p  set:html={element.compiledContent()}/>
-    ))
-  }
+  <HomeContent />
 </ReaderStaticMarkdowns>
