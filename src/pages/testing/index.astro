@@ -1,16 +1,12 @@
 ---
-import "../../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 
-import Elemento from "../../components/test/testHome.mdx";
-import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
-// const otraHome = await Astro.glob("@test/testHome.mdx");
-// console.log(Elemento);
+import HomeTest from "@test/HomeTest.astro";
+const testingHome = await Astro.glob("@test/testHome.mdx");
 ---
 
 <MainLayout>
   <!-- <h1>Pagina de testin de componentes</h1> -->
-  <ReaderStaticMarkdowns>
-    <Elemento />
-  </ReaderStaticMarkdowns>
+
+  {testingHome.map((element) => <HomeTest {...element} />)}
 </MainLayout>
