@@ -2,27 +2,32 @@
 import { convertDateToISO8601 } from "@utils/validatingDate";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 
-const about = await Astro.glob("@static/markdowns/about.md");
+// const about = await Astro.glob("@static/markdowns/about.md");
+import { Content } from "@static/markdowns/about.mdx";
 
-const date = '2027-12-10'
-
+// HACIENDO PRUEBAS 👇🏽
+const date = "2027-12-10";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <ReaderStaticMarkdowns>
+  <Content />
   <article>
-    <p class="text-blue-400">{convertDateToISO8601(date)}</p>
+    <p class="text-blue-400">
+      {convertDateToISO8601(date)} | {new Date(Date.now())}
+    </p>
     <p class="text-green-400">{canonicalURL}</p>
+    <p>
+      Lorem ipsum, <span
+        class="font-code inset-x-0 bottom-0 hover:underline decoration-mr-neon-lime underline-offset-4 transition-all hover:decoration-mr-neon-lime/70"
+        >dolor sit amet consectetur</span
+      > adipisicing elit. Laboriosam perspiciatis nemo voluptates dolor corrupti
+      labore quae perferendis, numquam nostrum quas placeat. <a
+        class="no-underline text-mr-text-content font-rubik font-normal"
+        href="/testing">testing</a
+      > Ratione error minima maiores itaque repudiandae, nihil impedit vitae
+    </p>
 
-    {
-      about.map((element) => (
-        <h1 class="text-3xl text-mr-text-headers">{element.frontmatter.title}</h1>
-        <p set:html={element.compiledContent()}/>
-      ))
-    }
-  <p >
-    Lorem ipsum, <span class="font-code inset-x-0 bottom-0 hover:underline decoration-mr-neon-lime underline-offset-4 transition-all hover:decoration-mr-neon-lime/70">dolor sit amet consectetur</span> adipisicing elit. Laboriosam perspiciatis nemo voluptates dolor corrupti labore quae perferendis, numquam nostrum quas placeat. <a class=" no-underline text-mr-text-content font-rubik font-normal" href="/testing">testing</a> Ratione error minima maiores itaque repudiandae, nihil impedit vitae
-  </p>
-  <p class="text-mr-neon-blue"><a href="/psychology">Go to Psychology Page</a></p>
+    <a href="/psychology" class="text-mr-neon-pink">Go to Psychology Page</a>
   </article>
 </ReaderStaticMarkdowns>
