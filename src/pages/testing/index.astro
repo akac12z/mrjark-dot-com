@@ -1,12 +1,9 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-
-import HomeTest from "@test/HomeTest.astro";
-const testingHome = await Astro.glob("@test/testHome.mdx");
 ---
 
 <MainLayout>
   <!-- <h1>Pagina de testin de componentes</h1> -->
 
-  {testingHome.map((element) => <HomeTest {...element} />)}
+  <h1 class="text-green-500">Testing Page</h1>
 </MainLayout>
