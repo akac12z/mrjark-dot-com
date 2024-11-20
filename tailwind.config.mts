@@ -42,6 +42,36 @@ export default {
       fontSize: {
         xxs: ["10px", "12px"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: "1.5rem",
+              color: "mr-text-headers",
+            },
+            h2: {
+              fontSize: "1.25rem",
+              color: "mr-text-headers",
+            },
+            h3: {
+              fontSize: "1.125rem",
+              color: "mr-text-headers",
+            },
+            h4: {
+              fontSize: "1rem",
+              color: "mr-text-headers",
+            },
+            h5: {
+              fontSize: "0.875rem",
+              color: "mr-text-headers",
+            },
+            h6: {
+              fontSize: "0.875rem",
+              color: "mr-text-headers",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
