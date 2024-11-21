@@ -1,0 +1,33 @@
+---
+interface Props {
+  rating: number; // Número de estrellas completamente llenas (entre 0 y 5)
+  fillColor?: string;
+  emptyColor?: string;
+}
+
+const {
+  rating,
+  fillColor = "text-yellow-500",
+  emptyColor = "text-gray-500",
+} = Astro.props;
+const maxStars = 5;
+---
+
+<section class="flex flex-col justify-center items-center gap-y-3">
+  <div id="flag" class="flex">
+    {
+      Array.from({ length: maxStars }, (_, index) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`xs:w-6 xs:h-6 w-5 h-5 ${index < rating ? fillColor : emptyColor}`}
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M5 21V4h9l.4 2H20v10h-7l-.4-2H7v7zm9.65-7H18V8h-5.25l-.4-2H7v6h7.25z"
+          />
+        </svg>
+      ))
+    }
+  </div>
+</section>

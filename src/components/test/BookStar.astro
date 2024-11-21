@@ -1,0 +1,84 @@
+---
+interface Props {
+  rating: number; // Número de estrellas completamente llenas (entre 0 y 5)
+  fillColor?: string;
+  emptyColor?: string;
+}
+
+const {
+  rating,
+  fillColor = "text-yellow-500",
+  emptyColor = "text-gray-500",
+} = Astro.props;
+const maxStars = 5;
+---
+
+<section class="flex flex-col justify-center items-center gap-y-3 mt-12">
+  <div id="pill" class="flex">
+    {
+      Array.from({ length: maxStars }, (_, index) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 250 250"
+          class={`w-4 h-4 ${index < rating ? fillColor : emptyColor}`}
+        >
+          <path
+            fill="currentColor"
+            d="M216.42 39.6a53.26 53.26 0 0 0-75.32 0L39.6 141.09a53.26 53.26 0 0 0 75.32 75.31l101.51-101.49a53.31 53.31 0 0 0-.01-75.31M103.61 205.09a37.26 37.26 0 0 1-52.7-52.69L96 107.31L148.7 160Zm101.5-101.49L160 148.69L107.32 96l45.1-45.09a37.26 37.26 0 0 1 52.69 52.69m-15.43-21.26a8 8 0 0 1 0 11.32l-24 24a8 8 0 1 1-11.31-11.32l24-24a8 8 0 0 1 11.31 0"
+          />
+        </svg>
+      ))
+    }
+  </div>
+
+  <div id="flag" class="flex">
+    {
+      Array.from({ length: maxStars }, (_, index) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`w-4 h-4 ${index < rating ? fillColor : emptyColor}`}
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M5 21V4h9l.4 2H20v10h-7l-.4-2H7v7zm9.65-7H18V8h-5.25l-.4-2H7v6h7.25z"
+          />
+        </svg>
+      ))
+    }
+  </div>
+
+  <div id="fire-fill" class="flex">
+    {
+      Array.from({ length: maxStars }, (_, index) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`w-4 h-4 ${index < rating ? fillColor : emptyColor}`}
+          viewBox="0 0 384 512"
+        >
+          <path
+            fill="currentColor"
+            d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99c-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14"
+          />
+        </svg>
+      ))
+    }
+  </div>
+
+  <div id="fire-empty" class="flex">
+    {
+      Array.from({ length: maxStars }, (_, index) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`w-4 h-4 ${index < rating ? fillColor : emptyColor}`}
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M14.265 1.627c0 3.545 1.869 5.327 3.479 7.021c1.54 1.62 3.006 3.163 3.006 6.102c0 4.812-3.753 8.25-8.565 8.25c-4.813 0-8.935-3.421-8.935-8.25c0-2.039.962-4.011 2.509-4.899c.305-.175.672.007.803.334C7.563 12.684 8.797 12.64 9.437 12c.388-.387.47-1.116-.004-2.062c-2.405-4.812 1.863-8.279 4.2-8.854c.336-.082.615.198.632.543M12.185 21.5c4.059 0 7.065-2.84 7.065-6.75c0-2.337-1.093-3.489-2.678-5.158l-.021-.023c-1.44-1.517-3.139-3.351-3.649-6.557a6.15 6.15 0 0 0-1.911 1.76c-.787 1.144-1.147 2.633-.216 4.495c.603 1.205.777 2.74-.277 3.794c-.657.657-1.762 1.1-2.956.586c-.752-.324-1.353-.955-1.838-1.79c-.567.706-.954 1.74-.954 2.893c0 3.847 3.288 6.75 7.435 6.75"
+          />
+        </svg>
+      ))
+    }
+  </div>
+</section>
