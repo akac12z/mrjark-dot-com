@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import { BOOKNOTES_PAGE_INFO } from "@/global/pagesInfo";
 import MainLayout from "@layouts/MainLayout.astro";
 import BookPageSEO from "@SEO/pages/book-notes/BookPageSEO.astro";
+import BookPage from "@/components/pages/books/BookPage.astro";
 
 const notes = await getCollection("bookNotes");
 ---
@@ -14,27 +15,5 @@ const notes = await getCollection("bookNotes");
     pageTitle={BOOKNOTES_PAGE_INFO.title}
     pageDescription={BOOKNOTES_PAGE_INFO.description}
   />
-  <h1 class="text-xl mb-8">
-    Books <span class="text-mr-neon-lime">page</span> in porgress
-  </h1>
-  <section class="grid grid-cols-2 gap-6 my-12 mx-auto">
-    {
-      notes.map(({ slug, data }) => {
-        const { title } = data;
-        return (
-          <article class="flex flex-col text-center items-center">
-            <h1 class="" transition:name={`title-${slug}`}>
-              {title}
-            </h1>
-            <a
-              class="mt-4 text-mr-text-headers underline"
-              href={`/book-notes/${slug}`}
-            >
-              Ir al post
-            </a>
-          </article>
-        );
-      })
-    }
-  </section>
+  <BookPage />
 </MainLayout>

@@ -1,6 +1,6 @@
 ---
 interface Props {
-  rating: number; // Número de estrellas completamente llenas (entre 0 y 5)
+  rating: 1 | 2 | 3 | 4 | 5; // Número de estrellas completamente llenas (entre 0 y 5)
   fillColor?: string;
   emptyColor?: string;
 }
@@ -19,7 +19,7 @@ const maxStars = 5;
       Array.from({ length: maxStars }, (_, index) => (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class={`xs:w-6 xs:h-6 w-5 h-5 ${index < rating ? fillColor : emptyColor}`}
+          class={`w-5 h-5 ${index < rating ? fillColor : emptyColor}`}
           viewBox="0 0 24 24"
         >
           <path

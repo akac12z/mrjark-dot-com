@@ -1,0 +1,34 @@
+---
+import { Picture } from "astro:assets";
+
+import Book from "@bookImages/the-great-mental-models.jpg";
+// import Book2 from "@bookImages/show-your-work.jpg";
+import BookRating from "./BookRating.astro";
+---
+
+<section class="pb-10 flex flex-col justify-center items-center mx-auto">
+  <div class="flex flex-row w-full sm:px-10 mx-auto">
+    <div class="max-w-24 xs:max-w-32 h-fit bg-gray-400 rounded">
+      <Picture
+        src={Book}
+        height={Book.height}
+        width={Book.width}
+        formats={["avif", "webp", "jpeg", "png"]}
+        alt="image mr"
+        class="max-w-24 xs:max-w-32 overflow-hidden object-cover w-fit h-fit rounded"
+        quality="mid"
+      />
+    </div>
+
+    <section class="flex flex-col items-start ml-5 gap-y-2">
+      <h2>Título del libro</h2>
+      <BookRating rating={4} />
+      <p>
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+        maiores dignissimos animi reprehenderit rem reiciendis " "Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Numquam maiores dignissimos
+        animi reprehenderit rem reiciendis "
+      </p>
+    </section>
+  </div>
+</section>
