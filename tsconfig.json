@@ -36,6 +36,9 @@
       "@imageAssets/*": [
         "./src/assets/images/*"
       ],
+      "@bookImages/*": [
+        "./src/components/assets/images/books/*"
+      ],
       "@SEO/*": [
         "./src/components/SEO/*"
       ],
