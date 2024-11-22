@@ -3,7 +3,7 @@ import { Picture } from "astro:assets";
 
 import Book from "@bookImages/the-great-mental-models.jpg";
 // import Book2 from "@bookImages/show-your-work.jpg";
-import BookRating from "./BookRating.astro";
+import BookScore from "./BookScore.astro";
 ---
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
@@ -22,7 +22,7 @@ import BookRating from "./BookRating.astro";
 
     <section class="flex flex-col items-start ml-5 gap-y-2">
       <h2>Título del libro</h2>
-      <BookRating rating={4} />
+      <BookScore rating={4} />
       <p>
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
         maiores dignissimos animi reprehenderit rem reiciendis " "Lorem ipsum
