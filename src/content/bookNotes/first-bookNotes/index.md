@@ -1,5 +1,24 @@
 ---
-title: "Título del libro o nota" # (Máx. 60 caracteres)
+title: "Show your work" # (Máx. 60 caracteres)
+description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv'
+quote: 'Una ¡quete que me haya gustado'
+scrore: 4
+cover: 
+  src: './show-your-work copy.jpg'
+  alt: "un libro"
+readingTime: 2
+keywords: ["abc", "def"]
+tags: ['abc', 'def']
+language: es
+publishDate: '2023-10-12'
+authors: [
+  name: 'Nicolas Cole',
+  link: "https://www.mrjark.com"
+  ]
+authorLink: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
+isDraft: true
+buyItOnAmazon: 
+  spain: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
 ---
 
 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
