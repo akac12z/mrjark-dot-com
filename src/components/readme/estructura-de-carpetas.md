@@ -75,4 +75,90 @@ Aquí diferencio:
 - Favicons.astro: donde están todos los icons, de todos los tamaños para todas las plataformas y OS.
 - /404: Un intento de hacer que se peuda ver el contenido de la página 404.
 
-#### /src/components/SEO/{page_name}/
+#### /src/components/SEO/pages/{page_name}/
+
+Cada página dentro de su carpeta tendrá:
+
+1. Un componente de Astro con los metatags y twitter cards que tendrá el nombre de **{page_nameSEO}.astro** donde estará recogidos todos los metas necesarios para los artículos
+2. Archivo de keywords específico para esa página en concreto con el formato específico para cumplir con la interface de las keywords.
+
+Pueden haber {page_nameSEO}.astro distinas ya que pueden ser videos, libros, y para cada una de ellas hay tags especiíficos.
+
+Puedes buscar más información en:
+
+- [The Open Grapth Protocol](https://ogp.me/)
+- [Twitter for Devs](https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards)
+
+#### /src/components/SEO/content/{content_name}/
+
+Cada content, que serán todos aquellos que estén en la ruta `/src/content/*` tendrán un componente de Astro distinto con un nombre identificativo con el contenido **{content_nameSEO}.astro** porque cada uno tendrá unas entry distintas que estarán definidas en las collections como las **keywords**.
+
+Y es obligatorio que se repita el contenido porque cada uno tiene unos entry distintos.
+
+### /src/components/shared
+
+Estos son elementos que se comparten a lo largo de toda la web como son:
+
+- Navbar
+- Footer
+- Social Icons
+- NavLinks
+
+### /src/components/statics
+
+Son las páginas y elementos de las páginas que no tienen una función SEO específica como son la home o el about y el cv.
+
+Dentro de esta tengo:
+
+- Carpeta de markdowns: esta es donde escribo los contenidos de estas pages.
+- Elementos .astro: que son aquellos elementos donde se renderiza el contenido del markdown y los que se colocan en las páginas respectivas con sus nombres en las rutas `/src/pages/*`.
+
+### /src/components/tags
+
+Carpeta donde pondré los eelementos que tengan que ver con los tags (work in progress).
+
+### /src/components/test
+
+Carpeta para colocar los elementos en los cuales ando trabajando y que no tengo seguro si poner o como tenerlos en la UI.
+
+### /src/content
+
+Carpeta de Astro donde se renderizan los contenidos. Si quieres saber más sobre ella, ve a [defineCollection()](https://docs.astro.build/en/reference/modules/astro-content/#definecollection) en Astro.
+
+### /src/global
+
+Aquí está el contenido estático de la propia web y páginas como puede ser:
+
+- Información de la web
+- Información de las páginas como el title o description
+- Header links (*este seguramente acabe cambiándolo a `/src/components/shared`*)
+
+### /src/interfaces
+
+Dentro de la carpeta están todas las interfaces que hacen que funcione el proyecto salvo aquellas que sean "insignificates" y que no tengan mucha importancia más a allá de poner el title o description.
+
+Cada una de estas interfaces que se coloquen deben tener el nombre de la siguiente forma: **{para_que_es_la_interfaz}.interface.ts**.
+
+No es más grande gracias al esquema de [Zod](https://zod.dev/).
+
+### /src/layouts
+
+Tengo dos distintos:
+
+- MainLayout: que es para todas las páginas en general y es **obligatorio** junto con sus títulos de la página y descripción específicos para cada una.
+- 404Layout: que solo es para la 404 page y la única diferencia es que es *nofollow*.
+
+### /src/pages
+
+Donde van todas las páginas del proyecto.
+
+### /src/styles
+
+Estilos globales de mi página con sus "atajos" para tailwind
+
+### /src/tuils
+
+Elementos que me son útiles para ciertas funcionalidades. Básicamente es el JavaScript/TypeScript que me hace falta para ciertas cosas y que no quiero tener en los componentes como un script.
+
+---
+Last Update: 22/11/2024
