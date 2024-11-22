@@ -4,7 +4,6 @@ description: 'Un ejemplo del primer bias con su descripción para ver cómo qued
 cover: 
   src: ./andrew-robinson-xh3DYZLFfgA-unsplash-copy.jpg
   alt: 'Efecto Backfire iamgen'
-slug: 'efecto-backfire'
 publishDate: '2024-02-10'
 lastTimeEdited: '2024-02-10'
 tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']

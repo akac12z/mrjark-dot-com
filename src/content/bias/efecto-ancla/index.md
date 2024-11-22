@@ -4,7 +4,7 @@ cover:
   src: "./armands-brants-BX8w_quWj_c-unsplash.jpeg"
   alt: "Markus unsplash image"
 description: Un ejemplo del primer bias con su descripción para ver cómo queda y un pooc mas por si acaso
-slug: efecto-ancla
+
 publishDate: '2023-10-30'
 lastTimeEdited: '2025-10-31'
 tags: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
