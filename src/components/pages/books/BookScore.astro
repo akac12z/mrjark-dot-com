@@ -1,14 +1,18 @@
 ---
 interface Props {
-  rating: 1 | 2 | 3 | 4 | 5; // Número de estrellas completamente llenas (entre 0 y 5)
+  score: 1 | 2 | 3 | 4 | 5; // Número de estrellas completamente llenas (entre 0 y 5)
   fillColor?: string;
   emptyColor?: string;
+  width?: string;
+  height?: string;
 }
 
 const {
-  rating,
+  score,
   fillColor = "text-yellow-500",
   emptyColor = "text-gray-500",
+  width = "w-5",
+  height = "h-5",
 } = Astro.props;
 const maxStars = 5;
 ---
@@ -19,7 +23,7 @@ const maxStars = 5;
       Array.from({ length: maxStars }, (_, index) => (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class={`w-5 h-5 ${index < rating ? fillColor : emptyColor}`}
+          class={`${width} ${height} ${index < score ? fillColor : emptyColor}`}
           viewBox="0 0 24 24"
         >
           <path

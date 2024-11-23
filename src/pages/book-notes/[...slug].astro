@@ -4,7 +4,9 @@
  */
 export const prerender = true;
 
+import BookScore from "@/components/pages/books/BookScore.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import { Picture } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 import { getCollection, render } from "astro:content";
@@ -25,18 +27,37 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data, slug } = entry;
 
-const { title } = data;
+const { title, cover, scrore, quote } = data;
 
 const { Content, headings } = await render(entry);
 ---
 
 <MainLayout>
-  <section class="">
-    <article class="prose prose-invert mx-auto">
-      <h1 transition:name=`title-${slug}` class="text-center">
-        {title}
-      </h1>
-      <section>
+  <article class="mx-auto">
+    <section class="grid grid-cols-2 max-w-lg mx-auto">
+      <div class="max-w-28 xs:max-w-36 md:max-w-40 mx-auto bg-gray-400 rounded">
+        <Picture
+          src={cover.src}
+          height={cover.src.height}
+          width={cover.src.width}
+          formats={["avif", "webp", "jpeg", "png"]}
+          alt={cover.alt}
+          class="max-w-28 xs:max-w-36 md:max-w-40 overflow-hidden object-cover rounded mx-auto"
+          quality="mid"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="flex flex-col items-start prose prose-inert">
+        <h1 transition:name=`title-${slug}` class="text-start mb-4">
+          {title}
+        </h1>
+        <BookScore score={3} width="w-5 xs:w-7" height="w-5 xs:h-7" />
+        <!-- TODO: ARREGLAR EL SCORE PARA QUE RECIBA EL SCORE DEL LIBRO-->
+      </div>
+    </section>
+    <section class="prose prose-invert mt-6">
+      <div>
         <p class="text-lg -mb-3">Tabla de contenidos</p>
         <ul class="list-none pl-0">
           {
@@ -52,8 +73,8 @@ const { Content, headings } = await render(entry);
             ))
           }
         </ul>
-      </section>
+      </div>
       <Content />
-    </article>
-  </section>
+    </section>
+  </article>
 </MainLayout>
