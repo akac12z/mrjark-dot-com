@@ -1,20 +1,21 @@
 ---
-title: "Show your work" # (Máx. 60 caracteres)
+title: "Show your work"
 description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv'
 quote: 'Una ¡quete que me haya gustado'
 scrore: 4
 cover: 
-  src: './show-your-work copy.jpg'
+  src: './show-your-work-copy.jpg'
   alt: "un libro"
 readingTime: 2
 keywords: ["abc", "def"]
 tags: ['abc', 'def']
 language: es
 publishDate: '2023-10-12'
-authors: [
-  name: 'Nicolas Cole',
-  link: "https://www.mrjark.com"
-  ]
+authors:
+  - name: "Nicolas Cole"
+    link: "https://www.mrjark.com"
+  - name: "Nicolas Cole"
+    link: "https://www.mrjark.com"
 authorLink: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
 isDraft: true
 buyItOnAmazon: 
