@@ -61,39 +61,69 @@ const bookNotesCollection = defineCollection({
       publishDate: z.string().refine(isValidDateFormat),
       tags: z.array(z.string()).optional(),
       language: z.enum(["es", "en"]),
-      authors: z.array(
+      authors: z.union([
         z.object({
           name: z.string(),
           link: z
             .string()
             .url()
-            .refine((link) => link.startsWith("https://www."), {
-              message: "El enlace del autor debe empezar con 'https://www.'",
-            }),
-        })
-      ),
+            .refine(
+              (link) =>
+                link.startsWith("https://www.") || link.startsWith("https://"),
+              {
+                message:
+                  "The author's URL must start with 'https://www.' or 'https://'",
+              }
+            ),
+        }),
+        z.array(
+          z.object({
+            name: z.string(),
+            link: z
+              .string()
+              .url()
+              .refine(
+                (link) =>
+                  link.startsWith("https://www.") ||
+                  link.startsWith("https://"),
+                {
+                  message:
+                    "The author's URL must start with 'https://www.' or 'https://'",
+                }
+              ),
+          })
+        ),
+      ]),
       readingTime: z.number().optional(),
       keywords: z.array(z.string()),
       authorLink: z.string().optional(),
-      // author: z.string().default("mrjark"),
-      // readingTime: z.string(),
-      // categories: z.array(z.string()),
-      // keywords: z.array(z.string()),
       isDraft: z.boolean().default(true).optional(),
       buyItOnAmazon: z
         .object({
           spain: z
             .string()
             .url()
-            .refine((url) => url.startsWith("https://www.amazon."), {
-              message: "The URL must start with 'https://www.amazon.'",
-            }),
+            .refine(
+              (url) =>
+                url.startsWith("https://www.amazon.es") ||
+                url.startsWith("https://amazon.es"),
+              {
+                message:
+                  "The URL must start with 'https://www.amazon.es' or 'https://amazon.es'.",
+              }
+            ),
           usa: z
             .string()
             .url()
-            .refine((url) => url.startsWith("https://www.amazon."), {
-              message: "The URL must start with 'https://www.amazon.'",
-            })
+            .refine(
+              (url) =>
+                url.startsWith("https://www.amazon.com") ||
+                url.startsWith("https://amazon.com"),
+              {
+                message:
+                  "The URL must start with 'https://www.amazon.com  or 'https://amazon.com'.",
+              }
+            )
             .optional(),
         })
         .optional(),
