@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data, slug } = entry;
 
-const { title, cover, scrore, quote } = data;
+const { title, cover, score, quote } = data;
 
 const { Content, headings } = await render(entry);
 ---
@@ -52,8 +52,7 @@ const { Content, headings } = await render(entry);
         <h1 transition:name=`title-${slug}` class="text-start mb-4">
           {title}
         </h1>
-        <BookScore score={3} width="w-5 xs:w-7" height="w-5 xs:h-7" />
-        <!-- TODO: ARREGLAR EL SCORE PARA QUE RECIBA EL SCORE DEL LIBRO-->
+        <BookScore score={score} width="w-5 xs:w-7" height="w-5 xs:h-7" />
       </div>
     </section>
     <section class="prose prose-invert mt-6">
