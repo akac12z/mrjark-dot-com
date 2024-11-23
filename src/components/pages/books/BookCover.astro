@@ -1,0 +1,25 @@
+---
+import { Picture } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"bookNotes">;
+}
+
+const { entry } = Astro.props;
+const { data, slug } = entry;
+const { cover } = data;
+---
+
+<div class="max-w-28 xs:max-w-36 md:max-w-40 mx-auto h-fit w-fit rounded">
+  <Picture
+    src={cover.src}
+    height={cover.src.height}
+    width={cover.src.width}
+    formats={["avif", "webp", "jpeg", "png"]}
+    alt={cover.alt}
+    class="max-w-28 xs:max-w-36 md:max-w-40 overflow-hidden object-cover w-fit h-fit rounded"
+    quality="mid"
+    transition:name={`${slug}-bookCover`}
+  />
+</div>

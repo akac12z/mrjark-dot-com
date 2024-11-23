@@ -1,38 +1,41 @@
 ---
-import { Picture } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
 
-import Book from "@bookImages/the-great-mental-models.jpg";
-import Book2 from "@bookImages/show-your-work.jpg";
 import BookScore from "./BookScore.astro";
+import BookCover from "./BookCover.astro";
+
+interface Props {
+  entry: CollectionEntry<"bookNotes">;
+}
+
+export async function getStaticPaths() {
+  const bookNotes = await getCollection("bookNotes");
+
+  return bookNotes.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data, slug } = entry;
+const { score, quote, title } = data;
 ---
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
-    <a
-      href="/book-notes/first-booknotes"
-      class="max-w-24 xs:max-w-32 h-fit bg-gray-400 rounded"
-    >
-      <Picture
-        src={Book2}
-        height={Book2.height}
-        width={Book2.width}
-        formats={["avif", "webp", "jpeg", "png"]}
-        alt="image mr"
-        class="max-w-24 xs:max-w-32 overflow-hidden object-cover w-fit h-fit rounded hover:scale-105 transition-transform duration-300"
-        quality="mid"
-      />
+    <a href=`/book-notes/${slug}`>
+      <BookCover entry={entry} transition:name={`${slug}-bookCover`} />
     </a>
-
     <section class="flex flex-col items-start ml-5 gap-y-2">
       <h2>
-        <a href="/book-notes/first-booknotes">Título del libro</a>
+        <a href=`/book-notes/${slug}` transition:name={`${slug}-${title}`}
+          >{title}</a
+        >
       </h2>
-      <BookScore score={4} />
+      <BookScore transition:name={`${slug}-bookScore-${score}`} entry={entry} />
       <p>
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        maiores dignissimos animi reprehenderit rem reiciendis " "Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Numquam maiores dignissimos
-        animi reprehenderit rem reiciendis "
+        {quote}
       </p>
     </section>
   </div>

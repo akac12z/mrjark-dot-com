@@ -1,23 +1,31 @@
 ---
+import type { CollectionEntry } from "astro:content";
+
 interface Props {
-  score: number; // Número de estrellas completamente llenas (entre 0 y 5)
   fillColor?: string;
   emptyColor?: string;
   width?: string;
   height?: string;
+  entry: CollectionEntry<"bookNotes">;
 }
 
 const {
-  score,
   fillColor = "text-yellow-500",
   emptyColor = "text-gray-500",
   width = "w-5",
   height = "h-5",
+  entry,
 } = Astro.props;
+
 const maxStars = 5;
+const { slug, data } = entry;
+const { score } = data;
 ---
 
-<section class="flex flex-col justify-center items-center">
+<section
+  class="flex flex-col justify-center items-center"
+  transition:name={`${slug}-bookScore-${score}`}
+>
   <div id="pill" class="flex">
     {
       Array.from({ length: maxStars }, (_, index) => (
