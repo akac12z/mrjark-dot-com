@@ -2,8 +2,7 @@
 title: "The Great Mental Models"
 description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv'
 quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        maiores dignissimos animi reprehenderit rem reiciendis. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit.'
+        maiores dignissimos animi reprehenderit rem reiciendis.'
 scrore: 4
 cover: 
   src: 'the-great-mental-models-copy.jpg'
