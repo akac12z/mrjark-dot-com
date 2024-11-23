@@ -49,7 +49,7 @@ const bookNotesCollection = defineCollection({
       }),
       description: z.string().min(40).max(150),
       quote: z.string().max(150),
-      scrore: z
+      score: z
         .number()
         .min(1, {
           message: "The minimum score value is 1",

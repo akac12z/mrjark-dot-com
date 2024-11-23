@@ -3,7 +3,7 @@ title: "Show your work"
 description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv'
 quote: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
         maiores dignissimos animi reprehenderit rem reiciendis."'
-scrore: 4
+score: 5
 cover: 
   src: './show-your-work-copy.jpg'
   alt: "un libro"
