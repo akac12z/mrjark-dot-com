@@ -47,8 +47,8 @@ const bookNotesCollection = defineCollection({
         src: image(),
         alt: z.string(),
       }),
-      description: z.string().min(40).max(160),
-      quote: z.string(),
+      description: z.string().min(40).max(180),
+      quote: z.string().max(180),
       scrore: z
         .number()
         .min(1, {
