@@ -25,7 +25,11 @@ const { score, quote, title } = data;
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
     <a href=`/book-notes/${slug}`>
-      <BookCover entry={entry} transition:name={`${slug}-bookCover`} />
+      <BookCover
+        customClasses="md:max-w-36"
+        entry={entry}
+        transition:name={`${slug}-bookCover`}
+      />
     </a>
     <section class="flex flex-col items-start ml-5 gap-y-2">
       <h2>

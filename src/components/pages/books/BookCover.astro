@@ -4,21 +4,32 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   entry: CollectionEntry<"bookNotes">;
+  customClasses?: string;
 }
 
-const { entry } = Astro.props;
+const { entry, customClasses = " md:max-w-40" } = Astro.props;
 const { data, slug } = entry;
 const { cover } = data;
+// class="max-w-28 xs:max-w-36 md:max-w-40 mx-auto h-fit w-fit rounded"
+// class="max-w-28 xs:max-w-36 md:max-w-40 overflow-hidden object-cover w-fit h-fit rounded"
 ---
 
-<div class="max-w-28 xs:max-w-36 md:max-w-40 mx-auto h-fit w-fit rounded">
+<div
+  class:list={[
+    "max-w-28 xs:max-w-36 mx-auto h-fit w-fit rounded",
+    `${customClasses}`,
+  ]}
+>
   <Picture
     src={cover.src}
     height={cover.src.height}
     width={cover.src.width}
     formats={["avif", "webp", "jpeg", "png"]}
     alt={cover.alt}
-    class="max-w-28 xs:max-w-36 md:max-w-40 overflow-hidden object-cover w-fit h-fit rounded"
+    class:list={[
+      "max-w-28 xs:max-w-36 overflow-hidden object-cover w-fit h-fit rounded",
+      `${customClasses}`,
+    ]}
     quality="mid"
     transition:name={`${slug}-bookCover`}
   />
