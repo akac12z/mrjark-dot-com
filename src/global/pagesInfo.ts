@@ -9,13 +9,13 @@ export const ABOUT_PAGE_INFO: PagesInfo = {
 export const BOOKNOTES_PAGE_INFO: PagesInfo = {
   title: `Notas de librso - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Una recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento entre otros, que me han resultado interesantes y útiles para mi carrera y que necesitaba recopilar en un solo lugar.",
+    "Recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento que me han parecido útiles e interesantes.",
 };
 
 export const PSYCHOLOGY_PAGE_INFO: PagesInfo = {
   title: `Psycología del comportamiento y heurísticas aplicada a growth`,
   description:
-    "Una recopilación de principios, ideas y ejemplos de economía conductual, psicología del comportamiento, sesgos y psicología humana, aplicados al mundo de las startups y las metodologías de growth, con el objetivo de resolver los problemas de los usuarios de la manera más eficaz y sencilla, mejorando el crecimiento, la experiencia del usuario y nuestro juicio y razonamiento.",
+    "Algunos principios e ideas de economía conductual y psicología humana para entender mejor a los usuarios en el mundo startup y growth.",
 };
 
 export const BIAS_PAGE_INFO: PagesInfo = {
