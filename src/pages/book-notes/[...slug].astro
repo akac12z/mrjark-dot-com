@@ -7,11 +7,13 @@ export const prerender = true;
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
+import GoBackInTop from "@/components/pages/shared/GoBackInTop";
+import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
+
 import BookScore from "@/components/pages/books/BookScore.astro";
 import BookCover from "@/components/pages/books/BookCover.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BookNoteSEO from "@SEO/contents/BookNoteSEO.astro";
-import GoBack from "@/components/pages/shared/GoBack";
 
 interface Props {
   entry: CollectionEntry<"bookNotes">;
@@ -37,7 +39,9 @@ const { Content, headings } = await render(entry);
 <MainLayout>
   <BookNoteSEO slot="head" entry={entry} />
   <article class="mx-auto">
-    <GoBack client:idle />
+    <GoBackInTop client:idle />
+    <ScrollGoBackBtn client:load />
+
     <section class="grid grid-cols-2 max-w-lg mx-auto">
       <BookCover entry={entry} />
 
