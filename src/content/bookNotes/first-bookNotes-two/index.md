@@ -13,10 +13,8 @@ tags: ['abc', 'def']
 language: es
 publishDate: '2023-10-12'
 authors:
-  - name: "Nicolas Cole"
-    link: "https://www.mrjark.com"
-  - name: "Nicolas Cole"
-    link: "https://www.mrjark.com"
+  - name: "Shane Parrish"
+    link: "https://fs.blog/about/"
 authorLink: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
 isDraft: true
 buyItOnAmazon: 
@@ -60,3 +58,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
 Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
 
 El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
+
+## Autor
+
+[Shane Parrish](https://fs.blog/about/)

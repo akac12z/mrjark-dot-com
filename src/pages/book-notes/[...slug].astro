@@ -31,7 +31,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data, slug } = entry;
 
-const { title, score } = data;
+const { title, score, authors } = data;
+const authorsInArry = Array.isArray(authors) ? authors : [authors];
 
 const { Content, headings } = await render(entry);
 ---
@@ -45,17 +46,32 @@ const { Content, headings } = await render(entry);
     <section class="grid grid-cols-2 max-w-lg mx-auto">
       <BookCover entry={entry} />
 
-      <div class="flex flex-col items-start prose prose-inert">
+      <section class="flex flex-col items-start prose prose-invert">
         <h1 transition:name={`${slug}-${title}`} class="text-start mb-4">
           {title}
         </h1>
+        <div class="flex flex-col -mt-1 mb-4">
+          <!-- TODO: HACER EL AUTHORS EN UN COMPONENTE A PARTE Y QUE DEPENDIENDO DE SI ES UNO U DOS, QUE SE MUESTRE UNA COSA U OTRA -->
+          {
+            authorsInArry.map((author) => (
+              <a
+                class=" no-underline text-sm hover:underline"
+                target="_blank"
+                href={author.link}
+              >
+                by {author.name}
+              </a>
+            ))
+          }
+        </div>
         <BookScore
           entry={entry}
           width="w-5 xs:w-7"
           height="w-5 xs:h-7"
           transition:name={`${slug}-bookScore-${score}`}
         />
-      </div>
+        <!-- TODO: HACER READING TIME -->
+      </section>
     </section>
     <section class="prose prose-invert mt-6">
       <div>
