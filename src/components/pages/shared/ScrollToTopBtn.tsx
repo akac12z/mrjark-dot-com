@@ -6,30 +6,35 @@ const ScrollToTopBtn = () => {
   // Mostrar el botón cuando el usuario haga scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) { // Aparece después de hacer scroll 300px
+      if (window.scrollY > 300) {
+        // Aparece después de hacer scroll 300px
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup al desmontar
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div
       className={`
         fixed bottom-6 right-5 md:right-auto w-full max-w-[740px] mx-auto 
         flex justify-end transition-opacity duration-300  
-        ${isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+        ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
-      <a
-        href="#top"
+      <button
+        onClick={scrollToTop}
         className="
           w-8 h-8 sm:right-10 sm:bottom-10 rounded-full 
           border border-mr-primary-green bg-mr-primary-green bg-opacity-10 
@@ -37,7 +42,7 @@ const ScrollToTopBtn = () => {
         "
       >
         ↑
-      </a>
+      </button>
     </div>
   );
 };
