@@ -8,7 +8,6 @@ const bookNotes = await getCollection("bookNotes");
 <h1 class="mb-8 animate-pulse">
   Books <span class="text-mr-neon-lime">page</span> in porgress
 </h1>
-<h2 class="mb-12">Aquí va un header bonito</h2>
 <section class="grid mx-auto max-w-2xl">
   {bookNotes.map((book) => <BookCard entry={book} />)}
 </section>
