@@ -33,13 +33,13 @@ export default function TestingGoBack() {
   return (
     <div
       className={`
-        fixed bottom-6 z-10 left-5 md:left-auto max-w-[740px] mx-auto h-fit w-fit
+        fixed bottom-6 left-5 z-10 md:left-auto mx-auto h-fit w-fit
         flex justify-start transition-opacity duration-300  
         ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <button
         className="
-          w-8 h-8 sm:right-10 sm:bottom-10 rounded-full 
+          w-8 h-8 rounded-full 
           border border-mr-neon-orange bg-mr-neon-orange bg-opacity-10 
           text-mr-neon-orange hover:scale-105 flex items-center justify-center
         "
