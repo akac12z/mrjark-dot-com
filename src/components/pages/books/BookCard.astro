@@ -33,11 +33,9 @@ const { score, quote, title } = data;
     </a>
     <section class="flex flex-col items-start ml-5 gap-y-2">
       <h2>
-        <a href=`/book-notes/${slug}` transition:name={`${slug}-${title}`}
-          >{title}</a
-        >
+        <a href=`/book-notes/${slug}`>{title}</a>
       </h2>
-      <BookScore transition:name={`${slug}-bookScore-${score}`} entry={entry} />
+      <BookScore entry={entry} />
       <p>
         {quote}
       </p>

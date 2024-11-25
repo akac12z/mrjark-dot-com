@@ -22,10 +22,7 @@ const { slug, data } = entry;
 const { score } = data;
 ---
 
-<section
-  class="flex flex-col justify-center items-center"
-  transition:name={`${slug}-bookScore-${score}`}
->
+<section class="flex flex-col justify-center items-center">
   <div id="pill" class="flex">
     {
       Array.from({ length: maxStars }, (_, index) => (
