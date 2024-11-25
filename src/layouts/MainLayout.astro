@@ -14,15 +14,15 @@ const { lang } = SITE_DEFAULT_CONFIG;
 
 <!doctype html>
 <html lang={lang}>
-	<BaseHead>
-		<slot name="head" />
-	</BaseHead>
-	<body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
-		<Header />
-		<main class="my-10 overflow-x-hidden">
-			<slot />
-			<ScrollToTopBtn client:idle />
-		</main>
-		<Footer />
-	</body>
+  <BaseHead>
+    <slot name="head" />
+  </BaseHead>
+  <body class="mx-auto p-5 px-3 max-w-3xl min-h-screen">
+    <Header />
+    <main class="my-10 overflow-x-hidden">
+      <slot />
+      <ScrollToTopBtn client:idle />
+    </main>
+    <Footer />
+  </body>
 </html>
