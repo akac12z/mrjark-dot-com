@@ -3,7 +3,7 @@ export default function GoBackInTop() {
     if (window.history.length > 1) {
       window.history.back();
     } else {
-      alert("No hay historial de navegación anterior.");
+      alert("No previous browsing history!");
     }
   };
 
