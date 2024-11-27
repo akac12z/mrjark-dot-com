@@ -1,0 +1,91 @@
+---
+interface Props {
+  navLinks: { text: string; href: string }[];
+}
+
+const { navLinks } = Astro.props;
+---
+
+<header
+  class="mx-auto bg-transparent backdrop-blur-md flex justify-end px-5 py-6 top-0 z-50 sticky h-80"
+>
+  <button
+    type="button"
+    id="menu-button"
+    class="xs:hidden text-neutral px-1.5 flex h-fit"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="2rem"
+      height="2rem"
+      viewBox="-5 -7 24 24"
+      ><path
+        fill="white"
+        d="M1 0h5a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2m7 8h5a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2M1 4h12a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2"
+      ></path></svg
+    >
+  </button>
+
+  <nav
+    class="hidden text-neutral border absolute right-12 top-12 border-mr-primary-green py-2 px-2 rounded-lg xs:block xs:border-0 xs:p-0 xs:static xs:bg-transparent"
+    id="main-menu"
+  >
+    <ul class="xs:flex gap-2">
+      {
+        navLinks.map((link) => (
+          <li class="relative">
+            <a class={` text-xs pt-2 block`} href={link.href}>
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<!-- <script>
+  const button = document.querySelector("#menu-button") as HTMLButtonElement;
+  const menu = document.querySelector("#main-menu") as HTMLButtonElement;
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    button?.setAttribute(
+      "aria-expanded",
+      `${!menu.classList.contains("hidden")}`
+    );
+  };
+
+  const closeMenuOnClickOutside = (event: any) => {
+    if (
+      !menu?.classList.contains("hidden") && // El menú está abierto
+      !menu?.contains(event.target) && // Clic fuera del menú
+      !button?.contains(event.target) // Clic fuera del botón
+    ) {
+      menu.classList.add("hidden");
+      button?.setAttribute("aria-expanded", "false");
+    }
+  };
+
+  // Event listeners
+  button?.addEventListener("click", toggleMenu);
+  document.addEventListener("click", closeMenuOnClickOutside);
+</script> -->
+<script>
+  const button = document.querySelector("#menu-button");
+  const menu = document.querySelector("#main-menu");
+  const navItems = document.querySelectorAll("#main-menu > ul > li");
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    const isHidden = menu?.classList.contains("hidden");
+    button?.setAttribute("aria-expanded", `${!isHidden}`);
+  };
+
+  button?.addEventListener("click", toggleMenu);
+  navItems.forEach((item) => {
+    item?.addEventListener("click", toggleMenu);
+  });
+</script>
