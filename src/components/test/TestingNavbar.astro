@@ -1,91 +1,67 @@
 ---
-interface Props {
-  navLinks: { text: string; href: string }[];
-}
-
-const { navLinks } = Astro.props;
+import { Image } from "astro:assets";
+import Icon from "../../../public/favicon.svg";
+// 18:41 -> https://www.youtube.com/watch?v=HbBMp6yUXO0&t=148s
 ---
 
-<header
-  class="mx-auto bg-transparent backdrop-blur-md flex justify-end px-5 py-6 top-0 z-50 sticky h-80"
->
-  <button
-    type="button"
-    id="menu-button"
-    class="xs:hidden text-neutral px-1.5 flex h-fit"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="2rem"
-      height="2rem"
-      viewBox="-5 -7 24 24"
-      ><path
-        fill="white"
-        d="M1 0h5a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2m7 8h5a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2M1 4h12a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2"
-      ></path></svg
-    >
-  </button>
-
-  <nav
-    class="hidden text-neutral border absolute right-12 top-12 border-mr-primary-green py-2 px-2 rounded-lg xs:block xs:border-0 xs:p-0 xs:static xs:bg-transparent"
-    id="main-menu"
-  >
-    <ul class="xs:flex gap-2">
-      {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a class={` text-xs pt-2 block`} href={link.href}>
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
+<header class="flex items-center justify-between mt-12">
+  <div>
+    <Image src={Icon} alt="mrjark icon" width={30} height={30} />
+  </div>
+  <nav>
+    <ul id="primary-navigation" class="primary-navigation flex">
+      <li class="active">
+        <a href="#">
+          <span aria-hidden="true">00</span>Home
+        </a>
+      </li>
+      <li class="active">
+        <a href="#">
+          <span aria-hidden="true">01</span>About
+        </a>
+      </li>
+      <li class="active">
+        <a href="#">
+          <span aria-hidden="true">02</span>Patatas
+        </a>
+      </li>
+      <li class="active">
+        <a href="#">
+          <span aria-hidden="true">03</span>Jamón
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
 
-<!-- <script>
-  const button = document.querySelector("#menu-button") as HTMLButtonElement;
-  const menu = document.querySelector("#main-menu") as HTMLButtonElement;
+<style>
+  /* primary header */
+  .primary-header {
+    align-items: center;
+    justify-content: space-between;
+  }
 
-  const toggleMenu = () => {
-    menu?.classList.toggle("hidden");
-    button?.setAttribute(
-      "aria-expanded",
-      `${!menu.classList.contains("hidden")}`
-    );
-  };
+  .primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: hsla(240, 1%, 32%, 0.8);
+  }
+  .primary-navigation a {
+    text-decoration: none;
+  }
+  .primary-navigation a > [aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-start: 0.75em;
+  }
 
-  const closeMenuOnClickOutside = (event: any) => {
-    if (
-      !menu?.classList.contains("hidden") && // El menú está abierto
-      !menu?.contains(event.target) && // Clic fuera del menú
-      !button?.contains(event.target) // Clic fuera del botón
-    ) {
-      menu.classList.add("hidden");
-      button?.setAttribute("aria-expanded", "false");
+  @media (max-width: 35em) {
+    .primary-navigation {
+      position: fixed;
+      inset: 30px 10px 10% 30%;
+
+      flex-direction: column;
+      padding: min(20vh, 10rem) 2em;
     }
-  };
-
-  // Event listeners
-  button?.addEventListener("click", toggleMenu);
-  document.addEventListener("click", closeMenuOnClickOutside);
-</script> -->
-<script>
-  const button = document.querySelector("#menu-button");
-  const menu = document.querySelector("#main-menu");
-  const navItems = document.querySelectorAll("#main-menu > ul > li");
-
-  const toggleMenu = () => {
-    menu?.classList.toggle("hidden");
-    const isHidden = menu?.classList.contains("hidden");
-    button?.setAttribute("aria-expanded", `${!isHidden}`);
-  };
-
-  button?.addEventListener("click", toggleMenu);
-  navItems.forEach((item) => {
-    item?.addEventListener("click", toggleMenu);
-  });
-</script>
+  }
+</style>

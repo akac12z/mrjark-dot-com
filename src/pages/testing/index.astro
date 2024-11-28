@@ -1,16 +1,9 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import TestingNavbar from "@test/TestingNavbar.astro";
-
-const navLinks = [
-  { text: "Experience", href: "#" },
-  { text: "Projects", href: "#" },
-  { text: "About", href: "#" },
-];
 ---
 
-<MainLayout
-  ><!-- <h1>Pagina de testin de componentes</h1> -->
+<MainLayout>
   <h1 class="text-green-500">Testing Page</h1>
-  <TestingNavbar navLinks={navLinks} />
+  <TestingNavbar />
 </MainLayout>
