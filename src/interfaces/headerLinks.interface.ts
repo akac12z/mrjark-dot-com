@@ -1,5 +1,5 @@
 export interface HeaderLinksInterface {
-  href: string
-  text: string
-  customClasses: string
+  href: string;
+  text: string;
+  customClasses: string;
 }
