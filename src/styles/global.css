@@ -171,7 +171,10 @@
   /* TOGGLE HAMBURGER MENU */
   /* Toggle Menu Mobile */
   .mobile-nav-toggle {
-    @apply absolute block text-mr-primary-green z-10 w-6 aspect-square top-7 right-3;
+    @apply absolute block text-mr-primary-green z-10 w-6 aspect-square top-7 right-3 transform duration-500 ease-linear;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    @apply text-mr-neon-orange transform duration-500 ease-linear;
   }
   .navigation-mobile-menu {
     @apply fixed top-4 right-0 w-2/4 h-2/4 rounded-b-xl rounded-tl-xl flex flex-col items-center justify-center gap-2 border border-mr-primary-green bg-mr-bg/10 backdrop-blur-lg transform -translate-y-96 transition-transform duration-500 ease-out;
@@ -181,13 +184,13 @@
   }
   /* Toggle Menu Desktop & Tablet */
   .navigation-desktop-menu {
-    @apply flex justify-center items-center text-mr-primary-green;
+    @apply flex justify-center items-center text-mr-primary-green gap-4;
   }
   .navigation-desktop-link {
     @apply mb-0;
   }
   .navigation-desktop-link a {
-    @apply text-mr-primary-green mx-2;
+    @apply text-mr-primary-green text-sm;
   }
 
   /* BIAS CATEGORIES */
