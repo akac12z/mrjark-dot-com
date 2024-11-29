@@ -1,67 +1,134 @@
 ---
 import { Image } from "astro:assets";
-import Icon from "../../../public/favicon.svg";
-// 18:41 -> https://www.youtube.com/watch?v=HbBMp6yUXO0&t=148s
+import Logo from "../../../public/favicon.svg";
 ---
 
-<header class="flex items-center justify-between mt-12">
-  <div>
-    <Image src={Icon} alt="mrjark icon" width={30} height={30} />
+<header class="flex items-center justify-between bg-gray-600">
+  <div class="flex-shrink-0">
+    <Image src={Logo} height={30} width={30} alt="mrjark logo" />
   </div>
-  <nav>
-    <ul id="primary-navigation" class="primary-navigation flex">
+  <button
+    class="mobile-nav-toggle xs:hidden"
+    aria-controls="navigation-mobile-menu"
+    aria-expanded="false"
+    ><svg
+      class="h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="3"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg></button
+  >
+  <nav class="xs:hidden">
+    <ul
+      data-visible="false"
+      id="navigation-mobile-menu"
+      class="navigation-mobile-menu"
+    >
       <li class="active">
-        <a href="#">
+        <a href="#home" class="">
           <span aria-hidden="true">00</span>Home
         </a>
       </li>
       <li class="active">
-        <a href="#">
+        <a href="#about">
           <span aria-hidden="true">01</span>About
         </a>
       </li>
       <li class="active">
-        <a href="#">
-          <span aria-hidden="true">02</span>Patatas
+        <a href="#tech">
+          <span aria-hidden="true">02</span>Tech
         </a>
       </li>
       <li class="active">
-        <a href="#">
-          <span aria-hidden="true">03</span>Jamón
+        <a href="#groth">
+          <span aria-hidden="true">03</span>Growth
         </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="hidden xs:flex">
+    <ul class="navigation-desktop-menu">
+      <li class="navigation-desktop-link">
+        <a href="#home">Home</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#about">About</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#tech">Tech</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#growth">Growth</a>
       </li>
     </ul>
   </nav>
 </header>
 
-<style>
-  /* primary header */
-  .primary-header {
-    align-items: center;
-    justify-content: space-between;
-  }
+<!-- <script>
+  document.addEventListener("astro:page-load", () => {
+    const primaryNav = document.querySelector(
+      ".navigation-mobile-menu"
+    ) as HTMLUListElement;
+    const navToggle = document.querySelector(
+      ".mobile-nav-toggle"
+    ) as HTMLButtonElement;
+    navToggle.addEventListener("click", () => {
+      const visibility = primaryNav.getAttribute("data-visible");
+      // console.log(visibility);
+      if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else if (visibility === "true") {
+        primaryNav.setAttribute("data-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script> -->
 
-  .primary-navigation {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: hsla(240, 1%, 32%, 0.8);
-  }
-  .primary-navigation a {
-    text-decoration: none;
-  }
-  .primary-navigation a > [aria-hidden="true"] {
-    font-weight: 700;
-    margin-inline-start: 0.75em;
-  }
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const primaryNav = document.querySelector(
+      ".navigation-mobile-menu"
+    ) as HTMLUListElement;
+    const navToggle = document.querySelector(
+      ".mobile-nav-toggle"
+    ) as HTMLButtonElement;
 
-  @media (max-width: 35em) {
-    .primary-navigation {
-      position: fixed;
-      inset: 30px 10px 10% 30%;
+    const toggleMenu = () => {
+      const visibility = primaryNav.getAttribute("data-visible");
+      if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else {
+        primaryNav.setAttribute("data-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    };
 
-      flex-direction: column;
-      padding: min(20vh, 10rem) 2em;
-    }
-  }
-</style>
+    const closeMenu = () => {
+      primaryNav.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      const isClickInsideMenu = primaryNav.contains(e.target as Node);
+      const isClickInsideButton = navToggle.contains(e.target as Node);
+      if (!isClickInsideMenu && !isClickInsideButton) {
+        closeMenu();
+      }
+    });
+  });
+</script>
