@@ -6,15 +6,7 @@ const isActive = currentPath.includes(href);
 
 const navLinksClasses = [
   customClasses,
-  isActive
-    ? href === "/essay"
-      ? "nav-essay_path"
-      : href === "/book-notes"
-        ? "nav-bookNotes_path"
-        : href === "/about"
-          ? "nav-about_path"
-          : ""
-    : "text-mr-primary-green",
+  isActive ? customClasses : "text-mr-primary-green",
 ]
   .filter(Boolean)
   .join(" ");
