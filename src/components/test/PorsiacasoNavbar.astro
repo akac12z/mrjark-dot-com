@@ -1,0 +1,133 @@
+---
+import { Image } from "astro:assets";
+---
+
+<header class="flex items-center justify-between bg-gray-600">
+  <a href="/" class="flex-shrink-0">
+    <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
+  </a>
+  <button
+    class="mobile-nav-toggle xs:hidden"
+    aria-controls="navigation-mobile-menu"
+    aria-expanded="false"
+    ><svg
+      class="h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="3"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg></button
+  >
+  <nav class="xs:hidden">
+    <ul
+      data-visible="false"
+      id="navigation-mobile-menu"
+      class="navigation-mobile-menu"
+    >
+      <li class="active">
+        <a href="#home" class="">
+          <span aria-hidden="true">00</span>Home
+        </a>
+      </li>
+      <li class="active">
+        <a href="#about">
+          <span aria-hidden="true">01</span>About
+        </a>
+      </li>
+      <li class="active">
+        <a href="#tech">
+          <span aria-hidden="true">02</span>Tech
+        </a>
+      </li>
+      <li class="active">
+        <a href="#groth">
+          <span aria-hidden="true">03</span>Growth
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="hidden xs:flex">
+    <ul class="navigation-desktop-menu">
+      <li class="navigation-desktop-link">
+        <a href="#home">Home</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#about">About</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#tech">Tech</a>
+      </li>
+      <li class="navigation-desktop-link">
+        <a href="#growth">Growth</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- <script>
+  document.addEventListener("astro:page-load", () => {
+    const primaryNav = document.querySelector(
+      ".navigation-mobile-menu"
+    ) as HTMLUListElement;
+    const navToggle = document.querySelector(
+      ".mobile-nav-toggle"
+    ) as HTMLButtonElement;
+    navToggle.addEventListener("click", () => {
+      const visibility = primaryNav.getAttribute("data-visible");
+      // console.log(visibility);
+      if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else if (visibility === "true") {
+        primaryNav.setAttribute("data-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script> -->
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const primaryNav = document.querySelector(
+      ".navigation-mobile-menu"
+    ) as HTMLUListElement;
+    const navToggle = document.querySelector(
+      ".mobile-nav-toggle"
+    ) as HTMLButtonElement;
+
+    const toggleMenu = () => {
+      const visibility = primaryNav.getAttribute("data-visible");
+      if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else {
+        primaryNav.setAttribute("data-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    const closeMenu = () => {
+      primaryNav.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      const isClickInsideMenu = primaryNav.contains(e.target as Node);
+      const isClickInsideButton = navToggle.contains(e.target as Node);
+      if (!isClickInsideMenu && !isClickInsideButton) {
+        closeMenu();
+      }
+    });
+  });
+</script>
