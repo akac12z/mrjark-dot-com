@@ -153,19 +153,9 @@
 
 /* CUSTOM CLASSES */
 @layer components {
+  /* CODING STYLE */
   .coding {
     @apply font-code text-xs text-mr-text-content;
-  }
-
-  /* NAVBAR COLOR ELEMENTS */
-  .nav-essay_path {
-    @apply text-mr-neon-pink border-mr-neon-pink;
-  }
-  .nav-bookNotes_path {
-    @apply text-mr-neon-gold border-mr-neon-gold;
-  }
-  .nav-about_path {
-    @apply text-mr-neon-blue border-mr-neon-blue;
   }
 
   /* COVER IMAGES */
@@ -176,6 +166,28 @@
   /* TO TOP BOTTON */
   .to-top-btn {
     @apply fixed bottom-5 right-5 w-8 h-8 rounded-full border border-green-500 bg-transparent text-green-500 hidden items-center justify-center;
+  }
+
+  /* TOGGLE HAMBURGER MENU */
+  /* Toggle Menu Mobile */
+  .mobile-nav-toggle {
+    @apply absolute block text-mr-primary-green z-10 w-6 aspect-square top-7 right-3;
+  }
+  .navigation-mobile-menu {
+    @apply fixed top-4 right-0 w-2/4 h-2/4 rounded-b-xl rounded-tl-xl flex flex-col items-center justify-center gap-2 border border-mr-primary-green bg-mr-bg/10 backdrop-blur-lg transform -translate-y-96 transition-transform duration-500 ease-out;
+  }
+  .navigation-mobile-menu[data-visible="true"] {
+    @apply transform translate-y-0;
+  }
+  /* Toggle Menu Desktop & Tablet */
+  .navigation-desktop-menu {
+    @apply flex justify-center items-center text-mr-primary-green;
+  }
+  .navigation-desktop-link {
+    @apply mb-0;
+  }
+  .navigation-desktop-link a {
+    @apply text-mr-primary-green mx-2;
   }
 
   /* BIAS CATEGORIES */
