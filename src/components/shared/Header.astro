@@ -2,13 +2,12 @@
 import { Image } from "astro:assets";
 import NavbarMobileMenu from "./headerMenus/NavbarMobileMenu.astro";
 import NavbarDesktopMenu from "./headerMenus/NavbarDesktopMenu.astro";
+import Logo from "@icons/shared/Logo.astro";
 ---
 
 <header class="flex items-center justify-between">
   <nav class="flex justify-between items-center mx-auto w-full my-2">
-    <a href="/" class="flex-shrink-0">
-      <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
-    </a>
+    <Logo shouldGo="/" height="1.5rem" width="1.5rem" />
     <NavbarMobileMenu />
     <NavbarDesktopMenu />
   </nav>
