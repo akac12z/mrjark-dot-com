@@ -153,6 +153,10 @@
 
 /* CUSTOM CLASSES */
 @layer components {
+  /* BODY */
+  .body-layout-classes {
+    @apply mx-auto p-5 px-3 max-w-3xl min-h-screen grid grid-rows-layout;
+  }
   /* CODING STYLE */
   .coding {
     @apply font-code text-xs text-mr-text-content;

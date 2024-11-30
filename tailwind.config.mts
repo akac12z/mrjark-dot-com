@@ -39,6 +39,9 @@ export default {
       screens: {
         xs: "460px",
       },
+      gridTemplateRows: {
+        layout: "auto 1fr auto",
+      },
       fontSize: {
         xxs: ["10px", "12px"],
       },
