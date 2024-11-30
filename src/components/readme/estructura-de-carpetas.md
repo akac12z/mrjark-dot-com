@@ -102,7 +102,9 @@ Estos son elementos que se comparten a lo largo de toda la web como son:
 - Navbar
 - Footer
 - Social Icons
-- NavLinks
+- Carpeta de headerMenus
+
+  En estaestá todo lo relacionado al menú de navegación, tanto en la parte mobile como en la parte desktop y tablet.
 
 ### /src/components/statics
 
