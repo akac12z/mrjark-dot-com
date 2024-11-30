@@ -70,28 +70,6 @@ import { Image } from "astro:assets";
   </nav>
 </header>
 
-<!-- <script>
-  document.addEventListener("astro:page-load", () => {
-    const primaryNav = document.querySelector(
-      ".navigation-mobile-menu"
-    ) as HTMLUListElement;
-    const navToggle = document.querySelector(
-      ".mobile-nav-toggle"
-    ) as HTMLButtonElement;
-    navToggle.addEventListener("click", () => {
-      const visibility = primaryNav.getAttribute("data-visible");
-      // console.log(visibility);
-      if (visibility === "false") {
-        primaryNav.setAttribute("data-visible", "true");
-        navToggle.setAttribute("aria-expanded", "true");
-      } else if (visibility === "true") {
-        primaryNav.setAttribute("data-visible", "false");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  });
-</script> -->
-
 <script>
   document.addEventListener("astro:page-load", () => {
     const primaryNav = document.querySelector(
@@ -131,3 +109,63 @@ import { Image } from "astro:assets";
     });
   });
 </script>
+
+<!-- ---
+import { HEADER_LINKS } from "@/global/headerLinks";
+import { Image } from "astro:assets";
+import TestingNavLinks from "./TestingNavLinks.astro";
+import NavbarMobileMenu from "./NavbarMobileMenu.astro";
+import NavbarDesktopMenu from "./NavbarDesktopMenu.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="flex items-center justify-between">
+  <nav class="flex justify-between items-center mx-auto w-full my-2">
+    <a href="/" class="flex-shrink-0">
+      <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
+    </a>
+    <NavbarMobileMenu />
+    <NavbarDesktopMenu />
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const primaryNav = document.querySelector(
+      ".navigation-mobile-menu"
+    ) as HTMLUListElement;
+    const navToggle = document.querySelector(
+      ".mobile-nav-toggle"
+    ) as HTMLButtonElement;
+
+    const toggleMenu = () => {
+      const visibility = primaryNav.getAttribute("data-visible");
+      if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else {
+        primaryNav.setAttribute("data-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    const closeMenu = () => {
+      primaryNav.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      const isClickInsideMenu = primaryNav.contains(e.target as Node);
+      const isClickInsideButton = navToggle.contains(e.target as Node);
+      if (!isClickInsideMenu && !isClickInsideButton) {
+        closeMenu();
+      }
+    });
+  });
+</script> -->
