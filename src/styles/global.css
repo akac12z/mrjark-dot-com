@@ -192,9 +192,6 @@
   .navigation-desktop-link {
     @apply mb-0;
   }
-  .navigation-desktop-link a {
-    @apply text-mr-primary-green text-sm;
-  }
 
   /* BIAS CATEGORIES */
   .common-classes-bias-category {
