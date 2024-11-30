@@ -9,6 +9,7 @@ import { Image } from "astro:assets";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@SEO/contents/BiasSEO.astro";
+import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
 
 
 interface Props {
@@ -34,36 +35,39 @@ const { Content } = await render(entry);
 
 <MainLayout>
   <BiasSEO slot="head" entry={entry} />
-  <section class="flex flex-col justify-center items-center">
-    <div class="w-3/4 pb-6">
-      <Image
-        src={cover.src}
-        width={cover.src.width}
-        height={cover.src.height}
-        alt={cover.alt}
-        transition:name=`${slug}-image`
-        class="for-covers"
-        quality="low"
-        loading="lazy"
-      />
-    </div>
-    <article class="prose prose-invert mx-auto">
-      <div class="flex items-center justify-between">
-        {
-          lastTimeEdited && lastTimeEdited !== publishDate
-            ? (
-              <p class="text-xs">Publicado: {publishDate}</p>
-              <p class="text-xs">Editado: {lastTimeEdited}</p>
-            )
-            : (
-              <p class="text-xs">Publicado: {publishDate}</p>
-            )
-        }
+  <section class="mx-auto">
+    <GoBackInTop headPage="/psychology/bias"/>
+    <article class="flex flex-col justify-center items-center">
+      <div class="w-3/4 pb-6">
+        <Image
+          src={cover.src}
+          width={cover.src.width}
+          height={cover.src.height}
+          alt={cover.alt}
+          transition:name=`${slug}-image`
+          class="for-covers"
+          quality="low"
+          loading="lazy"
+        />
       </div>
-      <h1 transition:name=`${slug}-name` class="text-center">
-        {name}
-      </h1>
-      <Content />
+      <div class="prose prose-invert mx-auto">
+        <div class="flex items-center justify-between">
+          {
+            lastTimeEdited && lastTimeEdited !== publishDate
+              ? (
+                <span class="text-xs">Publicado: {publishDate}</span>
+                <span class="text-xs">Editado: {lastTimeEdited}</span>
+              )
+              : (
+                <span class="text-xs">Publicado: {publishDate}</span>
+              )
+          }
+        </div>
+        <h1 transition:name=`${slug}-name` class="text-center mt-6">
+          {name}
+        </h1>
+        <Content />
+      </div>
     </article>
   </section>
 </MainLayout>
