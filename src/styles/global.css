@@ -171,20 +171,23 @@
   /* TOGGLE HAMBURGER MENU */
   /* Toggle Menu Mobile */
   .mobile-nav-toggle {
-    @apply absolute block text-mr-primary-green z-10 w-6 aspect-square top-7 right-3 transform duration-500 ease-linear;
+    @apply absolute block text-mr-primary-green z-10 w-6 h-6 aspect-square top-7 right-3 transform duration-500 ease-linear;
   }
   .mobile-nav-toggle[aria-expanded="true"] {
-    @apply text-mr-neon-orange transform duration-500 ease-linear;
+    @apply text-mr-neon-orange transform duration-500 ease-linear rotate-90;
   }
   .navigation-mobile-menu {
-    @apply fixed top-4 right-0 w-2/4 h-2/4 rounded-b-xl rounded-tl-xl flex flex-col items-center justify-center gap-2 border border-mr-primary-green bg-mr-bg/10 backdrop-blur-lg transform -translate-y-96 transition-transform duration-500 ease-out;
+    @apply fixed top-4 right-0 w-2/3 h-2/4 rounded-b-xl rounded-tl-xl flex flex-col items-start justify-start pt-6 pl-4 gap-2 border border-mr-primary-green bg-mr-bg/10 backdrop-blur-md transform -translate-y-[500px] transition-transform duration-500 ease-out;
   }
   .navigation-mobile-menu[data-visible="true"] {
     @apply transform translate-y-0;
   }
+  .navigation-mobile-link {
+    @apply mb-0;
+  }
   /* Toggle Menu Desktop & Tablet */
   .navigation-desktop-menu {
-    @apply flex justify-center items-center text-mr-primary-green gap-4;
+    @apply flex justify-center items-center gap-4;
   }
   .navigation-desktop-link {
     @apply mb-0;

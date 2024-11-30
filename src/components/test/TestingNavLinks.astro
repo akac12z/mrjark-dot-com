@@ -12,6 +12,6 @@ const navLinksClasses = [
   .join(" ");
 ---
 
-<li class={`${navLinksClasses} navigation-desktop-link`}>
-  <a href={href}>{text}</a>
+<li class="navigation-mobile-link xs:navigation-desktop-link">
+  <a class={navLinksClasses} href={href}>{text}</a>
 </li>

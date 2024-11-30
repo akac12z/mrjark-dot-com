@@ -3,6 +3,7 @@ import { HEADER_LINKS } from "@/global/headerLinks";
 import { Image } from "astro:assets";
 import TestingNavLinks from "./TestingNavLinks.astro";
 import NavbarMobileMenu from "./NavbarMobileMenu.astro";
+import NavbarDesktopMenu from "./NavbarDesktopMenu.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -13,45 +14,9 @@ const currentPath = Astro.url.pathname;
       <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
     </a>
     <NavbarMobileMenu />
-    <!-- <section class="xs:hidden">
-      <button
-        class="mobile-nav-toggle"
-        aria-controls="navigation-mobile-menu"
-        aria-expanded="false"
-        ><svg
-          class="h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="3"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg></button
-      >
+    <NavbarDesktopMenu />
 
-      <ul
-        data-visible="false"
-        id="navigation-mobile-menu"
-        class="navigation-mobile-menu"
-      >
-        {
-          HEADER_LINKS.map(({ customClasses, href, text }) => (
-            <TestingNavLinks
-              href={href}
-              text={text}
-              currentPath={currentPath}
-              customClasses={customClasses}
-            />
-          ))
-        }
-      </ul>
-    </section> -->
-
-    <section class="hidden xs:flex">
+    <!-- <section class="hidden xs:flex">
       <ul class="navigation-desktop-menu">
         {
           HEADER_LINKS.map(({ customClasses, href, text }) => (
@@ -64,7 +29,7 @@ const currentPath = Astro.url.pathname;
           ))
         }
       </ul>
-    </section>
+    </section> -->
   </nav>
 </header>
 
