@@ -45,6 +45,8 @@ Aquí estarán las imagenes o componentes visuales estáticos de los contenidos 
 
 Todos los iconos (svg) que tenga la web y los ordenaré dependiendo de donde se encuentre dentro de la carpeta `/src/pages/*` y también por `/src/content/*`. Es decir, si por ejemplo, la página *bias* está dentro de *psychology* **no haré** una carpeta dentro de icons que sea `.../icons/psychology/bias`. Sino que lo tendré todo en el root de la carpeta icons como dos elementos totalmente distintos.
 
+Y en la carpte de `/src/components/icons/shared` tengo los icons que se compoarten en toda la web como puede ser el Logo.
+
 ### /src/components/pages
 
 Aquí estará la UI de toda la web. Es decir, todos los elementos **generales** y se dividirán como los **icons**, donde no tendré en cuenta las subcarpetas sino que las tendré todas en el root de estas pages como elementos distintos.
