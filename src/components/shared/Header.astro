@@ -53,33 +53,3 @@ import NavbarDesktopMenu from "./headerMenus/NavbarDesktopMenu.astro";
     });
   });
 </script>
-
-<!-- ---
-import { HEADER_LINKS } from "@/global/headerLinks";
-import NavLinks from "@shared/NavLinks.astro";
-import { Image } from "astro:assets";
-
-const currentPath = Astro.url.pathname;
----
-
-<header>
-  <nav class="my-2 w-full">
-    <section class="flex justify-between items-center mx-auto">
-      <a href="/">
-        <Image src="/favicon.svg" width={20} height={20} alt=`mrjark logo` />
-      </a>
-      <div class="flex gap-4 justify-center items-center text-sm">
-        {
-          HEADER_LINKS.map(({ customClasses, href, text }) => (
-            <NavLinks
-              href={href}
-              text={text}
-              currentPath={currentPath}
-              customClasses={customClasses}
-            />
-          ))
-        }
-      </div>
-    </section>
-  </nav>
-</header> -->
