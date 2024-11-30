@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function TestingGoBack() {
+interface Props {
+  headPage: string; // Ruta a la que se redirige
+}
+
+export default function TestingGoTo({ headPage }: Props) {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Mostrar u ocultar el botón según el scroll
+  // Mostrar u ocultar el enlace según el scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,15 +21,6 @@ export default function TestingGoBack() {
     };
   }, []);
 
-  // Función para ir atrás
-  const goBack = () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      alert("No hay historial de navegación anterior.");
-    }
-  };
-
   return (
     <div
       className={`
@@ -37,16 +28,16 @@ export default function TestingGoBack() {
         flex justify-start transition-opacity duration-300
         ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
-      <button
+      <a
         className="
           w-8 h-8 rounded-full 
           border border-mr-neon-orange bg-mr-neon-orange bg-opacity-10 
           text-mr-neon-orange hover:scale-105 flex items-center justify-center
         "
-        onClick={goBack}
+        href={headPage}
       >
         ←
-      </button>
+      </a>
     </div>
   );
 }

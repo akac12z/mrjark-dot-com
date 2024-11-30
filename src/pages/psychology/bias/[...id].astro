@@ -10,6 +10,7 @@ import { Image } from "astro:assets";
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@SEO/contents/BiasSEO.astro";
 import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
+import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
 
 
 interface Props {
@@ -37,6 +38,7 @@ const { Content } = await render(entry);
   <BiasSEO slot="head" entry={entry} />
   <section class="mx-auto">
     <GoBackInTop headPage="/psychology/bias"/>
+    <ScrollGoBackBtn headPage="/psychology/bias" client:load />
     <article class="flex flex-col justify-center items-center">
       <div class="w-3/4 pb-6">
         <Image

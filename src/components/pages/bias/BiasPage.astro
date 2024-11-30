@@ -1,15 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 
+import GoBackInTop from "../shared/GoBackInTop.astro";
+import ScrollGoBackBtn from "../shared/ScrollGoBackBtn";
+
 import BiasHeader from "./BiasHeader.astro";
 import BiasCard from "./BiasCard.astro";
-import GoBackInTop from "../shared/GoBackInTop.astro";
 
 const biases = await getCollection("bias");
 ---
 
 <section class="mx-auto">
   <GoBackInTop headPage="/psychology" />
+  <ScrollGoBackBtn headPage="/psychology" client:load />
   <section class="flex flex-col gap-y-4 xs:gap-y-16">
     <BiasHeader />
 
