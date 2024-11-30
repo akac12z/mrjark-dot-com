@@ -175,7 +175,7 @@
   /* TOGGLE HAMBURGER MENU */
   /* Toggle Menu Mobile */
   .mobile-nav-toggle {
-    @apply absolute block text-mr-primary-green z-10 w-6 h-6 aspect-square top-7 right-3 transform duration-500 ease-linear;
+    @apply absolute block text-mr-primary-green z-10 w-6 h-6 aspect-square top-6 right-3 transform duration-500 ease-linear;
   }
   .mobile-nav-toggle[aria-expanded="true"] {
     @apply text-mr-neon-orange transform duration-500 ease-linear rotate-90;
