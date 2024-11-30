@@ -1,6 +1,6 @@
 ---
 import { HEADER_LINKS } from "@/global/headerLinks";
-import TestingNavLinks from "@shared/TestingNavLinks.astro";
+import NavLinks from "./NavLinks.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -9,7 +9,7 @@ const currentPath = Astro.url.pathname;
   <ul class="navigation-desktop-menu">
     {
       HEADER_LINKS.map(({ customClasses, href, text }) => (
-        <TestingNavLinks
+        <NavLinks
           href={href}
           text={text}
           currentPath={currentPath}

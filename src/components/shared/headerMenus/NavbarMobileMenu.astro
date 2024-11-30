@@ -2,7 +2,7 @@
 import { HEADER_LINKS } from "@/global/headerLinks";
 
 import FooterMobileMenu from "@shared/headerMenus/FooterMobileMenu.astro";
-import TestingNavLinks from "@shared/TestingNavLinks.astro";
+import NavLinks from "./NavLinks.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -32,7 +32,7 @@ const currentPath = Astro.url.pathname;
   >
     {
       HEADER_LINKS.map(({ customClasses, href, text }) => (
-        <TestingNavLinks
+        <NavLinks
           href={href}
           text={text}
           currentPath={currentPath}
