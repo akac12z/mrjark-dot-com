@@ -13,8 +13,6 @@ En este readme voy a ir poniendo ciertas cosas del código que pueden ser intere
 
 ## Dónde lo voy aprendiendo
 
-- Cómo usar los .md ccon el método .glob() gracias al vídeo de [Kevin Powell](https://www.youtube.com/watch?v=acgIGT0J99U&t=328s)
-
 - Los componentes de SEO que están en `src/components/SEO` y los de los head que están en  `src/components/shared/head` me estoy inspirando en el proyecto y repositorio de [Barebones](https://astro.build/themes/details/superweb-barebones/)
 
 - Aprender a usar markdown es sencillo si revisas [CommonaMark](https://commonmark.org/)
