@@ -12,28 +12,28 @@ export async function getStaticPaths() {
   const bookNotes = await getCollection("bookNotes");
 
   return bookNotes.map((entry) => ({
-    params: { id: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { data, slug } = entry;
+const { data, id } = entry;
 const { quote, title } = data;
 ---
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
-    <a href=`/book-notes/${slug}`>
+    <a href=`/book-notes/${id}`>
       <BookCover
         customClasses="md:max-w-36"
         entry={entry}
-        transition:name={`${slug}-bookCover`}
+        transition:name={`${id}-bookCover`}
       />
     </a>
     <section class="flex flex-col items-start ml-5 gap-y-2">
       <h2>
-        <a href=`/book-notes/${slug}`>{title}</a>
+        <a href=`/book-notes/${id}`>{title}</a>
       </h2>
       <BookScore entry={entry} />
       <!-- TODO: CREAR LA FECHA DE PUBLICACIÓN -->

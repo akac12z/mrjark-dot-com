@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { entry, customClasses = " md:max-w-40" } = Astro.props;
-const { data, slug } = entry;
+const { data, id } = entry;
 const { cover } = data;
 // class="max-w-28 xs:max-w-36 md:max-w-40 mx-auto h-fit w-fit rounded"
 // class="max-w-28 xs:max-w-36 md:max-w-40 overflow-hidden object-cover w-fit h-fit rounded"
@@ -31,6 +31,6 @@ const { cover } = data;
       `${customClasses}`,
     ]}
     quality="mid"
-    transition:name={`${slug}-bookCover`}
+    transition:name={`${id}-bookCover`}
   />
 </div>

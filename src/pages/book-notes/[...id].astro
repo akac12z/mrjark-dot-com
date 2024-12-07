@@ -24,13 +24,13 @@ export async function getStaticPaths() {
   const bookNotes = await getCollection("bookNotes");
 
   return bookNotes.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { data, slug } = entry;
+const { data, id } = entry;
 
 const { title, score, authors } = data;
 const authorsInArry = Array.isArray(authors) ? authors : [authors];
@@ -48,7 +48,7 @@ const { Content, headings } = await render(entry);
       <BookCover entry={entry} />
 
       <section class="flex flex-col items-start prose prose-invert">
-        <h1 transition:name={`${slug}-${title}`} class="text-start mb-4">
+        <h1 transition:name={`${id}-${title}`} class="text-start mb-4">
           {title}
         </h1>
         <div class="flex flex-col -mt-1 mb-4">
@@ -69,7 +69,7 @@ const { Content, headings } = await render(entry);
           entry={entry}
           width="w-5 xs:w-7"
           height="w-5 xs:h-7"
-          transition:name={`${slug}-bookScore-${score}`}
+          transition:name={`${id}-bookScore-${score}`}
         />
         <!-- TODO: HACER READING TIME -->
       </section>
@@ -83,7 +83,7 @@ const { Content, headings } = await render(entry);
               <li class=" leading-3 ">
                 <a
                   class="no-underline text-center text-gray-300 text-xs"
-                  href={`#${heading.slug}`}
+                  href={`#${heading}`}
                 >
                   {index + 1} - {heading.text}
                 </a>
