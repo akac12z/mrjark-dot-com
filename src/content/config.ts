@@ -9,7 +9,10 @@ import { glob } from "astro/loaders";
  */
 
 const essayCollection = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: ["**/*.mdx", "**/*.md"],
+    base: "./src/content/essay",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -40,7 +43,10 @@ const essayCollection = defineCollection({
 });
 
 const bookNotesCollection = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: ["**/*.mdx", "**/*.md"],
+    base: "./src/content/bookNotes",
+  }),
   schema: ({ image }) =>
     z.object({
       title: z.string().max(60),
