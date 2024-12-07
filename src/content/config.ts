@@ -10,7 +10,7 @@ import { glob } from "astro/loaders";
 
 const essayCollection = defineCollection({
   loader: glob({
-    pattern: ["**/*.mdx", "**/*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/essay",
   }),
   schema: z.object({
@@ -44,7 +44,7 @@ const essayCollection = defineCollection({
 
 const bookNotesCollection = defineCollection({
   loader: glob({
-    pattern: ["**/*.mdx", "**/*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/bookNotes",
   }),
   schema: ({ image }) =>
@@ -140,7 +140,7 @@ const bookNotesCollection = defineCollection({
 const biasCollection = defineCollection({
   // type: "content",
   loader: glob({
-    pattern: ["**/*.mdx", "**/*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/bias",
   }),
   schema: ({ image }) =>
