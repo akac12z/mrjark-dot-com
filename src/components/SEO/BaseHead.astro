@@ -5,7 +5,7 @@
  *
  */
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "../../styles/global.css";
 import Favicons from "./Favicons.astro";
 ---
@@ -54,7 +54,7 @@ import Favicons from "./Favicons.astro";
   }
 
   <Favicons />
-  <ViewTransitions />
+  <ClientRouter />
 
   <slot />
 </head>
