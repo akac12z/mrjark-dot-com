@@ -8,6 +8,7 @@ import BiasHeader from "./BiasHeader.astro";
 import BiasCard from "./BiasCard.astro";
 
 const biases = await getCollection("bias");
+// const biasesData = biases.map((bias) => bias.data);
 ---
 
 <section class="mx-auto">
@@ -21,7 +22,7 @@ const biases = await getCollection("bias");
       <section class="grid grid-cols-1 xs:grid-cols-2 gap-x-4 mx-auto gap-y-4">
         {
           biases.map((bias) => (
-            <BiasCard entry={bias} transition:name={`${bias.slug}-name`} />
+            <BiasCard entry={bias} transition:name={`${bias.id}-name`} />
           ))
         }
       </section>

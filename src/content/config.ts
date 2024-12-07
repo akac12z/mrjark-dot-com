@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { isValidDateFormat } from "@utils/validatingDate";
+import { glob } from "astro/loaders";
 // import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
 /**
@@ -131,7 +132,11 @@ const bookNotesCollection = defineCollection({
 });
 
 const biasCollection = defineCollection({
-  type: "content",
+  // type: "content",
+  loader: glob({
+    pattern: ["**/*.mdx", "**/*.md"],
+    base: "./src/content/bias",
+  }),
   schema: ({ image }) =>
     z
       .object({

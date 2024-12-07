@@ -21,13 +21,13 @@ export async function getStaticPaths() {
   const biases = await getCollection("bias");
 
   return biases.map((entry) => ({
-    params: { id: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { data, slug } = entry;
+const { data, id } = entry;
 const { name, cover, publishDate, lastTimeEdited } = data;
 
 const { Content } = await render(entry);
@@ -46,7 +46,7 @@ const { Content } = await render(entry);
           width={cover.src.width}
           height={cover.src.height}
           alt={cover.alt}
-          transition:name=`${slug}-image`
+          transition:name=`${id}-image`
           class="for-covers"
           quality="low"
           loading="lazy"
@@ -65,7 +65,7 @@ const { Content } = await render(entry);
               )
           }
         </div>
-        <h1 transition:name=`${slug}-name` class="text-center mt-6">
+        <h1 transition:name=`${id}-name` class="text-center mt-6">
           {name}
         </h1>
         <Content />

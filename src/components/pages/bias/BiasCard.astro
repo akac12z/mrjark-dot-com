@@ -9,22 +9,23 @@ interface Props {
 
 export async function getStaticPaths() {
   const biases = await getCollection("bias");
+  const {} = biases;
 
   return biases.map((entry) => ({
-    params: { id: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { data, slug } = entry;
+const { data, id } = entry;
 const { description, name, category } = data;
 ---
 
 <article
   class="group flex rounded-xl h-full border bg-clip-border border-mr-bias-500"
 >
-  <a href=`/psychology/bias/${slug}` class="p-3 flex flex-col justify-between">
+  <a href=`/psychology/bias/${id}` class="p-3 flex flex-col justify-between">
     <article>
       <div class="flex items-center justify-start gap-x-3 pb-1">
         <svg
@@ -44,7 +45,7 @@ const { description, name, category } = data;
         </svg>
         <h2
           class="line-clamp-2 text-ellipsis overflow-hidden flex-wrap"
-          transition:name=`${slug}-name`
+          transition:name=`${id}-name`
         >
           {name}
         </h2>
