@@ -54,7 +54,7 @@ const bookNotesCollection = defineCollection({
         src: image(),
         alt: z.string(),
       }),
-      description: z.string().min(40).max(150),
+      description: z.string().min(60).max(140),
       quote: z.string().max(150),
       score: z
         .number()
@@ -151,7 +151,7 @@ const biasCollection = defineCollection({
           src: image(),
           alt: z.string(),
         }),
-        description: z.string().min(40).max(160),
+        description: z.string().min(60).max(140),
         publishDate: z.string().refine(isValidDateFormat),
         lastTimeEdited: z
           .string()
