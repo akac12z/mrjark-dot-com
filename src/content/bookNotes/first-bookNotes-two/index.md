@@ -1,27 +1,27 @@
 ---
 title: "The Great Mental Models"
-description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv'
-quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        maiores dignissimos animi reprehenderit rem reiciendis.'
+description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv"
+quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+  maiores dignissimos animi reprehenderit rem reiciendis."
 score: 4
-cover: 
-  src: 'the-great-mental-models-copy.jpg'
+cover:
+  src: "the-great-mental-models-copy.jpg"
   alt: "un libro"
 readingTime: 2
 keywords: ["abc", "def"]
-tags: ['abc', 'def']
+tags: ["abc", "def"]
 language: es
-publishDate: '2023-10-12'
+publishDate: "2023-06-30"
 authors:
   - name: "Shane Parrish"
     link: "https://fs.blog/about/"
-authorLink: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
+authorLink: "https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent"
 isDraft: true
-buyItOnAmazon: 
-  spain: 'https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent'
+buyItOnAmazon:
+  spain: "https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent"
 ---
 
->Work in progress. Esta data no es real, solo un ejemplo.
+> Work in progress. Esta data no es real, solo un ejemplo.
 
 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
 
@@ -47,7 +47,7 @@ Este libro es un tratado de teoría de éticas, muy popular durante el Renacimie
 
 #### Index 3.1.1
 
->El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham - Naval
+> El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham - Naval
 
 ##### Index 3.1.1.1
 
