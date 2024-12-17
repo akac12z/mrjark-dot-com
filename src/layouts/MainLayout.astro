@@ -21,7 +21,7 @@ const { lang } = SITE_DEFAULT_CONFIG;
     <Header />
     <main class="mt-5 mb-10 overflow-x-hidden">
       <slot />
-      <ScrollToTopBtn client:idle />
+      <ScrollToTopBtn client:only="react" />
     </main>
     <Footer />
   </body>

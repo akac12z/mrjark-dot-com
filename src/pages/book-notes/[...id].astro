@@ -32,17 +32,17 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data, id } = entry;
 
-const { title, score, authors } = data;
+const { title, score, authors, readingTime, publishDate } = data;
 const authorsInArry = Array.isArray(authors) ? authors : [authors];
 
-const { Content, headings } = await render(entry);
+const { Content } = await render(entry);
 ---
 
 <MainLayout>
   <BookNoteSEO slot="head" entry={entry} />
   <article class="mx-auto">
     <GoBackInTop headPage="/book-notes" />
-    <ScrollGoBackBtn headPage="/book-notes" client:load />
+    <ScrollGoBackBtn headPage="/book-notes" client:only="react" />
 
     <section class="grid grid-cols-2 max-w-lg mx-auto">
       <BookCover entry={entry} />
@@ -60,7 +60,7 @@ const { Content, headings } = await render(entry);
                 target="_blank"
                 href={author.link}
               >
-                by {author.name}
+                de {author.name}
               </a>
             ))
           }
@@ -71,11 +71,15 @@ const { Content, headings } = await render(entry);
           height="w-5 xs:h-7"
           transition:name={`${id}-bookScore-${score}`}
         />
-        <!-- TODO: HACER READING TIME -->
+        <div class="flex flex-col mt-4 gap-y-2 text-xs text-mr-text-relax">
+          <span>Léelo en: {readingTime}min</span>
+          <span>Leido el: {publishDate}</span>
+        </div>
       </section>
     </section>
     <section class="prose prose-invert mt-6">
-      <div>
+      <!-- TODO: REHACER LOS HEADINGS CON UN TOGGLE QUE SE ABRA Y CIERRE -->
+      <!-- <div>
         <p class="text-lg -mb-3">Tabla de contenidos</p>
         <ul class="list-none pl-0">
           {
@@ -91,7 +95,7 @@ const { Content, headings } = await render(entry);
             ))
           }
         </ul>
-      </div>
+      </div> -->
       <Content />
     </section>
   </article>
