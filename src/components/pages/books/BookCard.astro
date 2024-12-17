@@ -24,7 +24,10 @@ const { quote, title } = data;
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
-    <a href=`/book-notes/${id}`>
+    <a
+      href=`/book-notes/${id}`
+      class="max-w-28 xs:max-w-36 mx-auto h-fit w-fit max-h-48 xs:max-h-52 rounded"
+    >
       <BookCover
         customClasses="md:max-w-36"
         entry={entry}

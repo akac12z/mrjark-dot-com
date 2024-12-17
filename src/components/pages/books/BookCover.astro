@@ -16,7 +16,7 @@ const { cover } = data;
 
 <div
   class:list={[
-    "max-w-28 xs:max-w-36 mx-auto h-fit w-fit rounded",
+    "max-w-28 xs:max-w-36 mx-auto h-fit w-fit max-h-48 xs:max-h-52 rounded ",
     `${customClasses}`,
   ]}
 >
@@ -27,10 +27,10 @@ const { cover } = data;
     formats={["avif", "webp", "jpeg", "png"]}
     alt={cover.alt}
     class:list={[
-      "max-w-28 xs:max-w-36 overflow-hidden object-cover w-fit h-fit rounded",
+      "max-w-28 xs:max-w-36 overflow-hidden object-cover w-fit h-fit max-h-48 xs:max-h-52 rounded",
       `${customClasses}`,
     ]}
-    quality="mid"
+    quality="high"
     transition:name={`${id}-bookCover`}
   />
 </div>

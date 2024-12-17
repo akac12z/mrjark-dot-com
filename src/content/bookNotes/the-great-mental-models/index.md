@@ -5,7 +5,7 @@ quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
   maiores dignissimos animi reprehenderit rem reiciendis."
 score: 4
 cover:
-  src: "the-great-mental-models-copy.jpg"
+  src: "the-great-mental-models-cover.jpg"
   alt: "un libro"
 readingTime: 2
 keywords: ["abc", "def"]
