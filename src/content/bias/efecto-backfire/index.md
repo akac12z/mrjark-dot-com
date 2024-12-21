@@ -11,7 +11,7 @@ tags: ["sesgo", "bias", "Efecto Backfire", "marco effect"]
 keywords: ["sesgo", "bias", "efecto ancla", "anchoring effect"]
 readingTime: 5
 language: "es"
-category: [speed, memory]
+category: [velocidad, memoria]
 ---
 
 # Qué son los sesgos?
