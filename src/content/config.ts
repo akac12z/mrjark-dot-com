@@ -152,6 +152,7 @@ const biasCollection = defineCollection({
           alt: z.string(),
         }),
         description: z.string().min(60).max(140),
+        biasQuestion: z.string().max(120),
         publishDate: z.string().refine(isValidDateFormat),
         lastTimeEdited: z
           .string()

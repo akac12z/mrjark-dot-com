@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { description, name, category } = data;
+const { biasQuestion, name, category } = data;
 ---
 
 <article
@@ -52,7 +52,7 @@ const { description, name, category } = data;
       </div>
       <div class="flex flex-col gap-2 my-4">
         <p class="line-clamp-2">
-          {description}
+          {biasQuestion}
         </p>
         <BiasCategory category={category} />
       </div>
