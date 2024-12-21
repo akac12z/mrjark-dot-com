@@ -27,7 +27,7 @@ const { biasQuestion, name, category } = data;
 >
   <a href=`/psychology/bias/${id}` class="p-3 flex flex-col justify-between">
     <article>
-      <div class="flex items-center justify-start gap-x-3 pb-1">
+      <div class="flex items-center justify-start gap-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -50,31 +50,12 @@ const { biasQuestion, name, category } = data;
           {name}
         </h2>
       </div>
-      <div class="flex flex-col gap-2 my-4">
-        <p class="line-clamp-2">
+      <div class="flex flex-col gap-2 mt-4">
+        <p class="line-clamp-3">
           {biasQuestion}
         </p>
         <BiasCategory category={category} />
       </div>
     </article>
-    <button
-      type="button"
-      class="w-fit flex items-center gap-1 pt-2 font-sans text-xs font-bold text-center align-middle transition-all rounded-lg select-none disabled:pointer-events-none"
-    >
-      Saber más
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        class="w-4 h-4 text-mr-bias transform transition-transform duration-300 ease-linear group-hover:translate-x-2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-      </svg>
-    </button>
   </a>
 </article>
