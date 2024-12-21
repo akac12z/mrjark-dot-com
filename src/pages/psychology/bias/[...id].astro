@@ -11,6 +11,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@SEO/contents/BiasSEO.astro";
 import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
 import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
+import BiasCategory from "@/components/pages/bias/BiasCategory.astro";
 
 
 interface Props {
@@ -28,7 +29,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { name, cover, publishDate, lastTimeEdited } = data;
+const { name, cover, publishDate, lastTimeEdited, biasQuestion, category } = data;
 
 const { Content } = await render(entry);
 
@@ -40,6 +41,32 @@ const { Content } = await render(entry);
     <GoBackInTop headPage="/psychology/bias"/>
     <ScrollGoBackBtn headPage="/psychology/bias" client:only="react" />
     <article class="flex flex-col justify-center items-center">
+      <section class="text-center">
+        <h1 transition:name=`${id}-name` class="text-base text-center mb-2 underline">
+          {name}
+        </h1>
+        <span class="xs:text-2xl text-xl font-museo_moderno text-mr-text-headers tracking-wider">{biasQuestion}</span>
+        <section class="flex flex-col justify-center items-center text-center mt-8 gap-y-2">
+          {
+            category.length > 1
+              ? <p>Categorías del sesgo:</p>
+              : <p>Categoría del sesgo:</p>
+          }
+          <BiasCategory category={category} />
+        </section>
+        <section class="flex items-center justify-between text-mr-text-relax my-4">
+          {
+            lastTimeEdited && lastTimeEdited !== publishDate
+              ? (
+                <span class="text-xs">Publicado: {publishDate}</span>
+                <span class="text-xs">Editado: {lastTimeEdited}</span>
+              )
+              : (
+                <span class="text-xs">Publicado: {publishDate}</span>
+              )
+          }
+        </section>
+      </section>
       <div class="w-3/4 pb-6">
         <Image
           src={cover.src}
@@ -53,21 +80,6 @@ const { Content } = await render(entry);
         />
       </div>
       <div class="prose prose-invert mx-auto">
-        <div class="flex items-center justify-between">
-          {
-            lastTimeEdited && lastTimeEdited !== publishDate
-              ? (
-                <span class="text-xs">Publicado: {publishDate}</span>
-                <span class="text-xs">Editado: {lastTimeEdited}</span>
-              )
-              : (
-                <span class="text-xs">Publicado: {publishDate}</span>
-              )
-          }
-        </div>
-        <h1 transition:name=`${id}-name` class="text-center mt-6">
-          {name}
-        </h1>
         <Content />
       </div>
     </article>

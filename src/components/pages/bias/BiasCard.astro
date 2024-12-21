@@ -23,11 +23,14 @@ const { biasQuestion, name, category } = data;
 ---
 
 <article
-  class="group flex rounded-xl h-full border bg-clip-border border-mr-bias-500"
+  class="group flex rounded-xl h-full w-full border bg-clip-border border-mr-bias-500"
 >
-  <a href=`/psychology/bias/${id}` class="p-3 flex flex-col justify-between">
-    <article>
-      <div class="flex items-center justify-start gap-x-3">
+  <a
+    href=`/psychology/bias/${id}`
+    class="flex flex-col justify-between h-full w-full p-3"
+  >
+    <article class="flex flex-col justify-between">
+      <div class="flex items-center justify-start gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -50,7 +53,7 @@ const { biasQuestion, name, category } = data;
           {name}
         </h2>
       </div>
-      <div class="flex flex-col gap-2 mt-4">
+      <div class="flex flex-col justify-between gap-2 mt-4">
         <p class="line-clamp-3">
           {biasQuestion}
         </p>
