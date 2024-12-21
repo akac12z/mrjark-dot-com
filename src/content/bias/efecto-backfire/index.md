@@ -1,13 +1,13 @@
 ---
-name: 'Efecto Backfire'
-description: 'Un ejemplo del primer bias con su descripción para ver cómo queda'
-cover: 
+name: "Efecto Backfire"
+description: "Un ejemplo del primer bias con su descripción para ver cómo queda"
+cover:
   src: ./andrew-robinson-xh3DYZLFfgA-unsplash-copy.jpg
-  alt: 'Efecto Backfire iamgen'
-publishDate: '2024-02-10'
-lastTimeEdited: '2024-02-10'
-tags: ['sesgo', 'bias', 'Efecto Backfire', 'marco effect']
-keywords: ['sesgo', 'bias', 'efecto ancla', 'anchoring effect']
+  alt: "Efecto Backfire iamgen"
+publishDate: "10-12-2023"
+lastTimeEdited: "12-12-2023"
+tags: ["sesgo", "bias", "Efecto Backfire", "marco effect"]
+keywords: ["sesgo", "bias", "efecto ancla", "anchoring effect"]
 readingTime: 5
 language: "es"
 category: [speed, memory]

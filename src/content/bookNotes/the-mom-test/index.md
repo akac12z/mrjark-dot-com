@@ -11,7 +11,7 @@ readingTime: 2
 keywords: ["abc", "def"]
 tags: ["abc", "def"]
 language: es
-publishDate: "2023-06-30"
+publishDate: "10-12-2023"
 authors:
   - name: "Rob Fitzpatrick"
     link: "https://www.robfitz.com/c/who-what-and-why/"

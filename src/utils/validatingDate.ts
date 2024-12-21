@@ -1,25 +1,32 @@
-
 export const isValidDateFormat = (dateString: string): boolean => {
-  const dateFormatMustBe = /^\d{4}-\d{2}-\d{2}$/; // Expresión regular para YYYY-MM-DD
+  const dateFormatMustBe = /^\d{2}-\d{2}-\d{4}$/; // Expresión regular para DD-MM-YYYY
 
-  if (!dateFormatMustBe.test(dateString)) throw new Error('The date must be in the format YYYY-MM-DD!');
+  if (!dateFormatMustBe.test(dateString))
+    throw new Error("The date must be in the format DD-MM-YYYY!");
 
-  const [year, month, day] = dateString.split('-').map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
+  const [day, month, year] = dateString.split("-").map(Number);
+
+  // Asegurarse de que la fecha sea válida
+  const date = new Date(year, month - 1, day); // Month está basado en 0, por eso restamos 1 al mes
 
   if (
-  date.getUTCFullYear() !== year ||
-    date.getUTCMonth() !== month - 1 ||
-    date.getUTCDate() !== day
+    date.getFullYear() !== year || // Comprobamos si el año es correcto
+    date.getMonth() !== month - 1 || // Comprobamos si el mes es correcto
+    date.getDate() !== day // Comprobamos si el día es correcto
   ) {
-    throw new Error('The date is invalid, make sure you have spelled the date correctly. Remember, must be YYYY-MM-DD and be real!')
+    throw new Error(
+      "The date is invalid, make sure you have spelled the date correctly. Remember, it must be DD-MM-YYYY and be real!"
+    );
   }
-  return true;
-}
 
-// Funcion para convertir la fecha en ISO para las metatags
+  return true;
+};
+
+// Función para convertir la fecha en ISO para las metatags
 export const convertDateToISO8601 = (dateString: string): string => {
-  const [year, month, day] = dateString.split('-').map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
+  isValidDateFormat(dateString); // Validamos la fecha en formato DD-MM-YYYY
+
+  const [day, month, year] = dateString.split("-").map(Number);
+  const date = new Date(year, month - 1, day); // Month está basado en 0, por eso restamos 1 al mes
   return date.toISOString();
 };
