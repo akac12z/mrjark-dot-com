@@ -72,8 +72,9 @@ const { Content } = await render(entry);
           transition:name={`${id}-bookScore-${score}`}
         />
         <div class="flex flex-col mt-4 gap-y-2 text-xs text-mr-text-relax">
-          <span>Léelo en: {readingTime}min</span>
-          <span>Leido el: {publishDate}</span>
+          <span
+            >Lo publiqué el {publishDate} y puedes leerlo en {readingTime} min</span
+          >
         </div>
       </section>
     </section>

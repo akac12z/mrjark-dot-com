@@ -19,14 +19,14 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { quote, title } = data;
+const { quote, title, readingTime } = data;
 ---
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
     <a
       href=`/book-notes/${id}`
-      class="max-w-28 xs:max-w-36 mx-auto h-fit w-fit max-h-48 xs:max-h-52 rounded"
+      class="min-w-28 xs:min-w-36 mx-auto h-fit w-fit rounded"
     >
       <BookCover
         customClasses="md:max-w-36"
@@ -39,9 +39,11 @@ const { quote, title } = data;
         <a href=`/book-notes/${id}`>{title}</a>
       </h2>
       <BookScore entry={entry} />
-      <!-- TODO: CREAR LA FECHA DE PUBLICACIÓN -->
+      <div class="flex flex-col gap-y-2 text-xs text-mr-text-relax">
+        <span>Léelo en {readingTime}min</span>
+      </div>
       <p>
-        {quote}
+        "{quote}"
       </p>
     </section>
   </div>
