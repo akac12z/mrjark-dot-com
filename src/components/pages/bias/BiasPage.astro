@@ -12,7 +12,7 @@ const biases = await getCollection("bias");
 
 <section class="mx-auto">
   <GoBackInTop headPage="/psychology" />
-  <ScrollGoBackBtn headPage="/psychology" client:load />
+  <ScrollGoBackBtn headPage="/psychology" client:only="react" />
   <section class="flex flex-col gap-y-4 xs:gap-y-16">
     <BiasHeader />
 
