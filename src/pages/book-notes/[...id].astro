@@ -15,6 +15,7 @@ import BookScore from "@/components/pages/books/BookScore.astro";
 import BookCover from "@/components/pages/books/BookCover.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BookNoteSEO from "@SEO/contents/BookNoteSEO.astro";
+import TableOfContents from "@/components/pages/shared/TableOfContent";
 
 interface Props {
   entry: CollectionEntry<"bookNotes">;
@@ -35,7 +36,7 @@ const { data, id } = entry;
 const { title, score, authors, readingTime, publishDate } = data;
 const authorsInArry = Array.isArray(authors) ? authors : [authors];
 
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
 
 <MainLayout>
@@ -78,25 +79,10 @@ const { Content } = await render(entry);
         </div>
       </section>
     </section>
-    <section class="prose prose-invert mt-6">
-      <!-- TODO: REHACER LOS HEADINGS CON UN TOGGLE QUE SE ABRA Y CIERRE -->
-      <!-- <div>
-        <p class="text-lg -mb-3">Tabla de contenidos</p>
-        <ul class="list-none pl-0">
-          {
-            headings.map((heading, index) => (
-              <li class=" leading-3 ">
-                <a
-                  class="no-underline text-center text-gray-300 text-xs"
-                  href={`#${heading}`}
-                >
-                  {index + 1} - {heading.text}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div> -->
+    <div class="mt-4">
+      <TableOfContents headings={headings} client:only="react" />
+    </div>
+    <section class="prose prose-invert">
       <Content />
     </section>
   </article>

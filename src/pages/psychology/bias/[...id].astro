@@ -11,7 +11,7 @@ import BiasSEO from "@SEO/contents/BiasSEO.astro";
 import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
 import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
 import BiasCategory from "@/components/pages/bias/BiasCategory.astro";
-import TableOfContents from "@test/TableOfContent";
+import TableOfContents from "@/components/pages/shared/TableOfContent";
 
 
 interface Props {
@@ -45,8 +45,8 @@ const { Content, headings } = await render(entry);
         <h1 transition:name=`${id}-name` class="text-base text-center mb-2 underline">
           {name}
         </h1>
-        <span class="xs:text-2xl text-xl font-museo_moderno text-mr-text-headers tracking-wider">{biasQuestion}</span>
-        <section class="flex flex-col justify-center items-center text-center mt-8 gap-y-2">
+        <h2 class="xs:text-2xl text-xl font-museo_moderno text-mr-text-headers tracking-wider">{biasQuestion}</h2>
+        <section class="flex flex-col justify-center items-center text-center my-4 gap-y-2">
           {
             category.length > 1
               ? <p>Categorías del sesgo:</p>
@@ -54,7 +54,7 @@ const { Content, headings } = await render(entry);
           }
           <BiasCategory category={category} />
         </section>
-        <section class="flex items-center justify-between text-mr-text-relax my-4">
+        <section class="flex items-center justify-between text-mr-text-relax mb-6">
           {
             lastTimeEdited && lastTimeEdited !== publishDate
               ? (
@@ -67,34 +67,10 @@ const { Content, headings } = await render(entry);
           }
         </section>
       </section>
-      <section class="flex flex-col justify-start items-start text-left w-full max-w-2xl mb-6">
-        <TableOfContents headings={headings} client:only="react" />
-      </section>
-      <div class="prose prose-invert mx-auto">
+      <TableOfContents headings={headings} client:only="react" />
+      <section class="prose prose-invert mx-auto">
         <Content />
-      </div>
+      </section>
     </article>
   </section>
 </MainLayout>
-
-<style is:global>
-  .btn-toggle-toc {
-    background-color: #007acc;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-
-  .toc-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid #ccc;
-    padding: 1rem;
-    z-index: 1000; /* Ensure it is above other content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    max-height: 80vh;
-  }
-</style>
