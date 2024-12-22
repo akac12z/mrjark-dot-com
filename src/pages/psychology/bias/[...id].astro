@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { name, cover, publishDate, lastTimeEdited, biasQuestion, category } = data;
+const { name, publishDate, lastTimeEdited, biasQuestion, category } = data;
 
 const { Content } = await render(entry);
 
@@ -67,18 +67,6 @@ const { Content } = await render(entry);
           }
         </section>
       </section>
-      <!-- <div class="w-3/4 pb-6">
-        <Image
-          src={cover.src}
-          width={cover.src.width}
-          height={cover.src.height}
-          alt={cover.alt}
-          transition:name=`${id}-image`
-          class="for-covers"
-          quality="low"
-          loading="lazy"
-        />
-      </div> -->
       <div class="prose prose-invert mx-auto">
         <Content />
       </div>
