@@ -41,7 +41,7 @@ const { Content } = await render(entry);
     <GoBackInTop headPage="/psychology/bias"/>
     <ScrollGoBackBtn headPage="/psychology/bias" client:only="react" />
     <article class="flex flex-col justify-center items-center">
-      <section class="text-center">
+      <section class="text-center mb-10">
         <h1 transition:name=`${id}-name` class="text-base text-center mb-2 underline">
           {name}
         </h1>
@@ -67,7 +67,7 @@ const { Content } = await render(entry);
           }
         </section>
       </section>
-      <div class="w-3/4 pb-6">
+      <!-- <div class="w-3/4 pb-6">
         <Image
           src={cover.src}
           width={cover.src.width}
@@ -78,7 +78,7 @@ const { Content } = await render(entry);
           quality="low"
           loading="lazy"
         />
-      </div>
+      </div> -->
       <div class="prose prose-invert mx-auto">
         <Content />
       </div>
