@@ -5,6 +5,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@sharedComponentsInPages/*": [
+        "./src/components/pages/shared/*"
+      ],
       "@shared/*": [
         "./src/components/shared/*"
       ],
