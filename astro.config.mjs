@@ -12,7 +12,7 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 
 // Este es provisional hasta que Vercel arregle el problema con sitemap
-import { sitemapCopier } from 'sitemap-copier';
+import { sitemapCopier } from './sitemap-copier';
 
 // https://astro.build/config
 export default defineConfig( {

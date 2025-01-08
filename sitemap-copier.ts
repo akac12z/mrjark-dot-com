@@ -18,7 +18,7 @@ export function sitemapCopier(): AstroIntegration {
           );
           buildLogger.info(xmlFiles.join(", "));
           for (const file of xmlFiles) {
-            const sourcePath = path.join("./dist/client", file);
+            const sourcePath = path.join("./dist", file);
             const destPath = path.join("./.vercel/output/static", file);
             await cp(sourcePath, destPath);
           }
