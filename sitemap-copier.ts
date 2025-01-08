@@ -1,3 +1,11 @@
+/**
+ * This is a custom Astro integration that copies the sitemap.xml file from the dist folder to the .vercel/output/static folder after the build is done because Vercel doesn't serve files from the dist folder for now.
+ *
+ * This is a workaround until Vercel supports serving files from the dist folder and you can remove this integration once Vercel supports it.
+ *
+ * I inspirated in https://github.com/withastro/adapters/issues/445 to create this integration.
+ */
+
 import type { AstroIntegration } from "astro";
 import { readdir, cp } from "node:fs/promises";
 import * as path from "node:path";
