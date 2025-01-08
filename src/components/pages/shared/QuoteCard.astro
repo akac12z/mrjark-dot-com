@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
-interface QuoteCardProps {
-  text: string;
-  author: string;
-  image: string;
-  link: string;
-}
+import type { QuoteCardProps } from "@interfaces/quoteCard.interfaces";
 
 const { text, author, image, link } = Astro.props as QuoteCardProps;
 ---
