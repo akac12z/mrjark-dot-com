@@ -12,12 +12,12 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 
 // Este es provisional hasta que Vercel arregle el problema con sitemap
-import { TheCopyFilesPlugin } from 'copy-files';
+import { sitemapCopier } from 'sitemap-copier';
 
 // https://astro.build/config
 export default defineConfig( {
   site: 'https://mrjark.com',
-  integrations: [ tailwind(), mdx(), sitemap(), react(), TheCopyFilesPlugin() ],
+  integrations: [ tailwind(), mdx(), sitemap(), react(), sitemapCopier() ],
   output: 'static',
   adapter: vercel( {
     webAnalytics: {
