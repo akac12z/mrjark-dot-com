@@ -10,7 +10,7 @@ export function sitemapCopier(): AstroIntegration {
         const buildLogger = logger.fork("sitemap-copier");
         buildLogger.info("Copying xml files from dist to vercel out");
         try {
-          const files = await readdir("./dist/client");
+          const files = await readdir("./dist");
           const xmlFiles = files.filter(
             (file) =>
               path.extname(file).toLowerCase() === ".xml" &&
