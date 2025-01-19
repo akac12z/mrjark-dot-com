@@ -28,7 +28,8 @@ export default defineConfig( {
   output: 'static',
   env: {
     schema: {
-      GA4_MEASUREMENT_ID: envField.string( { context: 'server', access: 'secret', optional: false } )
+      GA4_MEASUREMENT_ID: envField.string( { context: 'server', access: 'secret', optional: false } ),
+      GTM_MEASUREMENT_ID: envField.string( { context: 'server', access: 'secret', optional: false } )
     }
   },
   adapter: vercel( {
