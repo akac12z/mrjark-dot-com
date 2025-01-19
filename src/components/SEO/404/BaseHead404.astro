@@ -5,9 +5,14 @@ import "../../../styles/global.css";
 
 import Favicons from "@SEO/Favicons.astro";
 import GA4 from "@analytics/GA4.astro";
+import GTMHead from "@analytics/GTMHead.astro";
 ---
 
 <head>
+  <GA4 />
+  <GTMHead />
+  <Favicons />
+  <ClientRouter />
   {/* Global Metadata */}
   <meta charset="UTF-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -49,10 +54,6 @@ import GA4 from "@analytics/GA4.astro";
       />
     */
   }
-
-  <Favicons />
-  <ClientRouter />
-  <GA4 />
 
   <slot />
 </head>

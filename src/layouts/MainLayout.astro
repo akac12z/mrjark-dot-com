@@ -4,6 +4,7 @@ import "../styles/global.css";
 import { SITE_DEFAULT_CONFIG } from "@/global/siteInfo";
 
 import Header from "@shared/Header.astro";
+import GTMBody from "@analytics/GTMBody.astro";
 
 import Footer from "@shared/Footer.astro";
 import ScrollToTopBtn from "@/components/pages/shared/ScrollToTopBtn";
@@ -18,6 +19,7 @@ const { lang } = SITE_DEFAULT_CONFIG;
     <slot name="head" />
   </BaseHead>
   <body class="body-layout-classes">
+    <GTMBody />
     <Header />
     <main class="mt-2 xs:mt-5 mb-10 overflow-x-hidden">
       <slot />

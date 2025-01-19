@@ -9,10 +9,17 @@ import "../../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 import GA4 from "@analytics/GA4.astro";
+import GTMHead from "@analytics/GTMHead.astro";
+
 import Favicons from "./Favicons.astro";
 ---
 
 <head>
+  <GA4 />
+  <GTMHead />
+  <Favicons />
+  <ClientRouter />
+
   {/* Global Metadata */}
   <meta charset="UTF-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -54,10 +61,6 @@ import Favicons from "./Favicons.astro";
       />
     */
   }
-
-  <Favicons />
-  <ClientRouter />
-  <GA4 />
 
   <slot />
 </head>
