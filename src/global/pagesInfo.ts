@@ -12,8 +12,8 @@ export const LIBRARY_PAGE_INFO: PagesInfo = {
     "Recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento que me han parecido útiles e interesantes.",
 };
 
-export const PSYCHOLOGY_PAGE_INFO: PagesInfo = {
-  title: `Psycología del comportamiento y heurísticas aplicada a growth`,
+export const BEHAVIOR_PAGE_INFO: PagesInfo = {
+  title: `Psycología del comportamiento y heurísticas aplicada a Growth`,
   description:
     "Algunos principios e ideas de economía conductual y psicología humana para entender mejor a los usuarios en el mundo startup y growth.",
 };

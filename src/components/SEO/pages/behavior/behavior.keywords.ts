@@ -1,6 +1,6 @@
 import type { PageKeywords } from "@interfaces/keywords.interface";
 
-export const psychologyKeywords: PageKeywords = {
+export const behaviorKeywords: PageKeywords = {
   keywords: [
     "Psicología del comportamiento",
     "Economía conductual",
