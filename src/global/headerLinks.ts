@@ -7,18 +7,18 @@ export const HEADER_LINKS: HeaderLinksInterface[] = [
     customClasses: "hover:text-mr-neon-blue text-mr-neon-blue",
   },
   {
-    href: "/book-notes",
-    text: "Book Notes",
+    href: "/biblioteca",
+    text: "Biblioteca",
     customClasses: "hover:text-mr-neon-gold text-mr-neon-gold",
   },
   {
     href: "/psychology",
-    text: "Psychology",
+    text: "Comportamiento",
     customClasses: "hover:text-mr-neon-pink text-mr-neon-pink",
   },
   {
-    href: "/about",
-    text: "About",
+    href: "/contexto",
+    text: "Contexto",
     customClasses: "hover:text-mr-neon-lime text-mr-neon-lime",
   },
   // {
