@@ -1,50 +1,5 @@
 import type { PageKeywords } from "@interfaces/keywords.interface";
 
-
 export const aboutKeywords: PageKeywords = {
-  keywords: [
-    "growth hacking for startups",
-    "how to create a growth strategy",
-    "growth marketing vs traditional marketing",
-    "behavioral psychology in marketing",
-    "best growth tools for startups",
-    "beginners SEO guide for startups",
-    "advanced SEO strategies for growth",
-    "content marketing strategy for startups",
-    "psychology of buying behavior",
-    "growth frameworks for startups",
-    "top behavioral economics books",
-    "case studies on startup growth",
-    "beginner growth hacking techniques",
-    "scaling strategies for startups",
-    "psychology in digital marketing",
-    "what is growth marketing",
-    "why is behavioral psychology important in marketing",
-    "how to apply behavioral economics in marketing",
-    "what makes a good growth manager",
-    "why growth hacking matters for startups",
-    "how do startups scale effectively",
-    "why SEO is important for startups",
-    "what is a growth framework",
-    "growth marketing",
-    "growth strategy",
-    "behavioral psychology",
-    "behavioral economics",
-    "growth hacking",
-    "digital marketing",
-    "marketing psychology",
-    "startup growth",
-    "SEO for startups",
-    "content marketing",
-    "growth frameworks",
-    "scaling startups",
-    "growth tools",
-    "buyer psychology",
-    "growth manager",
-    "mrjark",
-    "chema ferrandez",
-    "quien es mrjark",
-    "blog personal",
-    "build in public"
-  ]
-}
+  keywords: ["quien es mrjark", "quien es chema ferrandez"],
+};
