@@ -31,7 +31,7 @@ const justInCaseNoCoverAlt = cover.alt || postName;
 // Validación de fechas. lastTimeEdited puede ser undefined en la collection pero en la práctica no pero para evitar el error hago la validación
 const publisDateInISO = convertDateToISO8601(publishDate);
 const lastTimeEditedInISO = convertDateToISO8601(
-  !lastTimeEdited ? publishDate : lastTimeEdited,
+  !lastTimeEdited ? publishDate : lastTimeEdited
 );
 ---
 
