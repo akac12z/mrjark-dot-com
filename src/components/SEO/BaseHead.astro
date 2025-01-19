@@ -4,9 +4,11 @@
  * TODO: HACER MANIFEST -> <link rel="manifest" href="/site.webmanifest" />
  *
  */
+import "../../styles/global.css";
 
 import { ClientRouter } from "astro:transitions";
-import "../../styles/global.css";
+
+import GA4 from "@analytics/GA4.astro";
 import Favicons from "./Favicons.astro";
 ---
 
@@ -55,6 +57,7 @@ import Favicons from "./Favicons.astro";
 
   <Favicons />
   <ClientRouter />
+  <GA4 />
 
   <slot />
 </head>

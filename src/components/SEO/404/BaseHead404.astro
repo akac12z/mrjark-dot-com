@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import "../../../styles/global.css";
 
 import Favicons from "@SEO/Favicons.astro";
+import GA4 from "@analytics/GA4.astro";
 ---
 
 <head>
@@ -51,6 +52,7 @@ import Favicons from "@SEO/Favicons.astro";
 
   <Favicons />
   <ClientRouter />
+  <GA4 />
 
   <slot />
 </head>
