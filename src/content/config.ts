@@ -45,7 +45,7 @@ const essayCollection = defineCollection({
 const libraryCollection = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
-    base: "./src/content/biblioteca",
+    base: "./src/content/library",
   }),
   schema: ({ image }) =>
     z.object({
