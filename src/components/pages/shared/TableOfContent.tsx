@@ -1,4 +1,4 @@
-import type { TableOfContentsProps } from "@interfaces/tableOfContent.interface";
+import type { TableOfContentsProps } from "@interfaces/TableOfContent.interface";
 import { useState, useEffect, useRef } from "react";
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ headings }) => {
