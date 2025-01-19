@@ -11,6 +11,9 @@
       "@shared/*": [
         "./src/components/shared/*"
       ],
+      "@analytics/*": [
+        "./src/components/shared/analytics/*"
+      ],
       "@static/*": [
         "./src/components/pages/static/*"
       ],
