@@ -1,15 +1,15 @@
 ---
-import { BOOKNOTES_PAGE_INFO } from "@/global/pagesInfo";
+import { LIBRARY_PAGE_INFO } from "@/global/pagesInfo";
 import MainLayout from "@layouts/MainLayout.astro";
-import BookPageSEO from "@SEO/pages/book-notes/BookPageSEO.astro";
+import LibrarySEO from "@SEO/pages/library/LibrarySEO.astro";
 import BookPage from "@/components/pages/books/BookPage.astro";
 ---
 
 <MainLayout>
-  <BookPageSEO
+  <LibrarySEO
     slot="head"
-    pageTitle={BOOKNOTES_PAGE_INFO.title}
-    pageDescription={BOOKNOTES_PAGE_INFO.description}
+    pageTitle={LIBRARY_PAGE_INFO.title}
+    pageDescription={LIBRARY_PAGE_INFO.description}
   />
   <BookPage />
 </MainLayout>

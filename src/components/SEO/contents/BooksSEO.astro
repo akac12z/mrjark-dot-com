@@ -10,8 +10,8 @@ import { convertDateToISO8601 } from "@utils/validatingDate";
 
 const { entry } = Astro.props;
 
-const bookNotes = entry as CollectionEntry<"bookNotes">;
-const { data } = bookNotes;
+const library = entry as CollectionEntry<"library">;
+const { data } = library;
 const { cover, title, keywords, publishDate } = data;
 
 const postName =

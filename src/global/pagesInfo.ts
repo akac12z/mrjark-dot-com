@@ -6,7 +6,7 @@ export const ABOUT_PAGE_INFO: PagesInfo = {
   description: SITE_DEFAULT_CONFIG.description,
 };
 
-export const BOOKNOTES_PAGE_INFO: PagesInfo = {
+export const LIBRARY_PAGE_INFO: PagesInfo = {
   title: `Notas de libros - ${SITE_DEFAULT_CONFIG.title}`,
   description:
     "Recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento que me han parecido útiles e interesantes.",

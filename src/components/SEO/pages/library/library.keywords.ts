@@ -1,6 +1,6 @@
 import type { PageKeywords } from "@interfaces/keywords.interface";
 
-export const bookNotesKeywords: PageKeywords = {
+export const libraryKeywords: PageKeywords = {
   keywords: [
     "summary books",
     "resúmenes de libros para startup",

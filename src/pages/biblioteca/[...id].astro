@@ -11,17 +11,17 @@ import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
 import BookScore from "@/components/pages/books/BookScore.astro";
 import BookCover from "@/components/pages/books/BookCover.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import BookNoteSEO from "@SEO/contents/BookNoteSEO.astro";
+import LibrarySEO from "@SEO/contents/BooksSEO.astro";
 import TableOfContents from "@/components/pages/shared/TableOfContent";
 
 interface Props {
-  entry: CollectionEntry<"bookNotes">;
+  entry: CollectionEntry<"library">;
 }
 
 export async function getStaticPaths() {
-  const bookNotes = await getCollection("bookNotes");
+  const library = await getCollection("library");
 
-  return bookNotes.map((entry) => ({
+  return library.map((entry) => ({
     params: { id: entry.id },
     props: { entry },
   }));
@@ -37,10 +37,10 @@ const { Content, headings } = await render(entry);
 ---
 
 <MainLayout>
-  <BookNoteSEO slot="head" entry={entry} />
+  <LibrarySEO slot="head" entry={entry} />
   <article class="mx-auto">
-    <GoBackInTop headPage="/book-notes" />
-    <ScrollGoBackBtn headPage="/book-notes" client:only="react" />
+    <GoBackInTop headPage="/biblioteca" />
+    <ScrollGoBackBtn headPage="/biblioteca" client:only="react" />
 
     <section class="grid grid-cols-2 max-w-lg mx-auto">
       <BookCover entry={entry} />

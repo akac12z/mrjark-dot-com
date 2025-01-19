@@ -1,6 +1,6 @@
 # Estructura de Carpetas del proyecto
 
-> *Breve explicación de cómo están construidas y pensadas las rutas de carpetas del proyecto para aquella persona que las quiera copiar o para mi yo del futuro por si tiene un lapso mental y se le olvida.*
+> _Breve explicación de cómo están construidas y pensadas las rutas de carpetas del proyecto para aquella persona que las quiera copiar o para mi yo del futuro por si tiene un lapso mental y se le olvida._
 
 Estas carpetas las voy a ir definiendo de arriba a abjado y siempre en formato `src/*` excepto las de `public/*` que serán una carpeta a parte y aislada.
 
@@ -10,7 +10,7 @@ Estas carpetas las voy a ir definiendo de arriba a abjado y siempre en formato `
 
 ## /public
 
-Aquí están los icons y favicons del proyecto y la imagen del Open Graph general -*la morveré en un futuro a `src/assets/images/OpenGraph`*.
+Aquí están los icons y favicons del proyecto y la imagen del Open Graph general -_la morveré en un futuro a `src/assets/images/OpenGraph`_.
 
 ## /src/assets
 
@@ -39,11 +39,11 @@ Aquí estarán las imagenes o componentes visuales estáticos de los contenidos 
 
 - `/images/OpenGraph`: todos los OpenGrapth de los **content**.
 
->*Esto tengo que pensarlo un poco porque quizá esté mejor ordenado dentro de cada una de las carpetas del content y ahí tener todos los recursos de mismo contenido junto con su index.mdx. Y los OpenGraph meterlos a la ruta `/src/assets/OpenGraph` y dividirla entre pages y content*
+> _Esto tengo que pensarlo un poco porque quizá esté mejor ordenado dentro de cada una de las carpetas del content y ahí tener todos los recursos de mismo contenido junto con su index.mdx. Y los OpenGraph meterlos a la ruta `/src/assets/OpenGraph` y dividirla entre pages y content_
 
 ### /src/components/icons
 
-Todos los iconos (svg) que tenga la web y los ordenaré dependiendo de donde se encuentre dentro de la carpeta `/src/pages/*` y también por `/src/content/*`. Es decir, si por ejemplo, la página *bias* está dentro de *psychology* **no haré** una carpeta dentro de icons que sea `.../icons/psychology/bias`. Sino que lo tendré todo en el root de la carpeta icons como dos elementos totalmente distintos.
+Todos los iconos (svg) que tenga la web y los ordenaré dependiendo de donde se encuentre dentro de la carpeta `/src/pages/*` y también por `/src/content/*`. Es decir, si por ejemplo, la página _bias_ está dentro de _psychology_ **no haré** una carpeta dentro de icons que sea `.../icons/psychology/bias`. Sino que lo tendré todo en el root de la carpeta icons como dos elementos totalmente distintos.
 
 Y en la carpte de `/src/components/icons/shared` tengo los icons que se compoarten en toda la web como puede ser el Logo.
 
@@ -63,7 +63,7 @@ Algunas páginas de contenido se estructurarán en 3 partes:
 
 Esta carpeta puede o no estar. Aquí estarán los icons que puedan hacer falta para cada uno de los elementos de previsualización de las páginas. Por ejemplo, en las cards de los bias, van a tener cada una un icon distinto dependiendo del bias descrito y esos icons los tendré en esta carpeta que estaria en `/src/components/pages/bias/icons`.
 
-Con esto me evito tener archivos muy grandes y sigo el principio de *componetización* y siendo una forma más sencilla de consumir el contenido y entenderlo.
+Con esto me evito tener archivos muy grandes y sigo el principio de _componetización_ y siendo una forma más sencilla de consumir el contenido y entenderlo.
 
 ### /src/components/SEO
 
@@ -71,8 +71,8 @@ Carpeta enfocada al SEO de la web con los Metatags, OpenGraph y las cards de Twi
 
 Aquí diferencio:
 
-- /Content: Todo lo que hay dentro de la carpeta `/src/content/*` ya que tiene un trato distinto por que no es una *website* sino un *article*.
-- /Pages: Todo lo que esté dentro de `/src/pages/*`. Estas tienen la categoría de *website* pero le doy la de  *article* porque escribo en ellas el header y son páginas que tratan de ciertos temas como son la de /bias o /book-notes. Pero estas el SEO no dependen del contenido que haya en ellas ya que son "estáticas".
+- /Content: Todo lo que hay dentro de la carpeta `/src/content/*` ya que tiene un trato distinto por que no es una _website_ sino un _article_.
+- /Pages: Todo lo que esté dentro de `/src/pages/*`. Estas tienen la categoría de _website_ pero le doy la de _article_ porque escribo en ellas el header y son páginas que tratan de ciertos temas como son la de /bias o /biblioteca. Pero estas el SEO no dependen del contenido que haya en ellas ya que son "estáticas".
 - BaseHead.astro: Es lo que todas las páginas deben tener, sea pages o content como son los UTF-8, el responsive, entre otros para no estar repitiendo siempre lo mismo ya que es contenido que no depende de nada más.
 - Favicons.astro: donde están todos los icons, de todos los tamaños para todas las plataformas y OS.
 - /404: Un intento de hacer que se peuda ver el contenido de la página 404.
@@ -135,7 +135,7 @@ Aquí está el contenido estático de la propia web y páginas como puede ser:
 
 - Información de la web
 - Información de las páginas como el title o description
-- Header links (*este seguramente acabe cambiándolo a `/src/components/shared`*)
+- Header links (_este seguramente acabe cambiándolo a `/src/components/shared`_)
 
 ### /src/interfaces
 
@@ -150,7 +150,7 @@ No es más grande gracias al esquema de [Zod](https://zod.dev/).
 Tengo dos distintos:
 
 - MainLayout: que es para todas las páginas en general y es **obligatorio** junto con sus títulos de la página y descripción específicos para cada una.
-- 404Layout: que solo es para la 404 page y la única diferencia es que es *nofollow*.
+- 404Layout: que solo es para la 404 page y la única diferencia es que es _nofollow_.
 
 ### /src/pages
 
@@ -165,4 +165,5 @@ Estilos globales de mi página con sus "atajos" para tailwind
 Elementos que me son útiles para ciertas funcionalidades. Básicamente es el JavaScript/TypeScript que me hace falta para ciertas cosas y que no quiero tener en los componentes como un script.
 
 ---
+
 Last Update: 22/11/2024

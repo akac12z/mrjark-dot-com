@@ -66,7 +66,7 @@ const essay = defineCollection({
 });
 ```
 
-### Frontmatter de la _BookNotes Collection_
+### Frontmatter de la _Library Collection_
 
 title: "Título del libro o nota" # (Máx. 60 caracteres)
 slug: "titulo-libro" # (URL amigable)
@@ -89,10 +89,10 @@ twitterCard: "summary_large_image" # Tipo de tarjeta de Twitter
 keywords: ["resumen libro", "psicología", "hábitos"] # Palabras clave específicas para SEO
 status: "published" # Estado del post ("draft" para borrador, "published" para publicado)
 
-#### Zod para _BookNotes Collection_
+#### Zod para _Library Collection_
 
 ```typescript
-const bookNote = defineCollection({
+const library = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(), // Título del libro
@@ -129,10 +129,10 @@ slug: "reflexion-creatividad"
 relatedLinks:
 
 - label: "Artículo sobre creatividad"
-    url: "<https://ejemplo.com/articulo-creatividad>"
+  url: "<https://ejemplo.com/articulo-creatividad>"
 - label: "Libro recomendado"
-    url: "<https://amazon.com/libro-creatividad>"
-readingTime: "5 min"
+  url: "<https://amazon.com/libro-creatividad>"
+  readingTime: "5 min"
 
 #### ZOD para _Bias Collections_
 
@@ -141,38 +141,53 @@ Estructura de zod para los bias
 ```typescript
 const biasCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object({
-    name: z.string().max(60), 
-    cover: z.object({
-      src: image(),
-      alt: z.string()
-    }),
-    description: z.string().min(40).max(160), 
-    publishDate: z.string().refine(isValidDateFormat), 
-    lastTimeEdited: z.string().refine(isValidDateFormat).refine(
-      (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
-        const publishDate = ctx;
-        return val ?? publishDate;
-      }).optional(),
-    tags: z.array(z.string()),
-    language: z.enum(["es"]),
-    keywords: z.array(z.string()), 
-    relatedLinks: z.array(z.object({
-      label: z.string(), 
-      url: z.string().url()
-    })).optional(),
-    readingTime: z.number().optional(), 
-  }).refine((data) => {
-    if (data.lastTimeEdited && data.publishDate) {
-      const publishDateObj = new Date(data.publishDate);
-      const lastTimeEditedObj = new Date(data.lastTimeEdited);
-      return lastTimeEditedObj >= publishDateObj;
-    }
-    return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
-  }, {
-    message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
-    path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
-  }),
+  schema: ({ image }) =>
+    z
+      .object({
+        name: z.string().max(60),
+        cover: z.object({
+          src: image(),
+          alt: z.string(),
+        }),
+        description: z.string().min(40).max(160),
+        publishDate: z.string().refine(isValidDateFormat),
+        lastTimeEdited: z
+          .string()
+          .refine(isValidDateFormat)
+          .refine((val) => (val ? isValidDateFormat(val) : true))
+          .transform((val, ctx) => {
+            const publishDate = ctx;
+            return val ?? publishDate;
+          })
+          .optional(),
+        tags: z.array(z.string()),
+        language: z.enum(["es"]),
+        keywords: z.array(z.string()),
+        relatedLinks: z
+          .array(
+            z.object({
+              label: z.string(),
+              url: z.string().url(),
+            })
+          )
+          .optional(),
+        readingTime: z.number().optional(),
+      })
+      .refine(
+        (data) => {
+          if (data.lastTimeEdited && data.publishDate) {
+            const publishDateObj = new Date(data.publishDate);
+            const lastTimeEditedObj = new Date(data.lastTimeEdited);
+            return lastTimeEditedObj >= publishDateObj;
+          }
+          return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
+        },
+        {
+          message:
+            "The field { lastTimeEdited } cannot be earlier than { publishDate }.",
+          path: ["lastTimeEdited"], // Indica el campo donde se muestra el error
+        }
+      ),
 });
 ```
 
@@ -181,78 +196,107 @@ Formas antiguas de usar el BiasCollection:
 ```typescript
 const biasCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object({
-    name: z.string(), 
-    image: image().refine((img) => img.width >= 1080, {
-      message: "Image should be 560px × 320px.",
-    }),
-    imageAlt: z.string(),
-    publishDate: z.string().refine(isValidDateFormat), 
-    lastTimeEdited: z.string().refine(isValidDateFormat).refine(
-      (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
-        const publishDate = ctx;
-        return val ?? publishDate;
-      }).optional(),
-    description: z.string(), 
-    tags: z.array(z.string()),
-    language: z.enum(["es"]),
-    keywords: z.array(z.string()), 
-    relatedLinks: z.array(z.object({
-      label: z.string(), 
-      url: z.string().url()
-    })).optional(),
-    readingTime: z.number().optional(), 
-  }).refine((data) => {
-    if (data.lastTimeEdited && data.publishDate) {
-      const publishDateObj = new Date(data.publishDate);
-      const lastTimeEditedObj = new Date(data.lastTimeEdited);
-      return lastTimeEditedObj >= publishDateObj;
-    }
-    return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
-  }, {
-    message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
-    path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
-  }),
+  schema: ({ image }) =>
+    z
+      .object({
+        name: z.string(),
+        image: image().refine((img) => img.width >= 1080, {
+          message: "Image should be 560px × 320px.",
+        }),
+        imageAlt: z.string(),
+        publishDate: z.string().refine(isValidDateFormat),
+        lastTimeEdited: z
+          .string()
+          .refine(isValidDateFormat)
+          .refine((val) => (val ? isValidDateFormat(val) : true))
+          .transform((val, ctx) => {
+            const publishDate = ctx;
+            return val ?? publishDate;
+          })
+          .optional(),
+        description: z.string(),
+        tags: z.array(z.string()),
+        language: z.enum(["es"]),
+        keywords: z.array(z.string()),
+        relatedLinks: z
+          .array(
+            z.object({
+              label: z.string(),
+              url: z.string().url(),
+            })
+          )
+          .optional(),
+        readingTime: z.number().optional(),
+      })
+      .refine(
+        (data) => {
+          if (data.lastTimeEdited && data.publishDate) {
+            const publishDateObj = new Date(data.publishDate);
+            const lastTimeEditedObj = new Date(data.lastTimeEdited);
+            return lastTimeEditedObj >= publishDateObj;
+          }
+          return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
+        },
+        {
+          message:
+            "The field { lastTimeEdited } cannot be earlier than { publishDate }.",
+          path: ["lastTimeEdited"], // Indica el campo donde se muestra el error
+        }
+      ),
 });
 
 const biasCollection = defineCollection({
-  schema: z.object({
-    biasName: z.string(), 
-    publishDate: z.string().refine(isValidDateFormat), 
-    lastTimeEdited: z.string().refine(isValidDateFormat).refine(
-      (val) => (val ? isValidDateFormat(val) : true)).transform((val, ctx) => {
-        const publishDate = ctx;
-        return val ?? publishDate;
-      }).optional(),
-    description: z.string(), 
-    tags: z.array(z.string()),
-    biasImage: z.object({
-      src: z.union([z.string().url(), z.string()]), 
-      alt: z.string(),
-    }),
-    language: z.enum(["es"]),
-    keywords: z.array(z.string()), 
-    relatedLinks: z.array(z.object({
-      label: z.string(), 
-      url: z.string().url()
-    })).optional(),
-    readingTime: z.number().optional(), 
-  }).refine((data) => {
-    if (data.lastTimeEdited && data.publishDate) {
-      const publishDateObj = new Date(data.publishDate);
-      const lastTimeEditedObj = new Date(data.lastTimeEdited);
-      return lastTimeEditedObj >= publishDateObj;
-    }
-    return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
-  }, {
-    message: 'The field { lastTimeEdited } cannot be earlier than { publishDate }.',
-    path: ['lastTimeEdited'], // Indica el campo donde se muestra el error
-  }),
+  schema: z
+    .object({
+      biasName: z.string(),
+      publishDate: z.string().refine(isValidDateFormat),
+      lastTimeEdited: z
+        .string()
+        .refine(isValidDateFormat)
+        .refine((val) => (val ? isValidDateFormat(val) : true))
+        .transform((val, ctx) => {
+          const publishDate = ctx;
+          return val ?? publishDate;
+        })
+        .optional(),
+      description: z.string(),
+      tags: z.array(z.string()),
+      biasImage: z.object({
+        src: z.union([z.string().url(), z.string()]),
+        alt: z.string(),
+      }),
+      language: z.enum(["es"]),
+      keywords: z.array(z.string()),
+      relatedLinks: z
+        .array(
+          z.object({
+            label: z.string(),
+            url: z.string().url(),
+          })
+        )
+        .optional(),
+      readingTime: z.number().optional(),
+    })
+    .refine(
+      (data) => {
+        if (data.lastTimeEdited && data.publishDate) {
+          const publishDateObj = new Date(data.publishDate);
+          const lastTimeEditedObj = new Date(data.lastTimeEdited);
+          return lastTimeEditedObj >= publishDateObj;
+        }
+        return true; // Si no hay lastTimeEdited, no aplica la validación en el frontmatter pero cuando se crea el componente, se le añade en el componente del {blog/bias/essay}SEO.astro para los metatags
+      },
+      {
+        message:
+          "The field { lastTimeEdited } cannot be earlier than { publishDate }.",
+        path: ["lastTimeEdited"], // Indica el campo donde se muestra el error
+      }
+    ),
 });
 ```
 
-Last Updated: 30/10/2024_
+Last Updated: 30/10/2024\_
 
 Actualización del Bias collection para validar las fechas
 
-Last Updated: 06/11/2024_
+Last Updated: 06/11/2024\_
