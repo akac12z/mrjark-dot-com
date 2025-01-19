@@ -2,7 +2,7 @@
 import { convertDateToISO8601 } from "@utils/validatingDate";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 
-import { Content as AboutContent } from "@static/markdowns/about.mdx";
+import { Content as ContextContent } from "@static/markdowns/context.mdx";
 
 // HACIENDO PRUEBAS 👇🏽
 const date = "10-12-2024";
@@ -11,7 +11,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <ReaderStaticMarkdowns>
   {/* TODO: PONER UNA IMAGEN MÍA */}
-  <AboutContent />
+  <ContextContent />
   <article>
     <p class="text-blue-400">
       {convertDateToISO8601(date)} | {new Date(Date.now())}
@@ -28,6 +28,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       > Ratione error minima maiores itaque repudiandae, nihil impedit vitae
     </p>
 
-    <a href="/psychology" class="text-mr-neon-pink">Go to Psychology Page</a>
+    <a href="/psychology" class="text-mr-bias-500">Go to Psychology Page</a>
   </article>
 </ReaderStaticMarkdowns>
