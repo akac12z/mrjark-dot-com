@@ -1,12 +1,14 @@
 ---
 import { ABOUT_PAGE_INFO } from "@/global/pagesInfo";
+
 import MainLayout from "@layouts/MainLayout.astro";
-import AboutSEO from "@SEO/pages/about/AboutSEO.astro";
+import ContextSEO from "@SEO/pages/context/ContextSEO.astro";
+
 import Context from "@static/Context.astro";
 ---
 
 <MainLayout>
-  <AboutSEO
+  <ContextSEO
     slot="head"
     pageTitle={ABOUT_PAGE_INFO.title}
     pageDescription={ABOUT_PAGE_INFO.description}
