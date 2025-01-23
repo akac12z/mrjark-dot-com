@@ -29,7 +29,8 @@ export default defineConfig( {
   env: {
     schema: {
       GA4_MEASUREMENT_ID: envField.string( { context: 'client', access: 'public', optional: false } ),
-      GTM_MEASUREMENT_ID: envField.string( { context: 'client', access: 'public', optional: false } )
+      GTM_MEASUREMENT_ID: envField.string( { context: 'client', access: 'public', optional: false } ),
+      AHRFS_MEASUREMENT_ID: envField.string( { context: 'client', access: 'public', optional: false } ),
     }
   },
   adapter: vercel( {
