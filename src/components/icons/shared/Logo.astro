@@ -23,7 +23,11 @@ if (!shouldGo.startsWith("/")) {
 }
 ---
 
-<a href={shouldGo} class="flex w-fit h-fit shrink-0">
+<a
+  href={shouldGo}
+  class="flex w-fit h-fit shrink-0"
+  aria-label="Go to homepage"
+>
   <svg
     width={width}
     height={height}
