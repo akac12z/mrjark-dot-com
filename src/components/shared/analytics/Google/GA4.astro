@@ -1,20 +1,18 @@
 ---
-import { GA4_MEASUREMENT_ID } from "astro:env/client";
+
 ---
 
 <script
   is:inline
   type="text/partytown"
   async
-  src=`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`
-></script>
+  src="https://www.googletagmanager.com/gtag/js?id=G-W0VDZXGWWH"></script>
 <script is:inline type="text/partytown">
-  import { GA4_MEASUREMENT_ID } from "astro:env/client";
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
 
-  gtag("config", `${GA4_MEASUREMENT_ID}`);
+  gtag("config", "G-W0VDZXGWWH");
 </script>
