@@ -5,10 +5,11 @@ export default {
     extend: {
       colors: {
         "mr-bg": "#0b0b0e",
-        "mr-text-headers": "#f9fafb",
-        "mr-text-content": "#e5e7eb",
-        "mr-text-relax": "#9ca3af",
+        "mr-text-headers": "#f6efe5",
+        "mr-text-content": "#DDD8D1",
+        "mr-text-relax": "#C3BDB4",
         "mr-primary-green": "#8EF91C",
+        "mr-secondary-pink": "#EC1564",
         "mr-neon-violet": "#CF33FF",
         "mr-neon-pink": "#FF33C4",
         "mr-neon-cosmic": "#FF327D",
