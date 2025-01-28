@@ -16,7 +16,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <p class="text-blue-400">
       {convertDateToISO8601(date)} | {new Date(Date.now())}
     </p>
-    <p class="text-green-400">{canonicalURL}</p>
+    <p class="text-mr-primary-green">{canonicalURL}</p>
     <p>
       Lorem ipsum, <span
         class="font-code inset-x-0 bottom-0 hover:underline decoration-mr-neon-lime underline-offset-4 transition-all hover:decoration-mr-neon-lime/70"
@@ -28,6 +28,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       > Ratione error minima maiores itaque repudiandae, nihil impedit vitae
     </p>
 
-    <a href="/comportamiento" class="text-mr-bias-500">Go to Behavior Page</a>
+    <p class="text-mr-primary-green">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong
+        class="text-mr-primary-green">Cupiditate quam autem</strong
+      > Cupiditate quam autem
+    </p>
+
+    <span
+      class="border border-mr-primary-green px-2 py-1 rounded-lg cursor-pointer"
+      >Una especie de botón que no hace nada</span
+    >
   </article>
+
+  <a href="/comportamiento" class="text-mr-bias-500">Go to Behavior Page</a>
 </ReaderStaticMarkdowns>
