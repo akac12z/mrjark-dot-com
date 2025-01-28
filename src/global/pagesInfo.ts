@@ -7,25 +7,25 @@ export const CONTEXT_PAGE_INFO: PagesInfo = {
 };
 
 export const LIBRARY_PAGE_INFO: PagesInfo = {
-  title: `Notas de libros - ${SITE_DEFAULT_CONFIG.title}`,
+  title: `Notas de libros sobre growth y psicología - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Recopilación de las ideas y conceptos más importantes de libros que voy leyendo sobre growth, startups, crecimiento personal, psicología del comportamiento que considero importantes tener a mano.",
+    "Explora las ideas y conceptos más importantes de libros sobre growth, startups, psicología del comportamiento y crecimiento personal. Accede a contenido esencial en un solo lugar.",
 };
 
 export const BEHAVIOR_PAGE_INFO: PagesInfo = {
-  title: `Psycología del comportamiento y heurísticas aplicada a Growth`,
+  title: `Psicología del comportamiento y heurísticas para Growth y Startups - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Algunos principios e ideas de economía conductual y psicología humana para entender mejor a los usuarios en el mundo startup y growth.",
+    "Descubre cómo aplicar la psicología del comportamiento y la economía conductual para entender mejor a los usuarios y potenciar estrategias de growth en startups.",
 };
 
 export const BIAS_PAGE_INFO: PagesInfo = {
-  title: `Sesgos y Heurísticas - ${SITE_DEFAULT_CONFIG.title}`,
+  title: `Sesgos cognitivos y heurísticas: Casos de estudio, ejemplos y aplicaciones - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Recopilación de sesgos cognitivos y heurísticas de los humanos junto con ejemplos y aplicaciones de los mismos.",
+    "Explora una recopilación de sesgos cognitivos y heurísticas humanas con ejemplos prácticos y aplicaciones para entender y mejorar la toma de decisiones y cómo poder aplicarlos en tus productos.",
 };
 
 export const ESSAY_PAGE_INFO: PagesInfo = {
-  title: `Ensayos - ${SITE_DEFAULT_CONFIG.title}`,
+  title: `Ensayos sobre Growth, Psicología del Comportamiento y Startups - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Un cunjunto de ensayos que voy recopilando en mi carrera como Growth en Startups y mi afan por conocer la psicologia del comportamiento",
+    "Colección de ensayos sobre Growth en startups y psicología del comportamiento. Reflexiones y aprendizajes que voy recopilando a lo largo de mi carrera profesional.",
 };
