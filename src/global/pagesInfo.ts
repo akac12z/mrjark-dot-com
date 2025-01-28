@@ -1,15 +1,15 @@
 import type { PagesInfo } from "@interfaces/pagesInfo.interface";
 import { SITE_DEFAULT_CONFIG } from "./siteInfo";
 
-export const ABOUT_PAGE_INFO: PagesInfo = {
-  title: `Un poco sobre ${SITE_DEFAULT_CONFIG.title} ✌🏽`,
+export const CONTEXT_PAGE_INFO: PagesInfo = {
+  title: `Mi contexto - ${SITE_DEFAULT_CONFIG.title} ✌🏽`,
   description: SITE_DEFAULT_CONFIG.description,
 };
 
 export const LIBRARY_PAGE_INFO: PagesInfo = {
   title: `Notas de libros - ${SITE_DEFAULT_CONFIG.title}`,
   description:
-    "Recopilación de las ideas y conceptos más importantes de libros sobre growth, startups, crecimiento personal, psicología del comportamiento que me han parecido útiles e interesantes.",
+    "Recopilación de las ideas y conceptos más importantes de libros que voy leyendo sobre growth, startups, crecimiento personal, psicología del comportamiento que considero importantes tener a mano.",
 };
 
 export const BEHAVIOR_PAGE_INFO: PagesInfo = {
