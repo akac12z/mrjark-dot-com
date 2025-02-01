@@ -26,12 +26,16 @@ export default function TestingGoTo({ headPage }: Props) {
       className={`
         fixed bottom-6 left-5 z-10 md:left-auto mx-auto h-fit w-fit
         flex justify-start transition-opacity duration-300
-        ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        ${
+          isVisible
+            ? "opacity-100 block w-fit"
+            : "pointer-events-none hidden opacity-0"
+        }`}
     >
       <a
         className="
           w-8 h-8 rounded-full 
-          border border-mr-neon-orange bg-mr-neon-orange/10
+          border border-mr-neon-orange bg-mr-neon-orange/10 cursor-pointer
           text-mr-neon-orange hover:scale-105 flex items-center justify-center
         "
         href={headPage}
