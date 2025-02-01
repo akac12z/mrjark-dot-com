@@ -33,7 +33,7 @@ const ScrollToTopBtn = () => {
         flex justify-end transition-opacity duration-300
         ${
           isVisible
-            ? "opacity-100 block w-fit"
+            ? "opacity-100 w-fit"
             : "pointer-events-none hidden opacity-0"
         }`}
     >

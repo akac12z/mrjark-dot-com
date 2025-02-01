@@ -28,7 +28,7 @@ export default function TestingGoTo({ headPage }: Props) {
         flex justify-start transition-opacity duration-300
         ${
           isVisible
-            ? "opacity-100 block w-fit"
+            ? "opacity-100 w-fit"
             : "pointer-events-none hidden opacity-0"
         }`}
     >
