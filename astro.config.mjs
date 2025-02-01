@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
 
-import tailwind from '@astrojs/tailwind';
+// import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 import mdx from '@astrojs/mdx';
 
@@ -20,7 +21,10 @@ import { sitemapCopier } from './sitemap-copier';
 // https://astro.build/config
 export default defineConfig( {
   site: 'https://mrjark.com',
-  integrations: [ tailwind(), mdx(), sitemap(), react(), sitemapCopier(), partytown( {
+  vite: {
+    plugins: [ tailwindcss() ],
+  },
+  integrations: [ mdx(), sitemap(), react(), sitemapCopier(), partytown( {
     config: {
       forward: [ 'dataLayer.push' ]
     }

@@ -19,7 +19,7 @@ export const HEADER_LINKS: HeaderLinksInterface[] = [
   {
     href: "/contexto",
     text: "Contexto",
-    customClasses: "hover:text-mr-neon-lime text-mr-neon-lime",
+    customClasses: "hover:text-mr-primary-green text-mr-primary-green",
   },
   // {
   //   href: "/testing",

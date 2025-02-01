@@ -37,7 +37,7 @@ const ScrollToTopBtn = () => {
         onClick={scrollToTop}
         className="
           w-8 h-8 sm:right-10 sm:bottom-10 rounded-full 
-          border border-mr-primary-green bg-mr-primary-green bg-opacity-10 
+          border border-mr-primary-green bg-mr-primary-green/10
           text-mr-primary-green hover:scale-105 flex items-center justify-center
         "
       >
