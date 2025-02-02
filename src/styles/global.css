@@ -4,7 +4,7 @@
 @source "../components/pages/shared/ScrollToTopBtn.tsx";
 @source "../components/pages/shared/ScrollGoBackBtn.tsx";
 @source "../components/pages/shared/TableOfContent.tsx";
-@source "../pages/contexto/index.astro";
+@source "../components/pages/static/Context.astro";
 
 /* headers */
 @font-face {
