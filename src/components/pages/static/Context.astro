@@ -3,20 +3,12 @@ import { convertDateToISO8601 } from "@utils/validatingDate";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 
 import { Content as ContextContent } from "@static/markdowns/context.mdx";
-
-// HACIENDO PRUEBAS 👇🏽
-const date = "10-12-2024";
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <ReaderStaticMarkdowns>
   {/* TODO: PONER UNA IMAGEN MÍA */}
   <ContextContent />
   <article>
-    <p class="text-blue-400">
-      {convertDateToISO8601(date)} | {new Date(Date.now())}
-    </p>
-    <p class="text-mr-primary-green">{canonicalURL}</p>
     <p>
       Lorem ipsum, <span
         class="font-code inset-x-0 bottom-0 hover:underline decoration-mr-neon-lime underline-offset-4 transition-all hover:decoration-mr-neon-lime/70"
