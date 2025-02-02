@@ -26,11 +26,7 @@ export default function TestingGoTo({ headPage }: Props) {
       className={`
         fixed bottom-6 left-5 z-10 md:left-auto mx-auto h-fit w-fit
         flex justify-start transition-opacity duration-300
-        ${
-          isVisible
-            ? "opacity-100 w-fit"
-            : "pointer-events-none hidden opacity-0"
-        }`}
+        ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <a
         className="
