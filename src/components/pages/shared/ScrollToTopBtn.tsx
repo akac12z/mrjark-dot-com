@@ -29,7 +29,7 @@ const ScrollToTopBtn = () => {
   return (
     <div
       className={`
-        fixed bottom-6 right-5 md:right-auto w-full max-w-3xl mx-auto
+        fixed bottom-6 right-5 md:right-auto w-full max-w-2xl mx-auto
         ${
           isVisible
             ? "opacity-100 flex justify-end"
