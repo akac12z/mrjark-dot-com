@@ -1,12 +1,24 @@
 ---
-import { convertDateToISO8601 } from "@utils/validatingDate";
-import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
-
+import { Picture } from "astro:assets";
 import { Content as ContextContent } from "@static/markdowns/context.mdx";
+
+import Mii from "@imageAssets/mii/mrjark-photo.jpeg";
+import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 ---
 
 <ReaderStaticMarkdowns>
   {/* TODO: PONER UNA IMAGEN MÍA */}
+  <div
+    class="shrink-0 w-32 h-32 rounded-full flex items-center justify-center p-2"
+  >
+    <Picture
+      src={Mii}
+      alt="Foto de perfil de mrjark aka Chema Ferrández"
+      width="120"
+      height="120"
+      class="w-full h-full object-cover aspect-square rounded-full"
+    />
+  </div>
   <ContextContent />
   <article>
     <p>
