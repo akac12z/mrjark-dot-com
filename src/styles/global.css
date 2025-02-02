@@ -181,9 +181,9 @@
   li {
     @apply font-rubik text-sm text-mr-text-content font-normal tracking-wide leading-relaxed mb-2;
   }
-  footer {
+  /* footer {
     @apply mt-auto;
-  }
+  } */
 }
 
 /* CUSTOM CLASSES */
@@ -195,7 +195,7 @@
 
   /* BODY */
   .body-layout-classes {
-    @apply mx-auto p-5 px-3 max-w-3xl min-h-screen;
+    @apply mx-auto p-5 px-3 max-w-3xl min-h-screen flex flex-col;
   }
   /* CODING STYLE */
   .coding {
