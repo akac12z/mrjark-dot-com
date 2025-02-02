@@ -25,10 +25,10 @@ export default function TestingGoTo({ headPage }: Props) {
     <div
       className={`
         fixed bottom-6 left-5 z-10 md:left-auto mx-auto h-fit w-fit
-         transition-opacity duration-300
+        transition-opacity duration-300
         ${
           isVisible
-            ? "opacity-100 flex justify-center items-center"
+            ? "opacity-100 flex justify-start"
             : "pointer-events-none opacity-0 hidden"
         }`}
     >
