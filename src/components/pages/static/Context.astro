@@ -2,45 +2,25 @@
 import { Picture } from "astro:assets";
 import { Content as ContextContent } from "@static/markdowns/context.mdx";
 
-import Mii from "@imageAssets/mii/mrjark-photo.jpeg";
+import Mii from "@imageAssets/mii/mrjark-photo-profiles.jpeg";
 import ReaderStaticMarkdowns from "@static/markdowns/ReaderStaticMarkdowns.astro";
 ---
 
 <ReaderStaticMarkdowns>
   {/* TODO: PONER UNA IMAGEN MÍA */}
-  <div
-    class="shrink-0 w-32 h-32 rounded-full flex items-center justify-center p-2"
-  >
-    <Picture
-      src={Mii}
-      alt="Foto de perfil de mrjark aka Chema Ferrández"
-      width="120"
-      height="120"
-      class="w-full h-full object-cover aspect-square rounded-full"
-    />
-  </div>
-  <ContextContent />
-  <article>
-    <p>
-      Lorem ipsum, <span
-        class="font-code inset-x-0 bottom-0 hover:underline decoration-mr-neon-lime underline-offset-4 transition-all hover:decoration-mr-neon-lime/70"
-        >dolor sit amet consectetur</span
-      > adipisicing elit. Laboriosam perspiciatis nemo voluptates dolor corrupti
-      labore quae perferendis, numquam nostrum quas placeat. <a
-        class="no-underline text-mr-text-content font-rubik font-normal"
-        href="/testing">testing</a
-      > Ratione error minima maiores itaque repudiandae, nihil impedit vitae
-    </p>
-
-    <p class="text-mr-primary-green">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong
-        class="text-mr-text-content font-bold">Cupiditate quam autem</strong
-      > Cupiditate quam autem
-    </p>
-
-    <span
-      class="border border-mr-primary-green px-2 py-1 rounded-lg cursor-pointer"
-      >Una especie de botón que no hace nada</span
+  <h1>¿Quién carajos (soy) es mrjark?</h1>
+  <section class="flex w-full justify-center">
+    <div
+      class="shrink-0 w-24 h-20 xs:w-36 xs:h-32 rounded-full flex items-center justify-center p-2 rotate-180"
     >
-  </article>
+      <Picture
+        src={Mii}
+        alt="Foto de perfil de mrjark aka Chema Ferrández"
+        width="140"
+        height="140"
+        class="object-cover aspect-square rounded-full"
+      />
+    </div>
+  </section>
+  <ContextContent />
 </ReaderStaticMarkdowns>
