@@ -76,10 +76,10 @@ const { Content, headings } = await render(entry);
         </div>
       </section>
     </section>
-    <div class="mt-4">
+    <div class="mt-4 mx-auto">
       <TableOfContents headings={headings} client:only="react" />
     </div>
-    <section class="custom-prose">
+    <section class="custom-prose mx-auto">
       <Content />
     </section>
     <section class="custom-prose">
