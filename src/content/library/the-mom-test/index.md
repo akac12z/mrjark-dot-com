@@ -1,4 +1,5 @@
 ---
+titleTag: "Resumen de The Mom Test de Rob Fitzpatrick"
 title: "The Mom Test"
 description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv"
 quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam

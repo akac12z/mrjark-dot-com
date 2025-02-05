@@ -1,4 +1,5 @@
 ---
+titleTag: "Resumen de The Great Mental Models de Shane Parrish"
 title: "The Great Mental Models"
 description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archiv"
 quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam

@@ -12,14 +12,11 @@ const { entry } = Astro.props;
 
 const library = entry as CollectionEntry<"library">;
 const { data } = library;
-const { cover, title, keywords, publishDate } = data;
+const { cover, title, keywords, publishDate, titleTag } = data;
 
-const postName =
-  `${title} - ${SITE_DEFAULT_CONFIG.title}` || SITE_DEFAULT_CONFIG.title;
+const postName = `${titleTag} - ${SITE_DEFAULT_CONFIG.title}`;
 
-const postDescription =
-  `Resumen e insights de ${title} - ${SITE_DEFAULT_CONFIG.title}` ||
-  `Insights y resúmenes de libros - ${SITE_DEFAULT_CONFIG.title}`;
+const postDescription = `Resumen e insights de ${title} - ${SITE_DEFAULT_CONFIG.title}`;
 
 const ogImage = new URL("./og-image.png", Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);

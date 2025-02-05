@@ -54,6 +54,7 @@ const libraryCollection = defineCollection({
         src: image(),
         alt: z.string(),
       }),
+      titleTag: z.string().max(85),
       description: z.string().min(60).max(140),
       quote: z.string().max(150),
       score: z
