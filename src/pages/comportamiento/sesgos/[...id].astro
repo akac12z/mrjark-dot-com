@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { name, publishDate, lastTimeEdited, biasQuestion, category } = data;
+const { biasName, publishDate, lastTimeEdited, biasQuestion, category } = data;
 
 const { Content, headings } = await render(entry);
 
@@ -43,7 +43,7 @@ const { Content, headings } = await render(entry);
     <article class="flex flex-col justify-center ">
       <section class="text-center">
         <h1 transition:name=`${id}-name` class="text-base text-center mb-2 underline">
-          {name}
+          {biasName}
         </h1>
         <h2 class="xs:text-2xl text-xl font-museo_moderno text-mr-text-headers tracking-wider">{biasQuestion}</h2>
         <section class="flex flex-col justify-center items-center text-center my-4 gap-y-2">

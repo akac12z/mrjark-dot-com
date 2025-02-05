@@ -146,11 +146,12 @@ const biasCollection = defineCollection({
   schema: ({ image }) =>
     z
       .object({
-        name: z.string().max(60),
+        biasName: z.string().max(80),
         cover: z.object({
           src: image(),
           alt: z.string(),
         }),
+        titleTag: z.string().max(85),
         description: z.string().min(60).max(140),
         biasQuestion: z.string().max(120),
         publishDate: z.string().refine(isValidDateFormat),

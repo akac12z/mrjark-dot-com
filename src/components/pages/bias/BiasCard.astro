@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { biasQuestion, name, category } = data;
+const { biasQuestion, biasName, category } = data;
 ---
 
 <article
@@ -50,7 +50,7 @@ const { biasQuestion, name, category } = data;
           class="line-clamp-2 text-ellipsis overflow-hidden flex-wrap"
           transition:name=`${id}-name`
         >
-          {name}
+          {biasName}
         </h2>
       </div>
       <div class="flex flex-col justify-between gap-2 mt-1">

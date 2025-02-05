@@ -11,15 +11,12 @@ const { entry } = Astro.props;
 
 const bias = entry as CollectionEntry<"bias">;
 const { data } = bias;
-const { cover, name, description, keywords, publishDate, lastTimeEdited } =
+const { cover, description, keywords, publishDate, lastTimeEdited, titleTag } =
   data;
 
-const postName =
-  `${name} - ${SITE_DEFAULT_CONFIG.title}` || SITE_DEFAULT_CONFIG.title;
+const postName = `${titleTag} - ${SITE_DEFAULT_CONFIG.title}`;
 
-const postDescription =
-  `${description} - ${SITE_DEFAULT_CONFIG.title}` ||
-  `Sesgos y heurísticas - ${SITE_DEFAULT_CONFIG.title}`;
+const postDescription = `${description} - ${SITE_DEFAULT_CONFIG.title}`;
 
 const ogImage = new URL("./og-image.png", Astro.site);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
