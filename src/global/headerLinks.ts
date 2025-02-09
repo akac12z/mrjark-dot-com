@@ -2,8 +2,8 @@ import type { HeaderLinksInterface } from "@interfaces/headerLinks.interface";
 
 export const HEADER_LINKS: HeaderLinksInterface[] = [
   {
-    href: "/essay",
-    text: "Essays",
+    href: "/ensayos",
+    text: "Ensayos",
     customClasses: "hover:text-mr-neon-blue text-mr-neon-blue",
   },
   {
