@@ -20,7 +20,7 @@ export const behaviorKeywords: PageKeywords = {
     "Psicología humana y diseño de productos en startups",
     "Cómo usar sesgos cognitivos para optimizar productos en startups",
     "Mejorando el juicio y razonamiento en startups con economía conductual",
-    "Aplicación de la psicología del comportamiento en metodologías de growth",
+    "Aplicación de la psicología de la conducta en metodologías de growth",
     "Técnicas de growth basadas en psicología del comportamiento para startups",
   ],
 };

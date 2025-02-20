@@ -8,7 +8,7 @@ export const biasKeywords: PageKeywords = {
     "sesgos cognitivos",
     "psicología del comportamiento",
     "sesgos humanos",
-    "comportamiento humano",
+    "conducta humana",
     "sesgos de comportamiento",
     "sesgos aplicados a startups",
     "sesgos aplicados a growth",
