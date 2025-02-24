@@ -16,14 +16,4 @@ export const HEADER_LINKS: HeaderLinksInterface[] = [
     text: "/conducta",
     customClasses: "hover:text-mr-neon-pink text-mr-neon-pink",
   },
-  // {
-  //   href: "/contexto",
-  //   text: "Contexto",
-  //   customClasses: "hover:text-mr-primary-green text-mr-primary-green",
-  // },
-  // {
-  //   href: "/testing",
-  //   text: "Testing",
-  //   customClasses: "hover:text-mr-neon-red text-mr-neon-red",
-  // },
 ];
