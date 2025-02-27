@@ -12,8 +12,8 @@ export const HEADER_LINKS: HeaderLinksInterface[] = [
     customClasses: "hover:text-mr-neon-gold text-mr-neon-gold",
   },
   {
-    href: "/conducta",
-    text: "/conducta",
+    href: "/behavior",
+    text: "/behavior",
     customClasses: "hover:text-mr-neon-pink text-mr-neon-pink",
   },
 ];
