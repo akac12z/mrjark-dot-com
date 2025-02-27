@@ -17,7 +17,7 @@ authors:
   - name: "Rob Fitzpatrick"
     link: "https://www.robfitz.com/c/who-what-and-why/"
 isDraft: true
-backlog: ["subiendo"]
+backlog: uploading
 buyItOnAmazon:
   spain: "https://www.amazon.es/El-Mom-Test-mantener-conversaciones/dp/1671455355/ref=sr_1_1?dib=eyJ2IjoiMSJ9.acOLCl__pRmPQgrpruGW-9vPN5TTonhMrG1piIWbVFV3tsKbxKJ0Gu370_69W8RLBiznr3FYUq850c7SOlz8JuMT5SJJaDQoYZoEVndOiuk.Yw1ept5QP01lGHs_0r6qpzAKulLqWjvzEgZ6y9FxTDE&dib_tag=se&keywords=the+mom+test&nsdOptOutParam=true&qid=1734438741&sr=8-1"
 ---

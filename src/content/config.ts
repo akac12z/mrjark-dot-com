@@ -56,7 +56,7 @@ const libraryCollection = defineCollection({
       }),
       titleTag: z.string().max(85),
       description: z.string().min(60).max(140),
-      backlog: z.array(z.enum(["leyendo", "leido", "subiendo"])),
+      backlog: z.enum(["reading", "read", "uploading"]),
       quote: z.string().max(150),
       score: z
         .number()
