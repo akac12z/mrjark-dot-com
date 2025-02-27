@@ -18,6 +18,7 @@ authors:
     link: "https://fs.blog/about/"
 authorLink: "https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent"
 isDraft: true
+backlog: ["leyendo"]
 buyItOnAmazon:
   spain: "https://www.amazon.es/s?k=show+your+work&crid=29N1GV9KIZ6M1&sprefix=%2Caps%2C203&ref=nb_sb_ss_recent_3_0_recent"
 ---
