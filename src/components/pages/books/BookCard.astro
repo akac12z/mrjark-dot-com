@@ -19,32 +19,54 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { quote, title, readingTime } = data;
+const { quote, title, readingTime, backlog } = data;
 ---
 
 <section class="pb-10 flex flex-col justify-center items-center mx-auto">
   <div class="flex flex-row w-full sm:px-10 mx-auto">
-    <a
-      href=`/biblioteca/${id}`
-      class="min-w-28 xs:min-w-36 mx-auto h-fit w-fit rounded"
-    >
-      <BookCover
-        customClasses="md:max-w-36"
-        entry={entry}
-        transition:name={`${id}-bookCover`}
-      />
-    </a>
-    <section class="flex flex-col items-start ml-5 gap-y-2">
-      <h2>
-        <a href=`/biblioteca/${id}`>{title}</a>
-      </h2>
-      <BookScore entry={entry} />
-      <div class="flex flex-col gap-y-2 text-xs text-mr-text-relax">
-        <span>Léelo en {readingTime}min</span>
-      </div>
-      <p>
-        "{quote}"
-      </p>
-    </section>
+    {
+      backlog === "upload" ? (
+        <a
+          href={`/biblioteca/${id}`}
+          class="min-w-28 xs:min-w-36 mx-auto h-fit w-fit rounded"
+        >
+          <BookCover
+            customClasses="md:max-w-36"
+            entry={entry}
+            transition:name={`${id}-bookCover`}
+          />
+        </a>
+        <section class="flex flex-col items-start ml-5 gap-y-2">
+          <h2>
+            <a href={`/biblioteca/${id}`}>{title}</a>
+          </h2>
+          <BookScore entry={entry} />
+          <div class="flex flex-col gap-y-2 text-xs text-mr-text-relax">
+            <span>Léelo en {readingTime}min</span>
+          </div>
+          <p>
+            "{quote}"
+          </p>
+        </section>
+      ) : (
+          <span
+            class="min-w-28 xs:min-w-36 w-fit h-fit mx-auto rounded"
+          >
+            <BookCover
+              customClasses="xs:min-w-32 bg-white opacity-50 backdrop-grayscale"
+              entry={entry}
+              transition:name={`${id}-bookCover`}
+            />
+          </span>
+          <section class="flex flex-col items-start ml-5 gap-y-2">
+            <h2 class="text-neutral-500">
+              {title}
+            </h2>
+            <p class="text-neutral-500">
+              "El resumen e insights de este libro aún no los tengo listos. Aún estoy leyéndolo o en proceso de subirlo. <span class="text-mr-neon-orange/50">Sorry!</span>"
+            </p>
+        </section>
+      )
+    }
   </div>
 </section>
