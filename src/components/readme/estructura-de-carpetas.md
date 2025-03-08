@@ -1,5 +1,7 @@
 # Estructura de Carpetas del proyecto
 
+Last Update: **08/03/2025**
+
 > _Breve explicación de cómo están construidas y pensadas las rutas de carpetas del proyecto para aquella persona que las quiera copiar o para mi yo del futuro por si tiene un lapso mental y se le olvida._
 
 Estas carpetas las voy a ir definiendo de arriba a abjado y siempre en formato `src/*` excepto las de `public/*` que serán una carpeta a parte y aislada.
@@ -99,14 +101,12 @@ Y es obligatorio que se repita el contenido porque cada uno tiene unos entry dis
 
 ### /src/components/shared
 
-Estos son elementos que se comparten a lo largo de toda la web como son:
+Esta carpeta está destinada a tener todos aquellos componentes que se compartan a lo largo de la web y estarán organizados a su vez por subcarpetas donde están:
 
-- Navbar
-- Footer
-- Social Icons
-- Carpeta de headerMenus
-
-  En estaestá todo lo relacionado al menú de navegación, tanto en la parte mobile como en la parte desktop y tablet.
+- **/components/bottons**: aquí están todos los elementos que son (o tienn forma de o funcionalidad estilo) botones. Como son _go to top_ o _go back_ y los futuros que se creen. Si hubieren varios botones que se pudieran agrupar por una categoría en concreto, se crearía teniendo así una subcarpeta estilo _/components/bottons/{carpeta-de-ejemplo}_ .
+- **/components/analytics**: elementos que tengan que ver con toda la medición de la web, cookies (si las hubiere) y demás.
+- **/components/headerMenus**: estos son los elementos que corresponden al navbar.
+- Elementos "sueltos" que al ser únicos en su categoría, están en la general.
 
 ### /src/components/statics
 
@@ -119,7 +119,7 @@ Dentro de esta tengo:
 
 ### /src/components/tags
 
-Carpeta donde pondré los eelementos que tengan que ver con los tags (work in progress).
+Carpeta donde pondré los elementos que tengan que ver con los tags (work in progress).
 
 ### /src/components/test
 
@@ -163,7 +163,3 @@ Estilos globales de mi página con sus "atajos" para tailwind
 ### /src/tuils
 
 Elementos que me son útiles para ciertas funcionalidades. Básicamente es el JavaScript/TypeScript que me hace falta para ciertas cosas y que no quiero tener en los componentes como un script.
-
----
-
-Last Update: 22/11/2024
