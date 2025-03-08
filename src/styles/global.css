@@ -195,7 +195,7 @@
 @layer components {
   /* CUSTOM PROSE PLUGING */
   .custom-prose {
-    @apply prose prose-invert prose-headings:text-mr-text-headers prose-strong:text-mr-text-content prose-h1:text-2xl prose-h2:text-xl prose-h2:mb-3 prose-h2:mt-9 prose-h3:text-lg prose-h3:mb-3 prose-h3:mt-9 prose-h4:text-base prose-h4:mb-3 prose-h4:mt-9 prose-h5:text-sm prose-h5:mb-3 prose-h5:mt-9 prose-h6:text-xs prose-h6:mb-3 prose-h6:mt-9 prose-p:mt-2 prose-p:mb-4;
+    @apply prose prose-invert prose-headings:text-mr-text-headers prose-strong:text-mr-text-content prose-h1:text-2xl prose-h2:text-xl prose-h2:mb-3 prose-h2:mt-9 prose-h3:text-lg prose-h3:mb-3 prose-h3:mt-9 prose-h4:text-base prose-h4:mb-3 prose-h4:mt-9 prose-h5:text-sm prose-h5:mb-3 prose-h5:mt-9 prose-h6:text-xs prose-h6:mb-3 prose-h6:mt-9 prose-p:mt-0 prose-p:mb-4;
   }
 
   /* CUSTOM BULLET LIST */
