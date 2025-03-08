@@ -46,7 +46,7 @@ const { Content, headings } = await render(entry);
       <BookCover entry={entry} />
 
       <section class="flex flex-col items-start custom-prose">
-        <h1 transition:name={`${id}-${title}`} class="text-start mb-4">
+        <h1 transition:name={`${id}-${title}`} class="text-start mb-2">
           {title}
         </h1>
         <div class="flex flex-col -mt-1 mb-4">
@@ -54,8 +54,9 @@ const { Content, headings } = await render(entry);
           {
             authorsInArry.map((author) => (
               <a
-                class=" no-underline text-sm hover:underline text-mr-text-headers"
+                class="no-underline text-sm hover:underline text-mr-text-headers"
                 target="_blank"
+                rel="noopener"
                 href={author.link}
               >
                 de {author.name}
