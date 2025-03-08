@@ -8,10 +8,11 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import BiasSEO from "@SEO/contents/BiasSEO.astro";
-import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
-import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
+
+import ScrollGoBackBtn from "@shared/components/bottons/ScrollGoBackBtn";
 import BiasCategory from "@/components/pages/bias/BiasCategory.astro";
-import TableOfContents from "@/components/pages/shared/TableOfContent";
+import TableOfContents from "@shared/components/TableOfContent";
+import GoBackInTop from "@shared/components/bottons/GoBackInTop.astro";
 
 
 interface Props {

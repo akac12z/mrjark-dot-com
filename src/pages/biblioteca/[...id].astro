@@ -5,14 +5,14 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection, render } from "astro:content";
 
-import GoBackInTop from "@/components/pages/shared/GoBackInTop.astro";
-import ScrollGoBackBtn from "@/components/pages/shared/ScrollGoBackBtn";
+import ScrollGoBackBtn from "@shared/components/bottons/ScrollGoBackBtn";
 
 import BookScore from "@/components/pages/books/BookScore.astro";
 import BookCover from "@/components/pages/books/BookCover.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import LibrarySEO from "@SEO/contents/BooksSEO.astro";
-import TableOfContents from "@/components/pages/shared/TableOfContent";
+import TableOfContents from "@shared/components/TableOfContent";
+import GoBackInTop from "@shared/components/bottons/GoBackInTop.astro";
 
 interface Props {
   entry: CollectionEntry<"library">;
