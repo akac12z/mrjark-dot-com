@@ -24,7 +24,7 @@ export default function TestingGoTo({ headPage }: Props) {
   return (
     <div
       className={`
-        fixed bottom-6 left-5 z-10 md:left-auto mx-auto h-fit w-fit
+        fixed bottom-12 xs:bottom-10 left-5 z-10 md:left-auto mx-auto h-fit w-fit
         transition-opacity duration-300
         ${
           isVisible
