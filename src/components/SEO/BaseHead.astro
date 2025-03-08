@@ -13,12 +13,14 @@ import GTMHead from "@analytics/Google/GTMHead.astro";
 import AhrefsAnalytics from "@analytics/Ahrefs/AhrefsAnalytics.astro";
 
 import Favicons from "./Favicons.astro";
+import Overtracking from "@shared/analytics/Overtracking/Overtracking.astro";
 ---
 
 <head>
   <GA4 />
   <GTMHead />
   <AhrefsAnalytics />
+  <Overtracking />
 
   <Favicons />
   <ClientRouter />
