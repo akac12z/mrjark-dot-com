@@ -2,10 +2,10 @@
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 import { getCollection, type CollectionEntry } from "astro:content";
 
-import { type BiasType } from "./icons/biasIcons.types";
+// import { type BiasType } from "./icons/biasIcons.types";
 
 import BiasCategory from "./BiasCategory.astro";
-import BiasIcons from "./BiasIcons.astro";
+// import BiasIcons from "./BiasIcons.astro";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { data, id } = entry;
-const { biasQuestion, biasName, category, biasID } = data;
+const { biasQuestion, biasName, category } = data;
 ---
 
 <article
