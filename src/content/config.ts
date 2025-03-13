@@ -157,6 +157,7 @@ const biasCollection = defineCollection({
         titleTag: z.string().max(85),
         description: z.string().min(60).max(140),
         biasQuestion: z.string().max(120),
+        backlog: z.enum(["wip", "upload"]),
         publishDate: z.string().refine(isValidDateFormat),
         lastTimeEdited: z
           .string()
