@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import AnchorEffect from "./icons/AnchorEffect.icon.astro";
-import BackfireEffect from "./icons/BackfireEffect.icon.astro";
+import { allBiasIcon } from "./icons/biasIconsComponents";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -10,39 +9,12 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { biasID } = data;
----
 
-<div>
-  {biasID === "efecto-ancla" && <AnchorEffect />}
-  {biasID === "efecto-backfire" && <BackfireEffect />}
-</div>
+const matchedIcon = allBiasIcon.find((icon) => icon.id === biasID);
 
-<!-- 
- ---
-import type { BiasType } from "./icons/biasIcons.types";
-import { biasIconsComponents } from "./icons/biasIconsComponents";
-
-interface Props {
-  biasId: string;
+if (!matchedIcon) {
+  throw new Error(`No icon found with this biasID: ${biasID}`);
 }
-
-const { biasId } = Astro.props;
-const BiasIcon = biasIconsComponents[biasId];
 ---
 
-<BiasIcon /> 
---><!-- 
----
-import AnchorEffect from "./icons/AnchorEffect.icon.astro";
-import BackfireEffect from "./icons/BackfireEffect.icon.astro";
-
-interface Props {
-  biasId: string;
-}
-
-const { biasId } = Astro.props as Props;
----
-
-{biasId === "efecto-ancla" && <AnchorEffect />}
-{biasId === "efecto-backfire" && <BackfireEffect />} 
--->
+{matchedIcon && <matchedIcon.icon />}

@@ -2,10 +2,8 @@
 /*inspiración -> https://www.creative-tim.com/twcomponents/component/tailwind-css-cards*/
 import { getCollection, type CollectionEntry } from "astro:content";
 
-// import { type BiasType } from "./icons/biasIcons.types";
-
 import BiasCategory from "./BiasCategory.astro";
-// import BiasIcons from "./BiasIcons.astro";
+import BiasIcons from "./BiasIcons.astro";
 
 interface Props {
   entry: CollectionEntry<"bias">;
@@ -13,7 +11,6 @@ interface Props {
 
 export async function getStaticPaths() {
   const biases = await getCollection("bias");
-  // const {} = biases;
 
   return biases.map((entry) => ({
     params: { id: entry.id },
@@ -35,7 +32,7 @@ const { biasQuestion, biasName, category } = data;
   >
     <article class="flex flex-col justify-between">
       <div class="flex items-center justify-start gap-2">
-        <!-- <BiasIcons /> -->
+        <BiasIcons entry={entry} />
         <h2
           class="line-clamp-2 text-ellipsis overflow-hidden flex-wrap"
           transition:name={`${id}-name`}
