@@ -149,6 +149,7 @@ const biasCollection = defineCollection({
     z
       .object({
         biasName: z.string().max(80),
+        biasID: z.string(),
         cover: z.object({
           src: image(),
           alt: z.string(),

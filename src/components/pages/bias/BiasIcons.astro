@@ -1,21 +1,37 @@
 ---
-import {
-  biasIconsComponents,
-  type BiasType,
-} from "./icons/biasIconsComponents";
+import type { CollectionEntry } from "astro:content";
+import AnchorEffect from "./icons/AnchorEffect.icon.astro";
+import BackfireEffect from "./icons/BackfireEffect.icon.astro";
 
 interface Props {
-  biasId: BiasType;
-  biasIconClasses?: string;
+  entry: CollectionEntry<"bias">;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { biasID } = data;
+---
+
+<div>
+  {biasID === "efecto-ancla" && <AnchorEffect />}
+  {biasID === "efecto-backfire" && <BackfireEffect />}
+</div>
+
+<!-- 
+ ---
+import type { BiasType } from "./icons/biasIcons.types";
+import { biasIconsComponents } from "./icons/biasIconsComponents";
+
+interface Props {
+  biasId: string;
 }
 
 const { biasId } = Astro.props;
 const BiasIcon = biasIconsComponents[biasId];
 ---
 
-<BiasIcon />
-
-<!-- 
+<BiasIcon /> 
+--><!-- 
 ---
 import AnchorEffect from "./icons/AnchorEffect.icon.astro";
 import BackfireEffect from "./icons/BackfireEffect.icon.astro";
