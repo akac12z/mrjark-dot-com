@@ -37,7 +37,7 @@ export const SOCIAL_LINKS: SocialLinksInterface = {
   },
   linkedin: {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/chemaferrandez/",
+    url: "https://www.linkedin.com/in/chemaferran/",
     userName: "ChemaFerrandez",
   },
   substack: {
